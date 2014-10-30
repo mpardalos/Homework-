@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".TaskList">
+
+    <item android:id="@+id/add_task_button"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_new"
+        android:showAsAction="always"
+        android:title="@string/add_task_button"
+        />
+
+</menu>
