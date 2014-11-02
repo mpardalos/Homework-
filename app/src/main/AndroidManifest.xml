@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="mpardalos.org.homeworkmanager.TaskAdd"
+            android:label="@string/title_activity_task_add"
+            android:parentActivityName="mpardalos.org.homeworkmanager.TaskList" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mpardalos.org.homeworkmanager.TaskList" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HomeworkManager</string>
+    <string name="action_settings">Ρυθμίσεις</string>
+    <string name="add_task_button">Προσθήκη Εργασίας</string>
+    <string name="class_input">Μάθημα</string>
+    <string name="due_date_input">Ημερομηνία Παράδοσης</string>
+    <string name="task_description_field">Περιγραφή</string>
+    <string name="task_list_view">Λίστα Εργασιών</string>
+    <string name="task_description_input">Περιγραφή</string>
+    <string name="task_title_field">Τίτλος Εργασίας</string>
+</resources>

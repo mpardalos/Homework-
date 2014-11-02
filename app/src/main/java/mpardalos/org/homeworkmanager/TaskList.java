@@ -1,12 +1,13 @@
 package mpardalos.org.homeworkmanager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.util.Log;
-import android.widget.Toast;
+
 
 import java.util.ArrayList;
 
@@ -72,9 +73,7 @@ public class TaskList extends Activity {
     }
 
     private void addTask() {
-        Log.i("method addTask", "not yet implemented");
-        Toast notImplementedMsg = Toast.makeText(getApplicationContext(), "Not yet implemented",
-                                                 Toast.LENGTH_SHORT);
-        notImplementedMsg.show();
+        Intent openTaskAdd = new Intent(this, TaskAdd.class);
+        startActivity(openTaskAdd);
     }
 }

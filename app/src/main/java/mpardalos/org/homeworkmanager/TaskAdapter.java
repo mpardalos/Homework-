@@ -45,7 +45,7 @@ public class TaskAdapter extends BaseAdapter {
     public View getView(int i, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(context)
-                    .inflate(R.layout.simple_task_layout, parent, false);
+                    .inflate(R.layout.task_list_entry, parent, false);
         }
 
         TextView title = (TextView) convertView.findViewById(R.id.task_title_field);
