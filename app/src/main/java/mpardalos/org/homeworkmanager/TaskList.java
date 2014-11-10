@@ -5,8 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ListView;
-import android.util.Log;
 
 
 import java.util.ArrayList;
@@ -19,17 +20,18 @@ public class TaskList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
         ArrayList<String[]> listOfTasks = new ArrayList<String[]>();
-        String[] task1 = new String[]{"Task 1", "This is first task"};
-        String[] task2 = new String[]{"Task 2", "This is the second task\n and it works!"};
-        String[] task3 = new String[]{"Task 3", "This is the third task \n this one as well!!! "};
-        String[] task4 = new String[]{"Task 4", "This is the fourth task"};
-        String[] task5 = new String[]{"Task 5", "This is the fifth task\n this is getting boring."};
-        String[] task6 = new String[]{"Task 6", "This is the sixth task"};
-        String[] task7 = new String[]{"Task 7", "This is the seventh task"};
-        String[] task8 = new String[]{"Task 8", "This is the eighth task"};
-        String[] task9 = new String[]{"Task 9", "This is the ninth task"};
-        String[] task10 = new String[]{"Task 10", "This is the tenth task"};
-        String[] task11 = new String[]{"Task 11", "This is the eleventh task\n FINALLY!!"};
+        String[] task1 = new String[]{"Maths", "This is first task"};
+        String[] task2 = new String[]{"Maths", "This is the second task\n and it works!"};
+        String[] task3 = new String[]{"Maths", "This is the third task \n this one as well!!! "};
+        String[] task4 = new String[]{"History", "This is the fourth task"};
+        String[] task5 = new String[]{"History", "This is the fifth task\n this is getting boring" +
+                "."};
+        String[] task6 = new String[]{"Greek", "This is the sixth task"};
+        String[] task7 = new String[]{"Greek", "This is the seventh task"};
+        String[] task8 = new String[]{"Physics", "This is the eighth task"};
+        String[] task9 = new String[]{"Chemistry", "This is the ninth task"};
+        String[] task10 = new String[]{"German", "This is the tenth task"};
+        String[] task11 = new String[]{"French", "This is the eleventh task\n FINALLY!!"};
 
         listOfTasks.add(task1);
         listOfTasks.add(task2);
@@ -75,5 +77,15 @@ public class TaskList extends Activity {
     private void addTask() {
         Intent openTaskAdd = new Intent(this, TaskAdd.class);
         startActivity(openTaskAdd);
+    }
+
+    public void onItemChecked(View checkbox) {
+        String itemId = ((View) checkbox.getParent()).getTag().toString();
+        boolean checked = ((CheckBox) checkbox).isChecked();
+        if (checked) {
+            android.util.Log.i(itemId, "checked");
+        } else {
+            android.util.Log.i(itemId, "unchecked");
+        }
     }
 }

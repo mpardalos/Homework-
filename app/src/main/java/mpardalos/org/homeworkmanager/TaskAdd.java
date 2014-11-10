@@ -4,9 +4,26 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
-public class TaskAdd extends Activity {
+import java.util.Date;
+
+
+public class TaskAdd extends Activity implements DatePickerFragment.onDateEnteredListener {
+/*
+    private static Date getDateFromDatePicker(DatePicker datePicker) {
+        int day = datePicker.getDayOfMonth();
+        int month = datePicker.getMonth();
+        int year = datePicker.getYear();
+
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month, day);
+
+        return cal.getTime();
+    }
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,4 +52,16 @@ public class TaskAdd extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void onDueDateClicked(View view) {
+        DatePickerFragment dateInput = new DatePickerFragment();
+        dateInput.show(getFragmentManager(), "dueDateInput");
+    }
+
+    public void onDateEntered(Date date) {
+        EditText dateInput = (EditText) findViewById(R.id.due_date_input);
+        java.text.DateFormat df = android.text.format.DateFormat.getDateFormat(this);
+        dateInput.setText(df.format(date));
+    }
+
 }

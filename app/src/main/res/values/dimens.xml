@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="task_description_font_size">10sp</dimen>
     <dimen name="task_title_font_size">25sp</dimen>
+    <dimen name="task_add_input_seperator_height">15dp</dimen>
 </resources>

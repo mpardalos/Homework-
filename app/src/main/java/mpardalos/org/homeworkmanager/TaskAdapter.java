@@ -48,6 +48,8 @@ public class TaskAdapter extends BaseAdapter {
                     .inflate(R.layout.task_list_entry, parent, false);
         }
 
+        convertView.setTag(i);
+
         TextView title = (TextView) convertView.findViewById(R.id.task_title_field);
         TextView description = (TextView) convertView.findViewById(R.id.task_description_field);
 
@@ -58,4 +60,5 @@ public class TaskAdapter extends BaseAdapter {
 
         return convertView;
     }
+
 }
