@@ -7,30 +7,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-
 import java.util.Date;
 
 
 public class TaskAdd extends Activity implements DatePickerFragment.onDateEnteredListener {
-/*
-    private static Date getDateFromDatePicker(DatePicker datePicker) {
-        int day = datePicker.getDayOfMonth();
-        int month = datePicker.getMonth();
-        int year = datePicker.getYear();
-
-        Calendar cal = Calendar.getInstance();
-        cal.set(year, month, day);
-
-        return cal.getTime();
-    }
-*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_add);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

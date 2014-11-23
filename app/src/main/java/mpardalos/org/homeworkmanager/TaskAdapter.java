@@ -12,6 +12,13 @@ import java.util.Collections;
 import java.util.List;
 
 
+/**
+ * Adapter for task_entry which uses a list of string arrays
+ * Deprecated with the addition of the database and the @TaskEntryCursorAdapter
+ * <p/>
+ * To be removed
+ */
+@Deprecated
 public class TaskAdapter extends BaseAdapter {
     //two item lists containing the title and the description
     private List<String[]> tasks = Collections.emptyList();
@@ -45,12 +52,12 @@ public class TaskAdapter extends BaseAdapter {
     public View getView(int i, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(context)
-                    .inflate(R.layout.task_list_entry, parent, false);
+                    .inflate(R.layout.task_entry, parent, false);
         }
 
         convertView.setTag(i);
 
-        TextView title = (TextView) convertView.findViewById(R.id.task_title_field);
+        TextView title = (TextView) convertView.findViewById(R.id.subject_field);
         TextView description = (TextView) convertView.findViewById(R.id.task_description_field);
 
         title.setText(getItem(i)[0]);

@@ -5,8 +5,15 @@
     <item android:id="@+id/add_task_button"
         android:enabled="true"
         android:icon="@drawable/ic_action_new"
-        android:showAsAction="always"
+        android:showAsAction="ifRoom"
         android:title="@string/add_task_button"
+        />
+
+    <item
+        android:id="@+id/reset_all_button"
+        android:enabled="true"
+        android:title="@string/reset_all_button"
+        android:showAsAction="never"
         />
 
 </menu>

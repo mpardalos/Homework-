@@ -14,4 +14,5 @@
     <string name="subject_tag">Μάθημα</string>
     <string name="description_input">Εισάγετε την Περιγραφή της εργασίας</string>
     <string name="description_tag">Περιγραφή Εργασίας</string>
+    <string name="reset_all_button">Επαναφορά όλων</string>
 </resources>
