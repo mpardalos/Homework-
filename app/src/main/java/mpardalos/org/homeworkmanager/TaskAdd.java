@@ -1,19 +1,19 @@
 package mpardalos.org.homeworkmanager;
 
 import android.app.Activity;
-import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CursorAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 public class TaskAdd extends Activity implements DatePickerFragment.onDateEnteredListener {
@@ -24,6 +24,30 @@ public class TaskAdd extends Activity implements DatePickerFragment.onDateEntere
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_add);
+        this.mDatabase = new TaskDatabaseHelper(this);
+
+        //Populate subject selection spinner
+        Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
+
+        Cursor subjectCursor = mDatabase.getSubjects();
+        List<String> subjects = new ArrayList<String>();
+        if (subjectCursor.moveToFirst()) {
+            do {
+                //Gets the subject that the cursor is currently pointing to
+                subjects.add(subjectCursor.getString(1));
+            }
+            /* points the cursor to the next entry and also
+            stops the loop if we reached the last element */
+            while (subjectCursor.moveToNext());
+        }
+
+        ArrayAdapter<String> subjectAdapter =
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, subjects);
+
+        subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        Log.d("Subjects: ", subjects.toString());
+        subjectSpinner.setAdapter(subjectAdapter);
     }
 
     @Override
@@ -63,5 +87,5 @@ public class TaskAdd extends Activity implements DatePickerFragment.onDateEntere
         super.onBackPressed();
     }
 
-    
+
 }
