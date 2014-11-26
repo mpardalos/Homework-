@@ -12,7 +12,6 @@
     <string name="due_date_input">Enter Due date</string>
     <string name="subject_tag">Subject</string>
     <string name="subject_input">Enter Subject</string>
-    <string name="task_description_input">Description</string>
     <string name="description_input">Enter task description</string>
     <string name="description_tag">Task Description</string>
     <string name="reset_all_button">Reset all</string>
