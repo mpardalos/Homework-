@@ -1,16 +1,24 @@
 package mpardalos.org.homeworkmanager;
 
 import android.app.Activity;
+import android.content.Context;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CursorAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
 import java.util.Date;
 
 
 public class TaskAdd extends Activity implements DatePickerFragment.onDateEnteredListener {
+
+    private TaskDatabaseHelper mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,4 +58,10 @@ public class TaskAdd extends Activity implements DatePickerFragment.onDateEntere
         dateInput.setText(df.format(date));
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    
 }

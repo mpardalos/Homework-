@@ -16,15 +16,17 @@ import java.io.IOError;
  */
 public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
-    private static final String DB_NAME = "database.db";
-    private static final int DB_VERSION = 1;
+    public static final String DB_NAME = "database.db";
+    public static final int DB_VERSION = 1;
 
-    private static final String TASKS_TABLE = "Tasks";
-    private static final String SUBJECTS_TABLE = "Subjects";
-    private static final String PERIOD_TABLE = "Periods";
-    private static final String TIMETABLE = "TimeTable";
+    public static final String TASKS_TABLE = "Tasks";
+    public static final String SUBJECTS_TABLE = "Subjects";
+    public static final String PERIOD_TABLE = "Periods";
+    public static final String TIMETABLE = "TimeTable";
 
-    private static final String TASK_DONE = "Done";
+    public static final String TASK_DONE = "Done";
+    public static final String SUBJECT_NAME = "SubjName";
+    public static final String TEACHER_NAME = "TeacherName";
 
 
     Context mContext;
@@ -47,11 +49,18 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         return c;
     }
 
-    /**
-     * Returns a cursor pointing t
-     *
-     * @return
-     */
+    public Cursor getSubjects() {
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        qb.setTables(SUBJECTS_TABLE);
+        String[] columns = new String[]{"_id", SUBJECT_NAME, TEACHER_NAME};
+
+        Cursor c = qb.query(db, columns, null, null, null, null, null, null);
+        c.moveToFirst();
+
+        return c;
+    }
 
     public Cursor getTasks() {
         SQLiteDatabase db = getReadableDatabase();
@@ -116,4 +125,11 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         }
         getReadableDatabase();
     }
+/*
+    public void addTask (String taskName) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        db.rawQuery("")
+    }
+*/
 }

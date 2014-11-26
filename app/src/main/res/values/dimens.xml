@@ -2,7 +2,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="task_add_input_seperator_height">15dp</dimen>
     <dimen name="task_description_font_size">15sp</dimen>
     <dimen name="task_title_font_size">25sp</dimen>
-    <dimen name="task_add_input_seperator_height">15dp</dimen>
+    <dimen name="spinner_entry_font_size">10sp</dimen>
 </resources>

@@ -14,11 +14,11 @@
         android:layout_height="wrap_content"
         android:text="@string/subject_tag"/>
 
-    <EditText
+    <Spinner
+        android:id="@+id/subject_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/subject_input"
-        android:inputType="text"/>
+        />
 
     <Space
         android:layout_width="match_parent"

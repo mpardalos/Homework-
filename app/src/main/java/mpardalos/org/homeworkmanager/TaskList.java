@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 public class TaskList extends Activity {
 
-    TaskDatabaseHelper mTaskDB;
+    TaskDatabaseHelper mDatabase;
     TaskEntryCursorAdapter adapter;
 
     @Override
@@ -20,9 +20,9 @@ public class TaskList extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
 
-        this.mTaskDB = new TaskDatabaseHelper(this);
+        this.mDatabase = new TaskDatabaseHelper(this);
         this.adapter = new TaskEntryCursorAdapter(this, R.layout.task_entry,
-                                                  mTaskDB.getTasks(), 0);
+                                                  mDatabase.getTasks(), 0);
 
         ListView task_view = (ListView) findViewById(R.id.task_list_view);
         task_view.setAdapter(adapter);
@@ -48,12 +48,6 @@ public class TaskList extends Activity {
             case R.id.add_task_button:
                 addTask();
                 break;
-
-            case R.id.reset_all_button:
-                android.util.Log.i("Item clicked:", "reset all button");
-                resetAllData();
-                break;
-
         }
 
         return super.onOptionsItemSelected(item);
@@ -68,12 +62,6 @@ public class TaskList extends Activity {
         int itemId = (Integer.parseInt(((View) checkbox.getParent()).getTag().toString()));
         boolean checked = ((CheckBox) checkbox).isChecked();
 
-        mTaskDB.setDone(itemId, checked);
-    }
-
-
-    public void resetAllData() {
-        mTaskDB.resetDB();
-        adapter.notifyDataSetChanged();
+        mDatabase.setDone(itemId, checked);
     }
 }

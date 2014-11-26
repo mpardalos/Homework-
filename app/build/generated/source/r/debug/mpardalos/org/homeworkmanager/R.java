@@ -13,24 +13,26 @@ public final class R {
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f040000;
         public static final int activity_vertical_margin=0x7f040001;
-        public static final int task_add_input_seperator_height=0x7f040002;
-        public static final int task_description_font_size=0x7f040003;
-        public static final int task_title_font_size=0x7f040004;
+        public static final int spinner_entry_font_size=0x7f040002;
+        public static final int task_add_input_seperator_height=0x7f040003;
+        public static final int task_description_font_size=0x7f040004;
+        public static final int task_title_font_size=0x7f040005;
     }
     public static final class drawable {
         public static final int ic_action_new=0x7f020000;
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int add_task_button=0x7f080007;
-        public static final int description_tag=0x7f080001;
-        public static final int due_date_input=0x7f080000;
-        public static final int reset_all_button=0x7f080008;
-        public static final int subject_field=0x7f080004;
-        public static final int task_description_field=0x7f080005;
-        public static final int task_description_input=0x7f080002;
-        public static final int task_done_checkbox=0x7f080006;
-        public static final int task_list_view=0x7f080003;
+        public static final int add_task_button=0x7f080008;
+        public static final int description_tag=0x7f080002;
+        public static final int due_date_input=0x7f080001;
+        public static final int reset_all_button=0x7f080009;
+        public static final int subject_field=0x7f080005;
+        public static final int subject_input=0x7f080000;
+        public static final int task_description_field=0x7f080006;
+        public static final int task_description_input=0x7f080003;
+        public static final int task_done_checkbox=0x7f080007;
+        public static final int task_list_view=0x7f080004;
     }
     public static final class layout {
         public static final int activity_task_add=0x7f030000;
