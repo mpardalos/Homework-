@@ -13,7 +13,7 @@
     <string name="subject_heading">Μάθημα</string>
     <string name="description_input">Εισάγετε την Περιγραφή της εργασίας</string>
     <string name="description_heading">Περιγραφή Εργασίας</string>
-    <string name="reset_all_button">Επαναφορά όλων</string>
+    <string name="delete_tasks_button">Διαγραφή όλων</string>
     <string name="subject_field">Τίτλος Εργασίας</string>
     <string name="task_done_checkbox">Ολοκληρώθηκε</string>
 </resources>

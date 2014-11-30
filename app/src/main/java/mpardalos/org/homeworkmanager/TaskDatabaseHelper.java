@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import java.io.IOError;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -138,23 +139,9 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         db.insert(TASKS_TABLE, null, task);
     }
 
-    /* No idea how to make this work (trying to delete db so that it can be remade)
-    public void resetDB() throws IOError {
-        File database = new File(this.mContext.getFilesDir().getPath() +
-                                         "mpardalos.org.homeworkmanager/databases/database.db");
-
-        boolean result = false;
-        try {
-            result = mContext.deleteDatabase("database.db");
-        } catch (Exception e) {
-            android.util.Log.e("resetDB", "Failed to delete database: ", e);
-        }
-
-        close();
-        if (!database.delete()) {
-            android.util.Log.e("resetDB", "Failed to delete database");
-        }
-        getReadableDatabase();
+    public void deleteTasks() throws IOError {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TASKS_TABLE, null, null);
     }
-    */
+
 }

@@ -24,11 +24,11 @@ public final class R {
     }
     public static final class id {
         public static final int add_task_button=0x7f050009;
+        public static final int delete_tasks_button=0x7f05000a;
         public static final int description_input=0x7f050003;
         public static final int due_date_field=0x7f050008;
         public static final int due_date_input=0x7f050002;
         public static final int due_date_tag=0x7f050000;
-        public static final int reset_all_button=0x7f05000a;
         public static final int subject_field=0x7f050005;
         public static final int subject_input=0x7f050001;
         public static final int task_description_field=0x7f050006;
@@ -49,11 +49,11 @@ public final class R {
         public static final int add_task_button=0x7f060001;
         public static final int app_name=0x7f060002;
         public static final int database_date_format=0x7f060003;
-        public static final int description_heading=0x7f060004;
-        public static final int description_input=0x7f060005;
-        public static final int due_date_heading=0x7f060006;
-        public static final int due_date_input=0x7f060007;
-        public static final int reset_all_button=0x7f060008;
+        public static final int delete_tasks_button=0x7f060004;
+        public static final int description_heading=0x7f060005;
+        public static final int description_input=0x7f060006;
+        public static final int due_date_heading=0x7f060007;
+        public static final int due_date_input=0x7f060008;
         public static final int subject_field=0x7f060009;
         public static final int subject_heading=0x7f06000a;
         public static final int subject_input=0x7f06000b;

@@ -14,7 +14,7 @@
     <string name="subject_input">Enter Subject</string>
     <string name="description_input">Enter task description</string>
     <string name="description_heading">Task Description</string>
-    <string name="reset_all_button">Reset all</string>
+    <string name="delete_tasks_button">Delete all tasks</string>
     <string name="task_done_checkbox">Done</string>
     <string name="database_date_format" translatable="false">dd-MM-yyyy</string>
     <string name="task_title_field">Task Title</string>

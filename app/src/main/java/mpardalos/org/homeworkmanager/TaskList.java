@@ -48,6 +48,12 @@ public class TaskList extends Activity {
             case R.id.add_task_button:
                 addTask();
                 break;
+
+            case R.id.delete_tasks_button:
+                deleteTasks();
+                adapter.changeCursor(mDatabase.getTasks());
+                adapter.notifyDataSetChanged();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -63,5 +69,9 @@ public class TaskList extends Activity {
         boolean checked = ((CheckBox) checkbox).isChecked();
 
         mDatabase.setDone(itemId, checked);
+    }
+
+    public void deleteTasks() {
+        mDatabase.deleteTasks();
     }
 }
