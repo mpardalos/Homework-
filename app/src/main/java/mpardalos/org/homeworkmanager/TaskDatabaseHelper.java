@@ -8,8 +8,9 @@ import android.database.sqlite.SQLiteQueryBuilder;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
-import java.io.File;
-import java.io.IOError;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -26,7 +27,10 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
     public static final String TASK_DONE = "Done";
     public static final String SUBJECT_NAME = "SubjName";
+    public static final String SUBJECT_ID = "SubjectId";
     public static final String TEACHER_NAME = "TeacherName";
+    public static final String DESCRIPTION = "TaskDescr";
+    public static final String DUE_DATE = "DueDate";
 
 
     Context mContext;
@@ -62,21 +66,31 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         return c;
     }
 
+    public int getSubjectId(String subject) {
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT _id FROM " + SUBJECTS_TABLE + " WHERE " + SUBJECT_NAME + "=?";
+
+        String[] selectionArgs = new String[]{subject};
+
+        Cursor c = db.rawQuery(query, selectionArgs);
+        c.moveToFirst();
+        return c.getInt(c.getColumnIndex("_id"));
+    }
+
     public Cursor getTasks() {
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor c = db.rawQuery("SELECT \n" +
-                                       "  Subjects.SubjName, " +
-                                       "  Tasks.TaskDescr, " +
-                                       "  Tasks.\"_id\"," +
-                                       "  Tasks.Done, " +
-                                       "  Tasks.DueDay " +
-                                       "FROM" +
-                                       "  Tasks " +
-                                       "  INNER JOIN Subjects ON (Tasks.SubjectId = Subjects" +
-                                       ".\"_id\")", null);
+        Cursor c = db.rawQuery(
+                "SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME +
+                        "," + TASKS_TABLE + "." + DESCRIPTION +
+                        "," + TASKS_TABLE + "." + "\"_id\"" +
+                        "," + TASKS_TABLE + "." + TASK_DONE +
+                        "," + TASKS_TABLE + "." + DUE_DATE +
+                        " FROM " +
+                        TASKS_TABLE +
+                        " INNER JOIN " + SUBJECTS_TABLE + " ON (" + TASKS_TABLE + "." +
+                        "SubjectId" + "=" + SUBJECTS_TABLE + "." + "\"_id\"" + ")", null);
         c.moveToFirst();
-
         return c;
     }
 
@@ -97,7 +111,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         String selection = "_id" + " LIKE ?";
         String[] selectionArgs = {String.valueOf(taskId)};
 
-        int count = db.update(
+        db.update(
                 TASKS_TABLE,
                 values,
                 selection,
@@ -105,31 +119,42 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
     }
 
-    /**
-     * Resets *everything* to the original state by deleting the database
-     */
+    public void insertTask(String description, Date dueDate, String subject)
+            throws IllegalArgumentException {
+
+        if (description == null || dueDate == null || subject == null) {
+            throw new IllegalArgumentException("All arguments must be non null");
+        }
+
+        SQLiteDatabase db = getWritableDatabase();
+        DateFormat dbDateFormat = new SimpleDateFormat(mContext.getResources().getString(R.string.database_date_format));
+
+        ContentValues task = new ContentValues();
+        task.put(DESCRIPTION, description);
+        task.put(DUE_DATE, dbDateFormat.format(dueDate));
+        task.put(SUBJECT_ID, getSubjectId(subject));
+        task.put(TASK_DONE, false);
+
+        db.insert(TASKS_TABLE, null, task);
+    }
+
+    /* No idea how to make this work (trying to delete db so that it can be remade)
     public void resetDB() throws IOError {
         File database = new File(this.mContext.getFilesDir().getPath() +
                                          "mpardalos.org.homeworkmanager/databases/database.db");
-        /*
+
         boolean result = false;
         try {
             result = mContext.deleteDatabase("database.db");
         } catch (Exception e) {
             android.util.Log.e("resetDB", "Failed to delete database: ", e);
         }
-        */
+
         close();
         if (!database.delete()) {
             android.util.Log.e("resetDB", "Failed to delete database");
         }
         getReadableDatabase();
     }
-/*
-    public void addTask (String taskName) {
-        SQLiteDatabase db = getWritableDatabase();
-
-        db.rawQuery("")
-    }
-*/
+    */
 }

@@ -22,27 +22,30 @@ public class TaskEntryCursorAdapter extends ResourceCursorAdapter implements Lis
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         TextView taskTitle = (TextView) view.findViewById(R.id.subject_field);
-        taskTitle.setText(cursor.getString(cursor.getColumnIndex("SubjName")));
+        taskTitle.setText(cursor.getString(cursor.getColumnIndex(TaskDatabaseHelper.SUBJECT_NAME)));
 
         TextView taskDescription = (TextView) view.findViewById(R.id.task_description_field);
-        taskDescription.setText(cursor.getString(cursor.getColumnIndex("TaskDescr")));
+        taskDescription.setText(cursor.getString(cursor.getColumnIndex(TaskDatabaseHelper
+                                                                               .DESCRIPTION)));
 
-        TextView dueDate = (TextView) view.findViewById(R.id.description_tag);
-        SimpleDateFormat dbFormat = new SimpleDateFormat("yyyy-MM-dd");
+        TextView dueDate = (TextView) view.findViewById(R.id.due_date_field);
+        SimpleDateFormat dbFormat = new SimpleDateFormat(context.getResources().getString(R.string.database_date_format));
         java.text.DateFormat displayFormat = SimpleDateFormat.getDateInstance();
         Date date;
         try {
-            date = dbFormat.parse(cursor.getString(cursor.getColumnIndex("DueDay")));
+            date = dbFormat.parse(cursor.getString(cursor.getColumnIndex(TaskDatabaseHelper
+                                                                                 .DUE_DATE)));
             dueDate.setText(displayFormat.format(date));
         } catch (ParseException e) {
             Log.e("Error parsing date from database", "unable to parse entry with id " +
                     String.valueOf(cursor.getInt(cursor.getColumnIndex("_id"))));
-            dueDate.setText(" ");
+            dueDate.setText("");
         }
 
 
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.task_done_checkbox);
-        checkBox.setChecked(cursor.getInt(cursor.getColumnIndex("Done")) != 0);
+        checkBox.setChecked(cursor.getInt(cursor.getColumnIndex(TaskDatabaseHelper.TASK_DONE)) !=
+                                    0);
 
         view.setTag(cursor.getInt(cursor.getColumnIndex("_id")));
     }

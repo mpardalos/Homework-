@@ -31,7 +31,7 @@
         android:onClick="onItemChecked"/>
 
     <TextView
-        android:id="@+id/description_tag"
+        android:id="@+id/due_date_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/task_done_checkbox"
