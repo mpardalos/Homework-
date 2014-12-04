@@ -9,6 +9,7 @@ import android.widget.ListAdapter;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,7 +31,7 @@ public class TaskEntryCursorAdapter extends ResourceCursorAdapter implements Lis
 
         TextView dueDate = (TextView) view.findViewById(R.id.due_date_field);
         SimpleDateFormat dbFormat = new SimpleDateFormat(context.getResources().getString(R.string.database_date_format));
-        java.text.DateFormat displayFormat = SimpleDateFormat.getDateInstance();
+        java.text.DateFormat displayFormat = DateFormat.getDateInstance(DateFormat.FULL);
         Date date;
         try {
             date = dbFormat.parse(cursor.getString(cursor.getColumnIndex(TaskDatabaseHelper

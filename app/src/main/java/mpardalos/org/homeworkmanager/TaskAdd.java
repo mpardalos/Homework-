@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -80,7 +81,7 @@ public class TaskAdd extends Activity implements DatePickerFragment.onDateEntere
 
     public void onDateEntered(Date date) {
         EditText dateInput = (EditText) findViewById(R.id.due_date_input);
-        java.text.DateFormat df = android.text.format.DateFormat.getDateFormat(this);
+        DateFormat df = DateFormat.getDateInstance(DateFormat.FULL);
         dateInput.setText(df.format(date));
         //<AWESOME>When a methods needs the date instead of parsing the text it can get this
         // tag</AWESOME>
