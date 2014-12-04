@@ -16,4 +16,6 @@
     <string name="delete_tasks_button">Διαγραφή όλων</string>
     <string name="subject_field">Τίτλος Εργασίας</string>
     <string name="task_done_checkbox">Ολοκληρώθηκε</string>
+    <string name="action_delete_task">Διαγραφή Εργασίας</string>
+
 </resources>

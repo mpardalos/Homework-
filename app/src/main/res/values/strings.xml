@@ -18,6 +18,8 @@
     <string name="task_done_checkbox">Done</string>
     <string name="database_date_format" translatable="false">dd-MM-yyyy</string>
     <string name="task_title_field">Task Title</string>
+    <string name="title_activity_task_details">TaskDetails</string>
+    <string name="action_delete_task">Delete Task</string>
 
 
 </resources>

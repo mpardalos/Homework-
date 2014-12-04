@@ -1,16 +1,20 @@
 package mpardalos.org.homeworkmanager;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.ListView;
+
+import java.util.Date;
 
 
-public class TaskList extends Activity {
+public class TaskList extends ListActivity {
+
+    public int ADD_TASK_REQUEST = 0; //request code for the add task activity
 
     TaskDatabaseHelper mDatabase;
     TaskEntryCursorAdapter adapter;
@@ -24,9 +28,21 @@ public class TaskList extends Activity {
         this.adapter = new TaskEntryCursorAdapter(this, R.layout.task_entry,
                                                   mDatabase.getTasks(), 0);
 
-        ListView task_view = (ListView) findViewById(R.id.task_list_view);
-        task_view.setAdapter(adapter);
+        setListAdapter(this.adapter);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.i("Result received, requestCode", String.valueOf(requestCode));
+        if (requestCode == ADD_TASK_REQUEST && resultCode == RESULT_OK) {
+            mDatabase.insertTask(data.getStringExtra("description"),
+                                 (Date) data.getSerializableExtra("dueDate"),
+                                 data.getStringExtra("subject")
+                                );
+            this.adapter.changeCursor(mDatabase.getTasks());
+            this.adapter.notifyDataSetChanged();
+        }
     }
 
     @Override
@@ -46,24 +62,25 @@ public class TaskList extends Activity {
 
         switch (id) {
             case R.id.add_task_button:
-                addTask();
+                Intent openTaskAdd = new Intent(this, TaskAdd.class);
+                startActivityForResult(openTaskAdd, ADD_TASK_REQUEST);
                 break;
 
             case R.id.delete_tasks_button:
-                deleteTasks();
-                adapter.changeCursor(mDatabase.getTasks());
-                adapter.notifyDataSetChanged();
+                deleteAllTasks();
+                this.adapter.changeCursor(mDatabase.getTasks());
+                this.adapter.notifyDataSetChanged();
                 break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void addTask() {
-        Intent openTaskAdd = new Intent(this, TaskAdd.class);
-        startActivity(openTaskAdd);
-    }
-
+    /**
+     * Called when a checkbox is clicked.
+     * Updates the state of the database entry associated with the item to reflect the state of
+     * the checkbox
+     */
     public void onItemChecked(View checkbox) {
         int itemId = (Integer.parseInt(((View) checkbox.getParent()).getTag().toString()));
         boolean checked = ((CheckBox) checkbox).isChecked();
@@ -71,7 +88,7 @@ public class TaskList extends Activity {
         mDatabase.setDone(itemId, checked);
     }
 
-    public void deleteTasks() {
-        mDatabase.deleteTasks();
+    public void deleteAllTasks() {
+        mDatabase.deleteAllTasks();
     }
 }

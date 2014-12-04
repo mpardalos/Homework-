@@ -139,9 +139,13 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         db.insert(TASKS_TABLE, null, task);
     }
 
-    public void deleteTasks() throws IOError {
+    public void deleteAllTasks() throws IOError {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TASKS_TABLE, null, null);
     }
 
+    public void deleteTask(int taskId) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TASKS_TABLE, "_id=" + String.valueOf(taskId), null);
+    }
 }
