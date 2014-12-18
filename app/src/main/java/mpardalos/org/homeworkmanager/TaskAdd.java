@@ -68,10 +68,10 @@ public class TaskAdd extends Activity implements DatePickerFragment.onDateEntere
         switch (id) {
             //Doesn't go back if the return value was false
             case android.R.id.home:
-                returnDataIfComplete();
+                setResultAndFinishIfPossible(); //also finishes the activity
                 return true;
         }
-        return false;
+        return super.onOptionsItemSelected(item);
     }
 
     public void onDueDateClicked(View view) {
@@ -88,7 +88,7 @@ public class TaskAdd extends Activity implements DatePickerFragment.onDateEntere
         dateInput.setTag(R.id.due_date_tag, date);
     }
 
-    private boolean returnDataIfComplete() {
+    private boolean setResultAndFinishIfPossible() {
         String subject = ((TextView) ((Spinner) findViewById(R.id.subject_input))
                 .getSelectedView().findViewById(android.R.id.text1)).getText().toString();
         Date dueDate = (Date) findViewById(R.id.due_date_input).getTag(R.id.due_date_tag);

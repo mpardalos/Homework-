@@ -37,6 +37,7 @@ public class TaskEntryCursorAdapter extends ResourceCursorAdapter implements Lis
             date = dbFormat.parse(cursor.getString(cursor.getColumnIndex(TaskDatabaseHelper
                                                                                  .DUE_DATE)));
             dueDate.setText(displayFormat.format(date));
+            dueDate.setTag(R.id.due_date_tag, date);
         } catch (ParseException e) {
             Log.e("Error parsing date from database", "unable to parse entry with id " +
                     String.valueOf(cursor.getInt(cursor.getColumnIndex("_id"))));
@@ -48,6 +49,6 @@ public class TaskEntryCursorAdapter extends ResourceCursorAdapter implements Lis
         checkBox.setChecked(cursor.getInt(cursor.getColumnIndex(TaskDatabaseHelper.TASK_DONE)) !=
                                     0);
 
-        view.setTag(cursor.getInt(cursor.getColumnIndex("_id")));
+        view.setTag(R.id.database_task_id, cursor.getInt(cursor.getColumnIndex("_id")));
     }
 }
