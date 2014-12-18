@@ -8,13 +8,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.Date;
 
 
 public class TaskList extends ListActivity {
 
-    public int ADD_TASK_REQUEST = 0; //request code for the add task activity
+    public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
+    public static final int EDIT_TASK_REQUEST = 3;
 
     TaskDatabaseHelper mDatabase;
     TaskEntryCursorAdapter adapter;
@@ -29,19 +32,41 @@ public class TaskList extends ListActivity {
                                                   mDatabase.getTasks(), 0);
 
         setListAdapter(this.adapter);
+    }
 
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        l.setSelection(position);
+        Date dueDate = (Date) (v.findViewById(R.id.due_date_field).getTag(R.id.due_date_tag));
+        String description = (String) ((TextView) v.findViewById(R.id.task_description_field))
+                .getText();
+        String subject = (String) ((TextView) v.findViewById(R.id.subject_field)).getText();
+        int databaseId = (Integer) v.getTag(R.id.database_task_id);
+
+        Intent intent = new Intent(getApplicationContext(), TaskEdit.class);
+        intent.putExtra(TaskDatabaseHelper.DUE_DATE, dueDate);
+        intent.putExtra(TaskDatabaseHelper.DESCRIPTION, description);
+        intent.putExtra(TaskDatabaseHelper.SUBJECT_NAME, subject);
+        intent.putExtra("_id", databaseId);
+
+        startActivityForResult(intent, EDIT_TASK_REQUEST);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i("Result received, requestCode", String.valueOf(requestCode));
+        Log.d("Result received, requestCode", String.valueOf(requestCode));
+
         if (requestCode == ADD_TASK_REQUEST && resultCode == RESULT_OK) {
             mDatabase.insertTask(data.getStringExtra("description"),
                                  (Date) data.getSerializableExtra("dueDate"),
                                  data.getStringExtra("subject")
                                 );
-            this.adapter.changeCursor(mDatabase.getTasks());
-            this.adapter.notifyDataSetChanged();
+            refreshList();
+
+        } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_DELETE_TASK) {
+            int _id = data.getIntExtra("_id", -1);
+            mDatabase.deleteTask(_id);
+            refreshList();
         }
     }
 
@@ -82,7 +107,7 @@ public class TaskList extends ListActivity {
      * the checkbox
      */
     public void onItemChecked(View checkbox) {
-        int itemId = (Integer.parseInt(((View) checkbox.getParent()).getTag().toString()));
+        int itemId = (Integer.parseInt(((View) checkbox.getParent()).getTag(R.id.database_task_id).toString()));
         boolean checked = ((CheckBox) checkbox).isChecked();
 
         mDatabase.setDone(itemId, checked);
@@ -90,5 +115,10 @@ public class TaskList extends ListActivity {
 
     public void deleteAllTasks() {
         mDatabase.deleteAllTasks();
+    }
+
+    private void refreshList() {
+        this.adapter.changeCursor(mDatabase.getTasks());
+        this.adapter.notifyDataSetChanged();
     }
 }

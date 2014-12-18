@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
+import android.util.Log;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
@@ -144,8 +145,18 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         db.delete(TASKS_TABLE, null, null);
     }
 
+    /**
+     * Delete a task from the database
+     *
+     * @param taskId the _id of the task to be deleted. If it is -1 then nothing is deleted
+     */
     public void deleteTask(int taskId) {
-        SQLiteDatabase db = getWritableDatabase();
-        db.delete(TASKS_TABLE, "_id=" + String.valueOf(taskId), null);
+        if (!(taskId == -1)) {
+            SQLiteDatabase db = getWritableDatabase();
+            db.delete(TASKS_TABLE, "_id=" + String.valueOf(taskId), null);
+            Log.d("Deleted task. Id", String.valueOf(taskId));
+        } else {
+            Log.d("deleteTask", "Not deleting any task");
+        }
     }
 }

@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 16
     buildToolsVersion "20.0.0"
-
     defaultConfig {
         applicationId "mpardalos.org.homeworkmanager"
         minSdkVersion 15
@@ -11,13 +10,8 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
-        release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

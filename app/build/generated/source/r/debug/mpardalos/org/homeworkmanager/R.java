@@ -23,17 +23,18 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_delete_task=0x7f05000a;
-        public static final int add_task_button=0x7f050008;
-        public static final int delete_tasks_button=0x7f050009;
-        public static final int description_input=0x7f050003;
-        public static final int due_date_field=0x7f050007;
-        public static final int due_date_input=0x7f050002;
-        public static final int due_date_tag=0x7f050000;
-        public static final int subject_field=0x7f050004;
-        public static final int subject_input=0x7f050001;
-        public static final int task_description_field=0x7f050005;
-        public static final int task_done_checkbox=0x7f050006;
+        public static final int action_delete_task=0x7f05000b;
+        public static final int add_task_button=0x7f050009;
+        public static final int database_task_id=0x7f050000;
+        public static final int delete_tasks_button=0x7f05000a;
+        public static final int description_input=0x7f050004;
+        public static final int due_date_field=0x7f050008;
+        public static final int due_date_input=0x7f050003;
+        public static final int due_date_tag=0x7f050001;
+        public static final int subject_field=0x7f050005;
+        public static final int subject_input=0x7f050002;
+        public static final int task_description_field=0x7f050006;
+        public static final int task_done_checkbox=0x7f050007;
     }
     public static final class layout {
         public static final int activity_task_add_or_edit=0x7f030000;
@@ -43,7 +44,7 @@ public final class R {
     public static final class menu {
         public static final int activity_task_list_menu=0x7f080000;
         public static final int menu_task_add=0x7f080001;
-        public static final int menu_task_details=0x7f080002;
+        public static final int menu_task_edit=0x7f080002;
     }
     public static final class string {
         public static final int action_delete_task=0x7f060000;
