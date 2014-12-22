@@ -1,20 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context=".TaskList">
-
-    <item
-        android:id="@+id/add_task_button"
-        android:enabled="true"
-        android:icon="@drawable/ic_action_new"
-        android:showAsAction="ifRoom"
-        android:title="@string/add_task_button"
-        />
 
     <item
         android:id="@+id/delete_tasks_button"
         android:enabled="true"
         android:title="@string/delete_tasks_button"
-        android:showAsAction="never"
+        app:showAsAction="never"
         />
 
 </menu>

@@ -1,7 +1,7 @@
 package mpardalos.org.homeworkmanager;
 
-import android.app.ActionBar;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -19,7 +19,7 @@ public class TaskEdit extends TaskAdd {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_task_edit, menu);
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }

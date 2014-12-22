@@ -1,10 +1,11 @@
 package mpardalos.org.homeworkmanager;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,7 +22,7 @@ import java.util.Date;
 import java.util.List;
 
 
-public class TaskAdd extends Activity implements DatePickerFragment.onDateEnteredListener {
+public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onDateEnteredListener {
 
     private TaskDatabaseHelper mDatabase;
 
@@ -49,13 +50,17 @@ public class TaskAdd extends Activity implements DatePickerFragment.onDateEntere
                 new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, subjects);
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
+        setSupportActionBar(toolbar);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_task_add, menu);
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }

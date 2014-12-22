@@ -1,8 +1,8 @@
 package mpardalos.org.homeworkmanager;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,10 +11,12 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.melnykov.fab.FloatingActionButton;
+
 import java.util.Date;
 
 
-public class TaskList extends ListActivity {
+public class TaskList extends ActionBarListActivity {
 
     public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
     public static final int EDIT_TASK_REQUEST = 3;
@@ -32,7 +34,15 @@ public class TaskList extends ListActivity {
                                                   mDatabase.getTasks(), 0);
 
         setListAdapter(this.adapter);
+
+        ((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView(getListView());
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
+        setSupportActionBar(toolbar);
+
+        getListView().setOnItemClickListener(mOnClickListener);
     }
+
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
@@ -86,11 +96,6 @@ public class TaskList extends ListActivity {
         android.util.Log.i("item clicked", String.valueOf(id));
 
         switch (id) {
-            case R.id.add_task_button:
-                Intent openTaskAdd = new Intent(this, TaskAdd.class);
-                startActivityForResult(openTaskAdd, ADD_TASK_REQUEST);
-                break;
-
             case R.id.delete_tasks_button:
                 deleteAllTasks();
                 this.adapter.changeCursor(mDatabase.getTasks());
@@ -115,6 +120,11 @@ public class TaskList extends ListActivity {
 
     public void deleteAllTasks() {
         mDatabase.deleteAllTasks();
+    }
+
+    public void addTask(View view) {
+        Intent openTaskAdd = new Intent(this, TaskAdd.class);
+        startActivityForResult(openTaskAdd, ADD_TASK_REQUEST);
     }
 
     private void refreshList() {
