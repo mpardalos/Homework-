@@ -1,9 +1,14 @@
 package mpardalos.org.homeworkmanager;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import java.text.DateFormat;
 
 /**
  * This Activity is used to edit tasks that already exist, the user can also delete the task
@@ -14,6 +19,25 @@ public class TaskEdit extends TaskAdd {
     public static final int RESULT_DELETE_TASK = 4;
     public static final int RESULT_EDIT_TASK = 5;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
+        ((Spinner) findViewById(R.id.subject_input)).setSelection(getIndex(subjectSpinner,
+                                                                           getIntent()
+                                                                                   .getStringExtra(TaskDatabaseHelper.SUBJECT_NAME)));
+
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL);
+        EditText dueDateInput = (EditText) findViewById(R.id.due_date_input);
+
+        dueDateInput.setText(dateFormat.format(getIntent().getSerializableExtra
+                (TaskDatabaseHelper.DUE_DATE)));
+        dueDateInput.setTag(R.id.due_date_tag, getIntent().getSerializableExtra
+                (TaskDatabaseHelper.DUE_DATE));
+
+        ((EditText) findViewById(R.id.description_input)).setText(getIntent().getStringExtra
+                (TaskDatabaseHelper.DESCRIPTION));
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,12 +57,13 @@ public class TaskEdit extends TaskAdd {
             case R.id.action_delete_task:
                 setResultDeleteTask();
                 finish();
-                break;
-            case android.R.id.home:
-                onBackPressed();
                 return true;
-        }
+            case android.R.id.home:
+                setResultFromInput(RESULT_EDIT_TASK);
+                finish();
+                return true;
 
+        }
         return super.onOptionsItemSelected(item);
     }
 

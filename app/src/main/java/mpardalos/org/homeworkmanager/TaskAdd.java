@@ -24,7 +24,7 @@ import java.util.List;
 
 public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onDateEnteredListener {
 
-    private TaskDatabaseHelper mDatabase;
+    protected TaskDatabaseHelper mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +71,14 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            //Doesn't go back if the return value was false
+            //Doesn't go back if setResultFromInput is false
             case android.R.id.home:
-                setResultAndFinishIfPossible(); //also finishes the activity
+                boolean inputComplete = setResultFromInput(RESULT_OK);
+                if (inputComplete) {
+                    finish();
+                } else {
+                    Toast.makeText(this, R.string.enter_due_date_toast, Toast.LENGTH_LONG).show();
+                }
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -93,7 +98,21 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         dateInput.setTag(R.id.due_date_tag, date);
     }
 
-    private boolean setResultAndFinishIfPossible() {
+    //Thanks to @Akhil Jain at from stackoverflow for this method
+    protected int getIndex(Spinner spinner, String myString) {
+        int index = 0;
+
+        for (int i = 0; i < spinner.getCount(); i++) {
+            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(myString)) {
+                index = i;
+                i = spinner.getCount();//will stop the loop, kind of break,
+                // by making condition false
+            }
+        }
+        return index;
+    }
+
+    protected boolean setResultFromInput(int result_code) {
         String subject = ((TextView) ((Spinner) findViewById(R.id.subject_input))
                 .getSelectedView().findViewById(android.R.id.text1)).getText().toString();
         Date dueDate = (Date) findViewById(R.id.due_date_input).getTag(R.id.due_date_tag);
@@ -104,19 +123,13 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         Log.i("Task to be added: ", "Due Date: " + dueDate);
         Log.i("Task to be added: ", "Description: " + description);
 
-        if (dueDate != null) {
-            Intent result = new Intent();
-            result.putExtra("subject", subject);
-            result.putExtra("dueDate", dueDate);
-            result.putExtra("description", description);
-            setResult(RESULT_OK, result);
-            finish();
-            return true;
-        } else {
-            Toast.makeText(getApplicationContext(),
-                           "Enter due date or use back button to discard task",
-                           Toast.LENGTH_LONG).show();
-            return false;
-        }
+        Intent result = new Intent();
+
+        result.putExtra("_id", getIntent().getIntExtra("_id", -1));//The _id will never be -1
+        result.putExtra("subject", subject);
+        result.putExtra("dueDate", dueDate);
+        result.putExtra("description", description);
+        setResult(result_code, result);
+        return dueDate != null;
     }
 }

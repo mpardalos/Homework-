@@ -16,10 +16,6 @@ public class DatePickerFragment extends DialogFragment
 
     onDateEnteredListener parent;
 
-    public interface onDateEnteredListener {
-        public void onDateEntered(Date date);
-    }
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the current date as the default date in the picker
@@ -48,5 +44,9 @@ public class DatePickerFragment extends DialogFragment
         Calendar cal = Calendar.getInstance();
         cal.set(year, month, day);
         parent.onDateEntered(cal.getTime());
+    }
+
+    public interface onDateEnteredListener {
+        public void onDateEntered(Date date);
     }
 }

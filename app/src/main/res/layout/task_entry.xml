@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="@string/subject_field"
+        android:text="Language B"
+        android:textColor="#000000"
         android:textSize="@dimen/task_title_font_size"/>
 
     <TextView
@@ -19,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/subject_field"
         android:text="@string/task_description_field"
+        android:textColor="#000000"
         android:textSize="@dimen/task_description_font_size"/>
 
 
@@ -26,6 +28,7 @@
         android:id="@+id/task_done_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:focusable="false"
@@ -35,9 +38,14 @@
         android:id="@+id/due_date_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/task_done_checkbox"
-        android:layout_marginRight="40dp"
-        android:layout_toLeftOf="@+id/task_done_checkbox"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_toEndOf="@id/subject_field"
+        android:layout_toLeftOf="@id/task_done_checkbox"
+        android:layout_toRightOf="@id/subject_field"
+        android:layout_toStartOf="@id/task_done_checkbox"
         android:text=""
+        android:textColor="#000000"
         />
 </RelativeLayout>

@@ -74,8 +74,13 @@ public class TaskList extends ActionBarListActivity {
             refreshList();
 
         } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_DELETE_TASK) {
-            int _id = data.getIntExtra("_id", -1);
-            mDatabase.deleteTask(_id);
+            mDatabase.deleteTask(data.getIntExtra("_id", -1));
+            refreshList();
+        } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_EDIT_TASK) {
+            mDatabase.modifyTask(data.getIntExtra("_id", 500),
+                                 data.getStringExtra("description"),
+                                 (Date) data.getSerializableExtra("dueDate"),
+                                 data.getStringExtra("subject"));
             refreshList();
         }
     }

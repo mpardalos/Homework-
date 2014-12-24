@@ -140,6 +140,26 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         db.insert(TASKS_TABLE, null, task);
     }
 
+    public void modifyTask(int _id, String description, Date dueDate, String subject) {
+        SQLiteDatabase db = getWritableDatabase();
+        DateFormat dbDateFormat = new SimpleDateFormat(mContext.getResources().getString(R.string.database_date_format));
+        ContentValues task = new ContentValues();
+        if (description != null) {
+            task.put(DESCRIPTION, description);
+        }
+        if (dueDate != null) {
+            task.put(DUE_DATE, dbDateFormat.format(dueDate));
+        }
+        if (subject != null) {
+            task.put(SUBJECT_ID, getSubjectId(subject));
+        }
+
+        String selection = "_id LIKE ?";
+        String[] selectionArgs = {String.valueOf(_id)};
+
+        db.update(TASKS_TABLE, task, selection, selectionArgs);
+    }
+
     public void deleteAllTasks() throws IOError {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TASKS_TABLE, null, null);

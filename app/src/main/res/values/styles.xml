@@ -4,11 +4,11 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorPrimary</item>
-        <item name="android:actionBarStyle">@style/ToolbarStyle</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionBarStyle">@style/AppToolbarStyle</item>
     </style>
 
-    <style name="ToolbarStyle">
+    <style name="AppToolbarStyle">
         <item name="android:textColor">#FFFFFF</item>
     </style>
 </resources>
