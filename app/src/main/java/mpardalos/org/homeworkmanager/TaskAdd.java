@@ -35,7 +35,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         //Populate subject selection spinner
         Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
         Cursor subjectCursor = mDatabase.getSubjects();
-        List<String> subjects = new ArrayList<String>();
+        List<String> subjects = new ArrayList<>();
         if (subjectCursor.moveToFirst()) {
             do {
                 //Gets the subject that the cursor is currently pointing to
@@ -47,7 +47,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         }
 
         ArrayAdapter<String> subjectAdapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, subjects);
+                new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subjects);
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
 
@@ -82,6 +82,11 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackPressed() {
+        setResult(RESULT_CANCELED);
+        finish();
     }
 
     public void onDueDateClicked(View view) {
