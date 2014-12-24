@@ -1,17 +1,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:fab="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 tools:context=".TaskList">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        />
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"/>
+        android:layout_below="@id/action_bar"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"/>
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/add_task_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:onClick="addTask"
+        android:src="@drawable/ic_action_new"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_type="normal"
+        />
 
 </RelativeLayout>
