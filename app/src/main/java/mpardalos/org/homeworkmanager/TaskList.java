@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.melnykov.fab.FloatingActionButton;
 
-import java.util.Date;
+import org.joda.time.LocalDate;
 
 
 public class TaskList extends ActionBarListActivity {
@@ -47,7 +47,7 @@ public class TaskList extends ActionBarListActivity {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         l.setSelection(position);
-        Date dueDate = (Date) (v.findViewById(R.id.due_date_field).getTag(R.id.due_date_tag));
+        LocalDate dueDate = (LocalDate) (v.findViewById(R.id.due_date_field).getTag(R.id.due_date_tag));
         String description = (String) ((TextView) v.findViewById(R.id.task_description_field))
                 .getText();
         String subject = (String) ((TextView) v.findViewById(R.id.subject_field)).getText();
@@ -68,7 +68,7 @@ public class TaskList extends ActionBarListActivity {
 
         if (requestCode == ADD_TASK_REQUEST && resultCode == RESULT_OK) {
             mDatabase.insertTask(data.getStringExtra("description"),
-                                 (Date) data.getSerializableExtra("dueDate"),
+                                 (LocalDate) data.getSerializableExtra("dueDate"),
                                  data.getStringExtra("subject")
                                 );
             refreshList();
@@ -79,7 +79,7 @@ public class TaskList extends ActionBarListActivity {
         } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_EDIT_TASK) {
             mDatabase.modifyTask(data.getIntExtra("_id", 500),
                                  data.getStringExtra("description"),
-                                 (Date) data.getSerializableExtra("dueDate"),
+                                 (LocalDate) data.getSerializableExtra("dueDate"),
                                  data.getStringExtra("subject"));
             refreshList();
         }

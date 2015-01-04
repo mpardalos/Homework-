@@ -18,4 +18,5 @@ dependencies {
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
     compile 'com.melnykov:floatingactionbutton:1.1.0'
     compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'net.danlew:android.joda:2.6.0'
 }

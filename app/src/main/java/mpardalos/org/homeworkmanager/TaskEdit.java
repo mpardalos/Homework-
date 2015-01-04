@@ -8,7 +8,12 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import java.text.DateFormat;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+import java.util.Locale;
+
 
 /**
  * This Activity is used to edit tasks that already exist, the user can also delete the task
@@ -25,13 +30,15 @@ public class TaskEdit extends TaskAdd {
         Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
         ((Spinner) findViewById(R.id.subject_input)).setSelection(getIndex(subjectSpinner,
                                                                            getIntent()
-                                                                                   .getStringExtra(TaskDatabaseHelper.SUBJECT_NAME)));
+                                                                                   .getStringExtra
+                                                                                           (TaskDatabaseHelper.SUBJECT_NAME)));
 
-        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL);
+        DateTimeFormatter df = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
         EditText dueDateInput = (EditText) findViewById(R.id.due_date_input);
 
-        dueDateInput.setText(dateFormat.format(getIntent().getSerializableExtra
-                (TaskDatabaseHelper.DUE_DATE)));
+        dueDateInput.setText(((LocalDate) getIntent().getSerializableExtra(TaskDatabaseHelper
+                                                                                   .DUE_DATE))
+                                     .toString(df));
         dueDateInput.setTag(R.id.due_date_tag, getIntent().getSerializableExtra
                 (TaskDatabaseHelper.DUE_DATE));
 

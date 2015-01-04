@@ -9,14 +9,13 @@ import android.util.Log;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
-import java.io.IOError;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
-/**
- *
- */
+import java.io.IOError;
+
+
 public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
     public static final String DB_NAME = "database.db";
@@ -33,7 +32,8 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
     public static final String TEACHER_NAME = "TeacherName";
     public static final String DESCRIPTION = "TaskDescr";
     public static final String DUE_DATE = "DueDate";
-
+    public static final String PERIOD_START = "PeriodStart";
+    public static final String PERIOD_END = "PeriodEnd";
 
     Context mContext;
 
@@ -121,7 +121,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
     }
 
-    public void insertTask(String description, Date dueDate, String subject)
+    public void insertTask(String description, LocalDate dueDate, String subject)
             throws IllegalArgumentException {
 
         if (description == null || dueDate == null || subject == null) {
@@ -129,26 +129,28 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         }
 
         SQLiteDatabase db = getWritableDatabase();
-        DateFormat dbDateFormat = new SimpleDateFormat(mContext.getResources().getString(R.string.database_date_format));
+        DateTimeFormatter dbDateFormat = DateTimeFormat.forPattern(mContext.getResources()
+                                                                           .getString(R.string.database_date_format));
 
         ContentValues task = new ContentValues();
         task.put(DESCRIPTION, description);
-        task.put(DUE_DATE, dbDateFormat.format(dueDate));
+        task.put(DUE_DATE, dueDate.toString(dbDateFormat));
         task.put(SUBJECT_ID, getSubjectId(subject));
         task.put(TASK_DONE, false);
 
         db.insert(TASKS_TABLE, null, task);
     }
 
-    public void modifyTask(int _id, String description, Date dueDate, String subject) {
+    public void modifyTask(int _id, String description, LocalDate dueDate, String subject) {
         SQLiteDatabase db = getWritableDatabase();
-        DateFormat dbDateFormat = new SimpleDateFormat(mContext.getResources().getString(R.string.database_date_format));
+        DateTimeFormatter dbDateFormat = DateTimeFormat.forPattern(mContext.getResources()
+                                                                           .getString(R.string.database_date_format));
         ContentValues task = new ContentValues();
         if (description != null) {
             task.put(DESCRIPTION, description);
         }
         if (dueDate != null) {
-            task.put(DUE_DATE, dbDateFormat.format(dueDate));
+            task.put(DUE_DATE, dueDate.toString(dbDateFormat));
         }
         if (subject != null) {
             task.put(SUBJECT_ID, getSubjectId(subject));

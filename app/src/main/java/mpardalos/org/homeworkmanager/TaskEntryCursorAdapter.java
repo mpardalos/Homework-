@@ -2,17 +2,18 @@ package mpardalos.org.homeworkmanager;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListAdapter;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+import java.util.Locale;
+
 
 public class TaskEntryCursorAdapter extends ResourceCursorAdapter implements ListAdapter {
 
@@ -30,19 +31,12 @@ public class TaskEntryCursorAdapter extends ResourceCursorAdapter implements Lis
                                                                                .DESCRIPTION)));
 
         TextView dueDate = (TextView) view.findViewById(R.id.due_date_field);
-        SimpleDateFormat dbFormat = new SimpleDateFormat(context.getResources().getString(R.string.database_date_format));
-        java.text.DateFormat displayFormat = DateFormat.getDateInstance(DateFormat.FULL);
-        Date date;
-        try {
-            date = dbFormat.parse(cursor.getString(cursor.getColumnIndex(TaskDatabaseHelper
-                                                                                 .DUE_DATE)));
-            dueDate.setText(displayFormat.format(date));
-            dueDate.setTag(R.id.due_date_tag, date);
-        } catch (ParseException e) {
-            Log.e("Error parsing date from database", "unable to parse entry with id " +
-                    String.valueOf(cursor.getInt(cursor.getColumnIndex("_id"))));
-            dueDate.setText("");
-        }
+        DateTimeFormatter dbFormat = DateTimeFormat.forPattern(context.getResources().getString(R.string.database_date_format));
+        DateTimeFormatter displayFormat = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
+        LocalDate date = dbFormat.parseLocalDate(cursor.getString(cursor.getColumnIndex
+                (TaskDatabaseHelper.DUE_DATE)));
+        dueDate.setText(date.toString(displayFormat));
+        dueDate.setTag(R.id.due_date_tag, date);
 
 
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.task_done_checkbox);

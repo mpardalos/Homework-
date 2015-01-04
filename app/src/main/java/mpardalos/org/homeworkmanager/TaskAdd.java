@@ -16,10 +16,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DateFormat;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onDateEnteredListener {
@@ -36,15 +39,14 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
         Cursor subjectCursor = mDatabase.getSubjects();
         List<String> subjects = new ArrayList<>();
-        if (subjectCursor.moveToFirst()) {
-            do {
-                //Gets the subject that the cursor is currently pointing to
-                subjects.add(subjectCursor.getString(1));
-            }
-            /* points the cursor to the next entry and also
-            stops the loop if we reached the last element */
-            while (subjectCursor.moveToNext());
+        subjectCursor.moveToPosition(-1);
+        /* points the cursor to the next entry and also
+        stops the loop if we reached the last element */
+        while (subjectCursor.moveToNext()) {
+            //Gets the subject that the cursor is currently pointing to
+            subjects.add(subjectCursor.getString(1));
         }
+
 
         ArrayAdapter<String> subjectAdapter =
                 new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subjects);
@@ -66,6 +68,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         }
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -94,12 +97,10 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         dateInput.show(getFragmentManager(), "dueDateInput");
     }
 
-    public void onDateEntered(Date date) {
+    public void onDateEntered(LocalDate date) {
         EditText dateInput = (EditText) findViewById(R.id.due_date_input);
-        DateFormat df = DateFormat.getDateInstance(DateFormat.FULL);
-        dateInput.setText(df.format(date));
-        //<AWESOME>When a methods needs the date instead of parsing the text it can get this
-        // tag</AWESOME>
+        DateTimeFormatter df = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
+        dateInput.setText(date.toString(df));
         dateInput.setTag(R.id.due_date_tag, date);
     }
 
@@ -120,7 +121,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
     protected boolean setResultFromInput(int result_code) {
         String subject = ((TextView) ((Spinner) findViewById(R.id.subject_input))
                 .getSelectedView().findViewById(android.R.id.text1)).getText().toString();
-        Date dueDate = (Date) findViewById(R.id.due_date_input).getTag(R.id.due_date_tag);
+        LocalDate dueDate = (LocalDate) findViewById(R.id.due_date_input).getTag(R.id.due_date_tag);
         String description = ((EditText) findViewById(R.id.description_input)).getText()
                 .toString();
 
