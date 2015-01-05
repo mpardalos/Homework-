@@ -1,4 +1,4 @@
-package mpardalos.org.homeworkmanager;
+package org.mpardalos.homeworkmanager;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -45,7 +45,8 @@ public class DatePickerFragment extends DialogFragment
 
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        parent.onDateEntered(new LocalDate(year, month, day));
+        parent.onDateEntered(new LocalDate(year, month + 1, day));//month + 1 because it has to
+        // be from 1-12 for joda and android uses 0-11
     }
 
     public interface onDateEnteredListener {

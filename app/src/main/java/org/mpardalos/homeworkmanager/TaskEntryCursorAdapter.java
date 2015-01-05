@@ -1,4 +1,4 @@
-package mpardalos.org.homeworkmanager;
+package org.mpardalos.homeworkmanager;
 
 import android.content.Context;
 import android.database.Cursor;

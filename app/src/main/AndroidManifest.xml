@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="mpardalos.org.homeworkmanager"
+    package="org.mpardalos.homeworkmanager"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="mpardalos.org.homeworkmanager.TaskList"
+            android:name="org.mpardalos.homeworkmanager.TaskList"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -18,20 +18,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="mpardalos.org.homeworkmanager.TaskAdd"
+            android:name="org.mpardalos.homeworkmanager.TaskAdd"
             android:label="@string/title_activity_task_add"
-            android:parentActivityName="mpardalos.org.homeworkmanager.TaskList">
+            android:parentActivityName="org.mpardalos.homeworkmanager.TaskList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="mpardalos.org.homeworkmanager.TaskList"/>
+                android:value="org.mpardalos.homeworkmanager.TaskList"/>
         </activity>
         <activity
-            android:name=".TaskEdit"
+            android:name="org.mpardalos.homeworkmanager.TaskEdit"
             android:label="@string/title_activity_task_details"
-            android:parentActivityName="mpardalos.org.homeworkmanager.TaskList">
+            android:parentActivityName="org.mpardalos.homeworkmanager.TaskList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="mpardalos.org.homeworkmanager.TaskList"/>
+                android:value="org.mpardalos.homeworkmanager.TaskList"/>
         </activity>
     </application>
 

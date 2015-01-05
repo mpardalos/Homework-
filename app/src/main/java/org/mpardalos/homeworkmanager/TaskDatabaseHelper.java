@@ -1,4 +1,4 @@
-package mpardalos.org.homeworkmanager;
+package org.mpardalos.homeworkmanager;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -181,4 +181,5 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
             Log.d("deleteTask", "Not deleting any task");
         }
     }
+
 }

@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package mpardalos.org.homeworkmanager;
+package org.mpardalos.homeworkmanager;
 
 public final class R {
     public static final class anim {

@@ -1,4 +1,4 @@
-package mpardalos.org.homeworkmanager;
+package org.mpardalos.homeworkmanager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import net.danlew.android.joda.JodaTimeAndroid;
 
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
@@ -27,6 +29,7 @@ public class TaskEdit extends TaskAdd {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        JodaTimeAndroid.init(this);
         Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
         ((Spinner) findViewById(R.id.subject_input)).setSelection(getIndex(subjectSpinner,
                                                                            getIntent()

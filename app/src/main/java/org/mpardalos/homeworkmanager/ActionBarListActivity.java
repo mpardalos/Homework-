@@ -1,4 +1,4 @@
-package mpardalos.org.homeworkmanager;
+package org.mpardalos.homeworkmanager;
 
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;

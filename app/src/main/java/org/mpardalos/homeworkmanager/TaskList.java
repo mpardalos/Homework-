@@ -1,4 +1,4 @@
-package mpardalos.org.homeworkmanager;
+package org.mpardalos.homeworkmanager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.melnykov.fab.FloatingActionButton;
+
+import net.danlew.android.joda.JodaTimeAndroid;
 
 import org.joda.time.LocalDate;
 
@@ -27,6 +29,7 @@ public class TaskList extends ActionBarListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        JodaTimeAndroid.init(this);
         setContentView(R.layout.activity_task_list);
 
         this.mDatabase = new TaskDatabaseHelper(this);
