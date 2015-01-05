@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -55,6 +56,14 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
                 new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subjects);
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
+
+        //auto-complete subject based on time
+        try {
+            subjectSpinner.setSelection(getIndex(subjectSpinner, mDatabase.getSubjectAtDateTime
+                    (DateTime.now())));
+        } catch (IllegalArgumentException e) {
+            Log.d("Subject not set: ", e.getMessage());
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);

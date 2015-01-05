@@ -9,7 +9,9 @@ import android.util.Log;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -34,6 +36,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
     public static final String DUE_DATE = "DueDate";
     public static final String PERIOD_START = "PeriodStart";
     public static final String PERIOD_END = "PeriodEnd";
+    public static final String DAY_OF_WEEK = "WeekDay";
 
     Context mContext;
 
@@ -180,6 +183,50 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         } else {
             Log.d("deleteTask", "Not deleting any task");
         }
+    }
+
+    public String getSubjectAtDateTime(DateTime dateTime) throws IllegalArgumentException {
+        Cursor periods = getPeriods();
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        LocalTime requestedTime = dateTime.toLocalTime();
+        LocalTime startTime;
+        LocalTime endTime;
+        DateTimeFormatter timeFormatter = DateTimeFormat.forPattern(mContext.getString(R.string.database_time_format));
+        int resultPeriod = -1;
+
+
+        periods.moveToPosition(-1);
+        while (periods.moveToNext()) {
+            startTime = timeFormatter.parseLocalTime(periods.getString(periods.getColumnIndex
+                    (PERIOD_START)));
+            endTime = timeFormatter.parseLocalTime(periods.getString(periods.getColumnIndex
+                    (PERIOD_END)));
+
+            if (startTime.compareTo(requestedTime) <= 0 && requestedTime.compareTo(endTime) < 0) {
+                resultPeriod = periods.getInt(periods.getColumnIndex("_id"));
+                break;
+            }
+        }
+
+        if (resultPeriod == -1) {
+            throw new IllegalArgumentException("There is no class at: " + requestedTime.toString
+                    (timeFormatter));
+        }
+
+        String dayOfWeek = dateTime.dayOfWeek().getAsText().toLowerCase();
+        qb.setTables(TIMETABLE);
+        String[] selectionArgs = new String[]{dayOfWeek, String.valueOf(resultPeriod)};
+        Cursor c = db.rawQuery("SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME +
+                                       " FROM " + SUBJECTS_TABLE + " INNER JOIN " + TIMETABLE + "" +
+                                       " ON (" + SUBJECTS_TABLE + "._id=" + TIMETABLE + "" +
+                                       ".SubjectId)" +
+                                       " WHERE (" + TIMETABLE + "." + DAY_OF_WEEK + "= ?" + " AND" +
+                                       " " + TIMETABLE + ".PeriodId= ? )"
+                , selectionArgs);
+
+        c.moveToFirst();
+        return c.getString(0);
     }
 
 }
