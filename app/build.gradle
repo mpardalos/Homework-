@@ -4,7 +4,7 @@ android {
     compileSdkVersion 21
     buildToolsVersion "20.0.0"
     defaultConfig {
-        applicationId "mpardalos.org.homeworkmanager"
+        applicationId "org.mpardalos.homeworkmanager"
         minSdkVersion 15
         targetSdkVersion 21
         versionCode 1

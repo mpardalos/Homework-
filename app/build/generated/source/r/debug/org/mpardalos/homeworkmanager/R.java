@@ -1187,68 +1187,75 @@ containing a value of this type.
         public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f060005;
     }
     public static final class color {
-        public static final int abc_background_cache_hint_selector_material_dark=0x7f070035;
-        public static final int abc_background_cache_hint_selector_material_light=0x7f070036;
+        public static final int abc_background_cache_hint_selector_material_dark=0x7f07003c;
+        public static final int abc_background_cache_hint_selector_material_light=0x7f07003d;
         public static final int abc_input_method_navigation_guard=0x7f070000;
-        public static final int abc_primary_text_disable_only_material_dark=0x7f070037;
-        public static final int abc_primary_text_disable_only_material_light=0x7f070038;
-        public static final int abc_primary_text_material_dark=0x7f070039;
-        public static final int abc_primary_text_material_light=0x7f07003a;
-        public static final int abc_search_url_text=0x7f07003b;
+        public static final int abc_primary_text_disable_only_material_dark=0x7f07003e;
+        public static final int abc_primary_text_disable_only_material_light=0x7f07003f;
+        public static final int abc_primary_text_material_dark=0x7f070040;
+        public static final int abc_primary_text_material_light=0x7f070041;
+        public static final int abc_search_url_text=0x7f070042;
         public static final int abc_search_url_text_normal=0x7f070001;
         public static final int abc_search_url_text_pressed=0x7f070002;
         public static final int abc_search_url_text_selected=0x7f070003;
-        public static final int abc_secondary_text_material_dark=0x7f07003c;
-        public static final int abc_secondary_text_material_light=0x7f07003d;
-        public static final int accent_material_dark=0x7f070004;
-        public static final int accent_material_light=0x7f070005;
-        public static final int background_floating_material_dark=0x7f070006;
-        public static final int background_floating_material_light=0x7f070007;
-        public static final int background_material_dark=0x7f070008;
-        public static final int background_material_light=0x7f070009;
-        public static final int bright_foreground_disabled_material_dark=0x7f07000a;
-        public static final int bright_foreground_disabled_material_light=0x7f07000b;
-        public static final int bright_foreground_inverse_material_dark=0x7f07000c;
-        public static final int bright_foreground_inverse_material_light=0x7f07000d;
-        public static final int bright_foreground_material_dark=0x7f07000e;
-        public static final int bright_foreground_material_light=0x7f07000f;
-        public static final int button_material_dark=0x7f070010;
-        public static final int button_material_light=0x7f070011;
-        public static final int colorPrimary=0x7f070012;
-        public static final int colorPrimaryDark=0x7f070013;
+        public static final int abc_secondary_text_material_dark=0x7f070043;
+        public static final int abc_secondary_text_material_light=0x7f070044;
+        public static final int accent=0x7f070004;
+        public static final int accent_material_dark=0x7f070005;
+        public static final int accent_material_light=0x7f070006;
+        public static final int background_floating_material_dark=0x7f070007;
+        public static final int background_floating_material_light=0x7f070008;
+        public static final int background_material_dark=0x7f070009;
+        public static final int background_material_light=0x7f07000a;
+        public static final int bright_foreground_disabled_material_dark=0x7f07000b;
+        public static final int bright_foreground_disabled_material_light=0x7f07000c;
+        public static final int bright_foreground_inverse_material_dark=0x7f07000d;
+        public static final int bright_foreground_inverse_material_light=0x7f07000e;
+        public static final int bright_foreground_material_dark=0x7f07000f;
+        public static final int bright_foreground_material_light=0x7f070010;
+        public static final int button_material_dark=0x7f070011;
+        public static final int button_material_light=0x7f070012;
+        public static final int control_activated=0x7f070013;
         public static final int dim_foreground_disabled_material_dark=0x7f070014;
         public static final int dim_foreground_disabled_material_light=0x7f070015;
         public static final int dim_foreground_material_dark=0x7f070016;
         public static final int dim_foreground_material_light=0x7f070017;
-        public static final int highlighted_text_material_dark=0x7f070018;
-        public static final int highlighted_text_material_light=0x7f070019;
-        public static final int hint_foreground_material_dark=0x7f07001a;
-        public static final int hint_foreground_material_light=0x7f07001b;
-        public static final int link_text_material_dark=0x7f07001c;
-        public static final int link_text_material_light=0x7f07001d;
-        public static final int material_blue_500=0x7f07001e;
-        public static final int material_blue_600=0x7f07001f;
-        public static final int material_blue_grey_800=0x7f070020;
-        public static final int material_blue_grey_900=0x7f070021;
-        public static final int material_blue_grey_950=0x7f070022;
-        public static final int material_deep_teal_200=0x7f070023;
-        public static final int material_deep_teal_500=0x7f070024;
-        public static final int primary_dark_material_dark=0x7f070025;
-        public static final int primary_dark_material_light=0x7f070026;
-        public static final int primary_material_dark=0x7f070027;
-        public static final int primary_material_light=0x7f070028;
-        public static final int primary_text_default_material_dark=0x7f070029;
-        public static final int primary_text_default_material_light=0x7f07002a;
-        public static final int primary_text_disabled_material_dark=0x7f07002b;
-        public static final int primary_text_disabled_material_light=0x7f07002c;
-        public static final int ripple_material_dark=0x7f07002d;
-        public static final int ripple_material_light=0x7f07002e;
-        public static final int secondary_text_default_material_dark=0x7f07002f;
-        public static final int secondary_text_default_material_light=0x7f070030;
-        public static final int secondary_text_disabled_material_dark=0x7f070031;
-        public static final int secondary_text_disabled_material_light=0x7f070032;
-        public static final int switch_thumb_normal_material_dark=0x7f070033;
-        public static final int switch_thumb_normal_material_light=0x7f070034;
+        public static final int divider=0x7f070018;
+        public static final int highlighted_text_material_dark=0x7f070019;
+        public static final int highlighted_text_material_light=0x7f07001a;
+        public static final int hint_foreground_material_dark=0x7f07001b;
+        public static final int hint_foreground_material_light=0x7f07001c;
+        public static final int icons=0x7f07001d;
+        public static final int link_text_material_dark=0x7f07001e;
+        public static final int link_text_material_light=0x7f07001f;
+        public static final int material_blue_500=0x7f070020;
+        public static final int material_blue_600=0x7f070021;
+        public static final int material_blue_grey_800=0x7f070022;
+        public static final int material_blue_grey_900=0x7f070023;
+        public static final int material_blue_grey_950=0x7f070024;
+        public static final int material_deep_teal_200=0x7f070025;
+        public static final int material_deep_teal_500=0x7f070026;
+        public static final int primary=0x7f070027;
+        public static final int primary_dark=0x7f070028;
+        public static final int primary_dark_material_dark=0x7f070029;
+        public static final int primary_dark_material_light=0x7f07002a;
+        public static final int primary_light=0x7f07002b;
+        public static final int primary_material_dark=0x7f07002c;
+        public static final int primary_material_light=0x7f07002d;
+        public static final int primary_text=0x7f07002e;
+        public static final int primary_text_default_material_dark=0x7f07002f;
+        public static final int primary_text_default_material_light=0x7f070030;
+        public static final int primary_text_disabled_material_dark=0x7f070031;
+        public static final int primary_text_disabled_material_light=0x7f070032;
+        public static final int ripple_material_dark=0x7f070033;
+        public static final int ripple_material_light=0x7f070034;
+        public static final int secondary_text=0x7f070035;
+        public static final int secondary_text_default_material_dark=0x7f070036;
+        public static final int secondary_text_default_material_light=0x7f070037;
+        public static final int secondary_text_disabled_material_dark=0x7f070038;
+        public static final int secondary_text_disabled_material_light=0x7f070039;
+        public static final int switch_thumb_normal_material_dark=0x7f07003a;
+        public static final int switch_thumb_normal_material_light=0x7f07003b;
     }
     public static final class dimen {
         public static final int abc_action_bar_default_height_material=0x7f090000;
@@ -1357,13 +1364,14 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020030;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
-        public static final int ic_action_camera=0x7f020033;
-        public static final int ic_action_discard=0x7f020034;
-        public static final int ic_action_new=0x7f020035;
-        public static final int ic_launcher=0x7f020036;
-        public static final int logo=0x7f020037;
-        public static final int shadow=0x7f020038;
-        public static final int shadow_mini=0x7f020039;
+        public static final int g3980=0x7f020033;
+        public static final int ic_action_camera=0x7f020034;
+        public static final int ic_action_discard=0x7f020035;
+        public static final int ic_action_new=0x7f020036;
+        public static final int ic_launcher=0x7f020037;
+        public static final int logo=0x7f020038;
+        public static final int shadow=0x7f020039;
+        public static final int shadow_mini=0x7f02003a;
     }
     public static final class id {
         public static final int action_bar=0x7f080034;
@@ -2001,242 +2009,241 @@ containing a value of this type.
     }
     public static final class style {
         public static final int AppTheme=0x7f0d0000;
-        public static final int AppToolbarStyle=0x7f0d0001;
-        public static final int Base_TextAppearance_AppCompat=0x7f0d0002;
-        public static final int Base_TextAppearance_AppCompat_Body1=0x7f0d0003;
-        public static final int Base_TextAppearance_AppCompat_Body2=0x7f0d0004;
-        public static final int Base_TextAppearance_AppCompat_Button=0x7f0d0005;
-        public static final int Base_TextAppearance_AppCompat_Caption=0x7f0d0006;
-        public static final int Base_TextAppearance_AppCompat_Display1=0x7f0d0007;
-        public static final int Base_TextAppearance_AppCompat_Display2=0x7f0d0008;
-        public static final int Base_TextAppearance_AppCompat_Display3=0x7f0d0009;
-        public static final int Base_TextAppearance_AppCompat_Display4=0x7f0d000a;
-        public static final int Base_TextAppearance_AppCompat_Headline=0x7f0d000b;
-        public static final int Base_TextAppearance_AppCompat_Inverse=0x7f0d000c;
-        public static final int Base_TextAppearance_AppCompat_Large=0x7f0d000d;
-        public static final int Base_TextAppearance_AppCompat_Large_Inverse=0x7f0d000e;
-        public static final int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0d000f;
-        public static final int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0d0010;
-        public static final int Base_TextAppearance_AppCompat_Medium=0x7f0d0011;
-        public static final int Base_TextAppearance_AppCompat_Medium_Inverse=0x7f0d0012;
-        public static final int Base_TextAppearance_AppCompat_Menu=0x7f0d0013;
-        public static final int Base_TextAppearance_AppCompat_SearchResult=0x7f0d0014;
-        public static final int Base_TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0d0015;
-        public static final int Base_TextAppearance_AppCompat_SearchResult_Title=0x7f0d0016;
-        public static final int Base_TextAppearance_AppCompat_Small=0x7f0d0017;
-        public static final int Base_TextAppearance_AppCompat_Small_Inverse=0x7f0d0018;
-        public static final int Base_TextAppearance_AppCompat_Subhead=0x7f0d0019;
-        public static final int Base_TextAppearance_AppCompat_Subhead_Inverse=0x7f0d001a;
-        public static final int Base_TextAppearance_AppCompat_Title=0x7f0d001b;
-        public static final int Base_TextAppearance_AppCompat_Title_Inverse=0x7f0d001c;
-        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0d001d;
-        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0d001e;
-        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0d001f;
-        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0d0020;
-        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0d0021;
-        public static final int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0d0022;
-        public static final int Base_TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0d0023;
-        public static final int Base_TextAppearance_AppCompat_Widget_DropDownItem=0x7f0d0024;
-        public static final int Base_TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0d0025;
-        public static final int Base_TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0d0026;
-        public static final int Base_TextAppearance_AppCompat_Widget_Switch=0x7f0d0027;
-        public static final int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0d0028;
-        public static final int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle=0x7f0d0029;
-        public static final int Base_TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0d002a;
-        public static final int Base_Theme_AppCompat=0x7f0d002b;
-        public static final int Base_Theme_AppCompat_CompactMenu=0x7f0d002c;
-        public static final int Base_Theme_AppCompat_Dialog=0x7f0d002d;
-        public static final int Base_Theme_AppCompat_Dialog_FixedSize=0x7f0d002e;
-        public static final int Base_Theme_AppCompat_DialogWhenLarge=0x7f0d002f;
-        public static final int Base_Theme_AppCompat_Light=0x7f0d0030;
-        public static final int Base_Theme_AppCompat_Light_DarkActionBar=0x7f0d0031;
-        public static final int Base_Theme_AppCompat_Light_Dialog=0x7f0d0032;
-        public static final int Base_Theme_AppCompat_Light_Dialog_FixedSize=0x7f0d0033;
-        public static final int Base_Theme_AppCompat_Light_DialogWhenLarge=0x7f0d0034;
-        public static final int Base_ThemeOverlay_AppCompat=0x7f0d0035;
-        public static final int Base_ThemeOverlay_AppCompat_ActionBar=0x7f0d0036;
-        public static final int Base_ThemeOverlay_AppCompat_Dark=0x7f0d0037;
-        public static final int Base_ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0d0038;
-        public static final int Base_ThemeOverlay_AppCompat_Light=0x7f0d0039;
-        public static final int Base_V11_Theme_AppCompat=0x7f0d00e1;
-        public static final int Base_V11_Theme_AppCompat_Dialog=0x7f0d00e2;
-        public static final int Base_V11_Theme_AppCompat_Light=0x7f0d00e3;
-        public static final int Base_V11_Theme_AppCompat_Light_Dialog=0x7f0d00e4;
-        public static final int Base_V14_Theme_AppCompat=0x7f0d00e5;
-        public static final int Base_V14_Theme_AppCompat_Dialog=0x7f0d00e6;
-        public static final int Base_V14_Theme_AppCompat_Light=0x7f0d00e7;
-        public static final int Base_V14_Theme_AppCompat_Light_Dialog=0x7f0d00e8;
-        public static final int Base_V21_Theme_AppCompat=0x7f0d00e9;
-        public static final int Base_V21_Theme_AppCompat_Dialog=0x7f0d00ea;
-        public static final int Base_V21_Theme_AppCompat_Light=0x7f0d00eb;
-        public static final int Base_V21_Theme_AppCompat_Light_Dialog=0x7f0d00ec;
-        public static final int Base_V7_Theme_AppCompat=0x7f0d003a;
-        public static final int Base_V7_Theme_AppCompat_Dialog=0x7f0d003b;
-        public static final int Base_V7_Theme_AppCompat_Light=0x7f0d003c;
-        public static final int Base_Widget_AppCompat_ActionBar=0x7f0d003d;
-        public static final int Base_Widget_AppCompat_ActionBar_Solid=0x7f0d003e;
-        public static final int Base_Widget_AppCompat_ActionBar_TabBar=0x7f0d003f;
-        public static final int Base_Widget_AppCompat_ActionBar_TabText=0x7f0d0040;
-        public static final int Base_Widget_AppCompat_ActionBar_TabView=0x7f0d0041;
-        public static final int Base_Widget_AppCompat_ActionButton=0x7f0d0042;
-        public static final int Base_Widget_AppCompat_ActionButton_CloseMode=0x7f0d0043;
-        public static final int Base_Widget_AppCompat_ActionButton_Overflow=0x7f0d0044;
-        public static final int Base_Widget_AppCompat_ActionMode=0x7f0d0045;
-        public static final int Base_Widget_AppCompat_ActivityChooserView=0x7f0d0046;
-        public static final int Base_Widget_AppCompat_AutoCompleteTextView=0x7f0d0047;
-        public static final int Base_Widget_AppCompat_CompoundButton_Switch=0x7f0d0048;
-        public static final int Base_Widget_AppCompat_DrawerArrowToggle=0x7f0d0049;
-        public static final int Base_Widget_AppCompat_DropDownItem_Spinner=0x7f0d004a;
-        public static final int Base_Widget_AppCompat_EditText=0x7f0d004b;
-        public static final int Base_Widget_AppCompat_Light_ActionBar=0x7f0d004c;
-        public static final int Base_Widget_AppCompat_Light_ActionBar_Solid=0x7f0d004d;
-        public static final int Base_Widget_AppCompat_Light_ActionBar_TabBar=0x7f0d004e;
-        public static final int Base_Widget_AppCompat_Light_ActionBar_TabText=0x7f0d004f;
-        public static final int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0d0050;
-        public static final int Base_Widget_AppCompat_Light_ActionBar_TabView=0x7f0d0051;
-        public static final int Base_Widget_AppCompat_Light_ActivityChooserView=0x7f0d0052;
-        public static final int Base_Widget_AppCompat_Light_AutoCompleteTextView=0x7f0d0053;
-        public static final int Base_Widget_AppCompat_Light_PopupMenu=0x7f0d0054;
-        public static final int Base_Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0d0055;
-        public static final int Base_Widget_AppCompat_ListPopupWindow=0x7f0d0056;
-        public static final int Base_Widget_AppCompat_ListView_DropDown=0x7f0d0057;
-        public static final int Base_Widget_AppCompat_ListView_Menu=0x7f0d0058;
-        public static final int Base_Widget_AppCompat_PopupMenu=0x7f0d0059;
-        public static final int Base_Widget_AppCompat_PopupMenu_Overflow=0x7f0d005a;
-        public static final int Base_Widget_AppCompat_PopupWindow=0x7f0d005b;
-        public static final int Base_Widget_AppCompat_ProgressBar=0x7f0d005c;
-        public static final int Base_Widget_AppCompat_ProgressBar_Horizontal=0x7f0d005d;
-        public static final int Base_Widget_AppCompat_SearchView=0x7f0d005e;
-        public static final int Base_Widget_AppCompat_Spinner=0x7f0d005f;
-        public static final int Base_Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0d0060;
-        public static final int Base_Widget_AppCompat_Toolbar=0x7f0d0061;
-        public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0d0062;
-        public static final int Platform_AppCompat=0x7f0d0063;
-        public static final int Platform_AppCompat_Dialog=0x7f0d0064;
-        public static final int Platform_AppCompat_Light=0x7f0d0065;
-        public static final int Platform_AppCompat_Light_Dialog=0x7f0d0066;
-        public static final int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem=0x7f0d0067;
-        public static final int RtlOverlay_Widget_AppCompat_ActionButton_CloseMode=0x7f0d0068;
-        public static final int RtlOverlay_Widget_AppCompat_ActionButton_Overflow=0x7f0d0069;
-        public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem=0x7f0d006a;
-        public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup=0x7f0d006b;
-        public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text=0x7f0d006c;
-        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown=0x7f0d006d;
-        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1=0x7f0d006e;
-        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2=0x7f0d006f;
-        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Query=0x7f0d0070;
-        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Text=0x7f0d0071;
-        public static final int RtlOverlay_Widget_AppCompat_SearchView_MagIcon=0x7f0d0072;
-        public static final int TextAppearance_AppCompat=0x7f0d0073;
-        public static final int TextAppearance_AppCompat_Body1=0x7f0d0074;
-        public static final int TextAppearance_AppCompat_Body2=0x7f0d0075;
-        public static final int TextAppearance_AppCompat_Button=0x7f0d0076;
-        public static final int TextAppearance_AppCompat_Caption=0x7f0d0077;
-        public static final int TextAppearance_AppCompat_Display1=0x7f0d0078;
-        public static final int TextAppearance_AppCompat_Display2=0x7f0d0079;
-        public static final int TextAppearance_AppCompat_Display3=0x7f0d007a;
-        public static final int TextAppearance_AppCompat_Display4=0x7f0d007b;
-        public static final int TextAppearance_AppCompat_Headline=0x7f0d007c;
-        public static final int TextAppearance_AppCompat_Inverse=0x7f0d007d;
-        public static final int TextAppearance_AppCompat_Large=0x7f0d007e;
-        public static final int TextAppearance_AppCompat_Large_Inverse=0x7f0d007f;
-        public static final int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0d0080;
-        public static final int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0d0081;
-        public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0d0082;
-        public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0d0083;
-        public static final int TextAppearance_AppCompat_Medium=0x7f0d0084;
-        public static final int TextAppearance_AppCompat_Medium_Inverse=0x7f0d0085;
-        public static final int TextAppearance_AppCompat_Menu=0x7f0d0086;
-        public static final int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0d0087;
-        public static final int TextAppearance_AppCompat_SearchResult_Title=0x7f0d0088;
-        public static final int TextAppearance_AppCompat_Small=0x7f0d0089;
-        public static final int TextAppearance_AppCompat_Small_Inverse=0x7f0d008a;
-        public static final int TextAppearance_AppCompat_Subhead=0x7f0d008b;
-        public static final int TextAppearance_AppCompat_Subhead_Inverse=0x7f0d008c;
-        public static final int TextAppearance_AppCompat_Title=0x7f0d008d;
-        public static final int TextAppearance_AppCompat_Title_Inverse=0x7f0d008e;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0d008f;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0d0090;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0d0091;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0d0092;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0d0093;
-        public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0d0094;
-        public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0d0095;
-        public static final int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0d0096;
-        public static final int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0d0097;
-        public static final int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0d0098;
-        public static final int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0d0099;
-        public static final int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0d009a;
-        public static final int TextAppearance_AppCompat_Widget_Switch=0x7f0d009b;
-        public static final int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0d009c;
-        public static final int TextAppearance_Widget_AppCompat_Toolbar_Subtitle=0x7f0d009d;
-        public static final int TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0d009e;
-        public static final int Theme_AppCompat=0x7f0d009f;
-        public static final int Theme_AppCompat_CompactMenu=0x7f0d00a0;
-        public static final int Theme_AppCompat_Dialog=0x7f0d00a1;
-        public static final int Theme_AppCompat_DialogWhenLarge=0x7f0d00a2;
-        public static final int Theme_AppCompat_Light=0x7f0d00a3;
-        public static final int Theme_AppCompat_Light_DarkActionBar=0x7f0d00a4;
-        public static final int Theme_AppCompat_Light_Dialog=0x7f0d00a5;
-        public static final int Theme_AppCompat_Light_DialogWhenLarge=0x7f0d00a6;
-        public static final int Theme_AppCompat_Light_NoActionBar=0x7f0d00a7;
-        public static final int Theme_AppCompat_NoActionBar=0x7f0d00a8;
-        public static final int ThemeOverlay_AppCompat=0x7f0d00a9;
-        public static final int ThemeOverlay_AppCompat_ActionBar=0x7f0d00aa;
-        public static final int ThemeOverlay_AppCompat_Dark=0x7f0d00ab;
-        public static final int ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0d00ac;
-        public static final int ThemeOverlay_AppCompat_Light=0x7f0d00ad;
-        public static final int Widget_AppCompat_ActionBar=0x7f0d00ae;
-        public static final int Widget_AppCompat_ActionBar_Solid=0x7f0d00af;
-        public static final int Widget_AppCompat_ActionBar_TabBar=0x7f0d00b0;
-        public static final int Widget_AppCompat_ActionBar_TabText=0x7f0d00b1;
-        public static final int Widget_AppCompat_ActionBar_TabView=0x7f0d00b2;
-        public static final int Widget_AppCompat_ActionButton=0x7f0d00b3;
-        public static final int Widget_AppCompat_ActionButton_CloseMode=0x7f0d00b4;
-        public static final int Widget_AppCompat_ActionButton_Overflow=0x7f0d00b5;
-        public static final int Widget_AppCompat_ActionMode=0x7f0d00b6;
-        public static final int Widget_AppCompat_ActivityChooserView=0x7f0d00b7;
-        public static final int Widget_AppCompat_AutoCompleteTextView=0x7f0d00b8;
-        public static final int Widget_AppCompat_CompoundButton_Switch=0x7f0d00b9;
-        public static final int Widget_AppCompat_DrawerArrowToggle=0x7f0d00ba;
-        public static final int Widget_AppCompat_DropDownItem_Spinner=0x7f0d00bb;
-        public static final int Widget_AppCompat_EditText=0x7f0d00bc;
-        public static final int Widget_AppCompat_Light_ActionBar=0x7f0d00bd;
-        public static final int Widget_AppCompat_Light_ActionBar_Solid=0x7f0d00be;
-        public static final int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0d00bf;
-        public static final int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0d00c0;
-        public static final int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0d00c1;
-        public static final int Widget_AppCompat_Light_ActionBar_TabText=0x7f0d00c2;
-        public static final int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0d00c3;
-        public static final int Widget_AppCompat_Light_ActionBar_TabView=0x7f0d00c4;
-        public static final int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0d00c5;
-        public static final int Widget_AppCompat_Light_ActionButton=0x7f0d00c6;
-        public static final int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0d00c7;
-        public static final int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0d00c8;
-        public static final int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0d00c9;
-        public static final int Widget_AppCompat_Light_ActivityChooserView=0x7f0d00ca;
-        public static final int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0d00cb;
-        public static final int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0d00cc;
-        public static final int Widget_AppCompat_Light_ListPopupWindow=0x7f0d00cd;
-        public static final int Widget_AppCompat_Light_ListView_DropDown=0x7f0d00ce;
-        public static final int Widget_AppCompat_Light_PopupMenu=0x7f0d00cf;
-        public static final int Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0d00d0;
-        public static final int Widget_AppCompat_Light_SearchView=0x7f0d00d1;
-        public static final int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0d00d2;
-        public static final int Widget_AppCompat_ListPopupWindow=0x7f0d00d3;
-        public static final int Widget_AppCompat_ListView_DropDown=0x7f0d00d4;
-        public static final int Widget_AppCompat_ListView_Menu=0x7f0d00d5;
-        public static final int Widget_AppCompat_PopupMenu=0x7f0d00d6;
-        public static final int Widget_AppCompat_PopupMenu_Overflow=0x7f0d00d7;
-        public static final int Widget_AppCompat_PopupWindow=0x7f0d00d8;
-        public static final int Widget_AppCompat_ProgressBar=0x7f0d00d9;
-        public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0d00da;
-        public static final int Widget_AppCompat_SearchView=0x7f0d00db;
-        public static final int Widget_AppCompat_Spinner=0x7f0d00dc;
-        public static final int Widget_AppCompat_Spinner_DropDown=0x7f0d00dd;
-        public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0d00de;
-        public static final int Widget_AppCompat_Toolbar=0x7f0d00df;
-        public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0d00e0;
+        public static final int Base_TextAppearance_AppCompat=0x7f0d0001;
+        public static final int Base_TextAppearance_AppCompat_Body1=0x7f0d0002;
+        public static final int Base_TextAppearance_AppCompat_Body2=0x7f0d0003;
+        public static final int Base_TextAppearance_AppCompat_Button=0x7f0d0004;
+        public static final int Base_TextAppearance_AppCompat_Caption=0x7f0d0005;
+        public static final int Base_TextAppearance_AppCompat_Display1=0x7f0d0006;
+        public static final int Base_TextAppearance_AppCompat_Display2=0x7f0d0007;
+        public static final int Base_TextAppearance_AppCompat_Display3=0x7f0d0008;
+        public static final int Base_TextAppearance_AppCompat_Display4=0x7f0d0009;
+        public static final int Base_TextAppearance_AppCompat_Headline=0x7f0d000a;
+        public static final int Base_TextAppearance_AppCompat_Inverse=0x7f0d000b;
+        public static final int Base_TextAppearance_AppCompat_Large=0x7f0d000c;
+        public static final int Base_TextAppearance_AppCompat_Large_Inverse=0x7f0d000d;
+        public static final int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0d000e;
+        public static final int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0d000f;
+        public static final int Base_TextAppearance_AppCompat_Medium=0x7f0d0010;
+        public static final int Base_TextAppearance_AppCompat_Medium_Inverse=0x7f0d0011;
+        public static final int Base_TextAppearance_AppCompat_Menu=0x7f0d0012;
+        public static final int Base_TextAppearance_AppCompat_SearchResult=0x7f0d0013;
+        public static final int Base_TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0d0014;
+        public static final int Base_TextAppearance_AppCompat_SearchResult_Title=0x7f0d0015;
+        public static final int Base_TextAppearance_AppCompat_Small=0x7f0d0016;
+        public static final int Base_TextAppearance_AppCompat_Small_Inverse=0x7f0d0017;
+        public static final int Base_TextAppearance_AppCompat_Subhead=0x7f0d0018;
+        public static final int Base_TextAppearance_AppCompat_Subhead_Inverse=0x7f0d0019;
+        public static final int Base_TextAppearance_AppCompat_Title=0x7f0d001a;
+        public static final int Base_TextAppearance_AppCompat_Title_Inverse=0x7f0d001b;
+        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0d001c;
+        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0d001d;
+        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0d001e;
+        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0d001f;
+        public static final int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0d0020;
+        public static final int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0d0021;
+        public static final int Base_TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0d0022;
+        public static final int Base_TextAppearance_AppCompat_Widget_DropDownItem=0x7f0d0023;
+        public static final int Base_TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0d0024;
+        public static final int Base_TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0d0025;
+        public static final int Base_TextAppearance_AppCompat_Widget_Switch=0x7f0d0026;
+        public static final int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0d0027;
+        public static final int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle=0x7f0d0028;
+        public static final int Base_TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0d0029;
+        public static final int Base_Theme_AppCompat=0x7f0d002a;
+        public static final int Base_Theme_AppCompat_CompactMenu=0x7f0d002b;
+        public static final int Base_Theme_AppCompat_Dialog=0x7f0d002c;
+        public static final int Base_Theme_AppCompat_Dialog_FixedSize=0x7f0d002d;
+        public static final int Base_Theme_AppCompat_DialogWhenLarge=0x7f0d002e;
+        public static final int Base_Theme_AppCompat_Light=0x7f0d002f;
+        public static final int Base_Theme_AppCompat_Light_DarkActionBar=0x7f0d0030;
+        public static final int Base_Theme_AppCompat_Light_Dialog=0x7f0d0031;
+        public static final int Base_Theme_AppCompat_Light_Dialog_FixedSize=0x7f0d0032;
+        public static final int Base_Theme_AppCompat_Light_DialogWhenLarge=0x7f0d0033;
+        public static final int Base_ThemeOverlay_AppCompat=0x7f0d0034;
+        public static final int Base_ThemeOverlay_AppCompat_ActionBar=0x7f0d0035;
+        public static final int Base_ThemeOverlay_AppCompat_Dark=0x7f0d0036;
+        public static final int Base_ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0d0037;
+        public static final int Base_ThemeOverlay_AppCompat_Light=0x7f0d0038;
+        public static final int Base_V11_Theme_AppCompat=0x7f0d00e0;
+        public static final int Base_V11_Theme_AppCompat_Dialog=0x7f0d00e1;
+        public static final int Base_V11_Theme_AppCompat_Light=0x7f0d00e2;
+        public static final int Base_V11_Theme_AppCompat_Light_Dialog=0x7f0d00e3;
+        public static final int Base_V14_Theme_AppCompat=0x7f0d00e4;
+        public static final int Base_V14_Theme_AppCompat_Dialog=0x7f0d00e5;
+        public static final int Base_V14_Theme_AppCompat_Light=0x7f0d00e6;
+        public static final int Base_V14_Theme_AppCompat_Light_Dialog=0x7f0d00e7;
+        public static final int Base_V21_Theme_AppCompat=0x7f0d00e8;
+        public static final int Base_V21_Theme_AppCompat_Dialog=0x7f0d00e9;
+        public static final int Base_V21_Theme_AppCompat_Light=0x7f0d00ea;
+        public static final int Base_V21_Theme_AppCompat_Light_Dialog=0x7f0d00eb;
+        public static final int Base_V7_Theme_AppCompat=0x7f0d0039;
+        public static final int Base_V7_Theme_AppCompat_Dialog=0x7f0d003a;
+        public static final int Base_V7_Theme_AppCompat_Light=0x7f0d003b;
+        public static final int Base_Widget_AppCompat_ActionBar=0x7f0d003c;
+        public static final int Base_Widget_AppCompat_ActionBar_Solid=0x7f0d003d;
+        public static final int Base_Widget_AppCompat_ActionBar_TabBar=0x7f0d003e;
+        public static final int Base_Widget_AppCompat_ActionBar_TabText=0x7f0d003f;
+        public static final int Base_Widget_AppCompat_ActionBar_TabView=0x7f0d0040;
+        public static final int Base_Widget_AppCompat_ActionButton=0x7f0d0041;
+        public static final int Base_Widget_AppCompat_ActionButton_CloseMode=0x7f0d0042;
+        public static final int Base_Widget_AppCompat_ActionButton_Overflow=0x7f0d0043;
+        public static final int Base_Widget_AppCompat_ActionMode=0x7f0d0044;
+        public static final int Base_Widget_AppCompat_ActivityChooserView=0x7f0d0045;
+        public static final int Base_Widget_AppCompat_AutoCompleteTextView=0x7f0d0046;
+        public static final int Base_Widget_AppCompat_CompoundButton_Switch=0x7f0d0047;
+        public static final int Base_Widget_AppCompat_DrawerArrowToggle=0x7f0d0048;
+        public static final int Base_Widget_AppCompat_DropDownItem_Spinner=0x7f0d0049;
+        public static final int Base_Widget_AppCompat_EditText=0x7f0d004a;
+        public static final int Base_Widget_AppCompat_Light_ActionBar=0x7f0d004b;
+        public static final int Base_Widget_AppCompat_Light_ActionBar_Solid=0x7f0d004c;
+        public static final int Base_Widget_AppCompat_Light_ActionBar_TabBar=0x7f0d004d;
+        public static final int Base_Widget_AppCompat_Light_ActionBar_TabText=0x7f0d004e;
+        public static final int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0d004f;
+        public static final int Base_Widget_AppCompat_Light_ActionBar_TabView=0x7f0d0050;
+        public static final int Base_Widget_AppCompat_Light_ActivityChooserView=0x7f0d0051;
+        public static final int Base_Widget_AppCompat_Light_AutoCompleteTextView=0x7f0d0052;
+        public static final int Base_Widget_AppCompat_Light_PopupMenu=0x7f0d0053;
+        public static final int Base_Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0d0054;
+        public static final int Base_Widget_AppCompat_ListPopupWindow=0x7f0d0055;
+        public static final int Base_Widget_AppCompat_ListView_DropDown=0x7f0d0056;
+        public static final int Base_Widget_AppCompat_ListView_Menu=0x7f0d0057;
+        public static final int Base_Widget_AppCompat_PopupMenu=0x7f0d0058;
+        public static final int Base_Widget_AppCompat_PopupMenu_Overflow=0x7f0d0059;
+        public static final int Base_Widget_AppCompat_PopupWindow=0x7f0d005a;
+        public static final int Base_Widget_AppCompat_ProgressBar=0x7f0d005b;
+        public static final int Base_Widget_AppCompat_ProgressBar_Horizontal=0x7f0d005c;
+        public static final int Base_Widget_AppCompat_SearchView=0x7f0d005d;
+        public static final int Base_Widget_AppCompat_Spinner=0x7f0d005e;
+        public static final int Base_Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0d005f;
+        public static final int Base_Widget_AppCompat_Toolbar=0x7f0d0060;
+        public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0d0061;
+        public static final int Platform_AppCompat=0x7f0d0062;
+        public static final int Platform_AppCompat_Dialog=0x7f0d0063;
+        public static final int Platform_AppCompat_Light=0x7f0d0064;
+        public static final int Platform_AppCompat_Light_Dialog=0x7f0d0065;
+        public static final int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem=0x7f0d0066;
+        public static final int RtlOverlay_Widget_AppCompat_ActionButton_CloseMode=0x7f0d0067;
+        public static final int RtlOverlay_Widget_AppCompat_ActionButton_Overflow=0x7f0d0068;
+        public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem=0x7f0d0069;
+        public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup=0x7f0d006a;
+        public static final int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text=0x7f0d006b;
+        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown=0x7f0d006c;
+        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1=0x7f0d006d;
+        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2=0x7f0d006e;
+        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Query=0x7f0d006f;
+        public static final int RtlOverlay_Widget_AppCompat_Search_DropDown_Text=0x7f0d0070;
+        public static final int RtlOverlay_Widget_AppCompat_SearchView_MagIcon=0x7f0d0071;
+        public static final int TextAppearance_AppCompat=0x7f0d0072;
+        public static final int TextAppearance_AppCompat_Body1=0x7f0d0073;
+        public static final int TextAppearance_AppCompat_Body2=0x7f0d0074;
+        public static final int TextAppearance_AppCompat_Button=0x7f0d0075;
+        public static final int TextAppearance_AppCompat_Caption=0x7f0d0076;
+        public static final int TextAppearance_AppCompat_Display1=0x7f0d0077;
+        public static final int TextAppearance_AppCompat_Display2=0x7f0d0078;
+        public static final int TextAppearance_AppCompat_Display3=0x7f0d0079;
+        public static final int TextAppearance_AppCompat_Display4=0x7f0d007a;
+        public static final int TextAppearance_AppCompat_Headline=0x7f0d007b;
+        public static final int TextAppearance_AppCompat_Inverse=0x7f0d007c;
+        public static final int TextAppearance_AppCompat_Large=0x7f0d007d;
+        public static final int TextAppearance_AppCompat_Large_Inverse=0x7f0d007e;
+        public static final int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0d007f;
+        public static final int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0d0080;
+        public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0d0081;
+        public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0d0082;
+        public static final int TextAppearance_AppCompat_Medium=0x7f0d0083;
+        public static final int TextAppearance_AppCompat_Medium_Inverse=0x7f0d0084;
+        public static final int TextAppearance_AppCompat_Menu=0x7f0d0085;
+        public static final int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0d0086;
+        public static final int TextAppearance_AppCompat_SearchResult_Title=0x7f0d0087;
+        public static final int TextAppearance_AppCompat_Small=0x7f0d0088;
+        public static final int TextAppearance_AppCompat_Small_Inverse=0x7f0d0089;
+        public static final int TextAppearance_AppCompat_Subhead=0x7f0d008a;
+        public static final int TextAppearance_AppCompat_Subhead_Inverse=0x7f0d008b;
+        public static final int TextAppearance_AppCompat_Title=0x7f0d008c;
+        public static final int TextAppearance_AppCompat_Title_Inverse=0x7f0d008d;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0d008e;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0d008f;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0d0090;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0d0091;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0d0092;
+        public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0d0093;
+        public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0d0094;
+        public static final int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0d0095;
+        public static final int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0d0096;
+        public static final int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0d0097;
+        public static final int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0d0098;
+        public static final int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0d0099;
+        public static final int TextAppearance_AppCompat_Widget_Switch=0x7f0d009a;
+        public static final int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0d009b;
+        public static final int TextAppearance_Widget_AppCompat_Toolbar_Subtitle=0x7f0d009c;
+        public static final int TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0d009d;
+        public static final int Theme_AppCompat=0x7f0d009e;
+        public static final int Theme_AppCompat_CompactMenu=0x7f0d009f;
+        public static final int Theme_AppCompat_Dialog=0x7f0d00a0;
+        public static final int Theme_AppCompat_DialogWhenLarge=0x7f0d00a1;
+        public static final int Theme_AppCompat_Light=0x7f0d00a2;
+        public static final int Theme_AppCompat_Light_DarkActionBar=0x7f0d00a3;
+        public static final int Theme_AppCompat_Light_Dialog=0x7f0d00a4;
+        public static final int Theme_AppCompat_Light_DialogWhenLarge=0x7f0d00a5;
+        public static final int Theme_AppCompat_Light_NoActionBar=0x7f0d00a6;
+        public static final int Theme_AppCompat_NoActionBar=0x7f0d00a7;
+        public static final int ThemeOverlay_AppCompat=0x7f0d00a8;
+        public static final int ThemeOverlay_AppCompat_ActionBar=0x7f0d00a9;
+        public static final int ThemeOverlay_AppCompat_Dark=0x7f0d00aa;
+        public static final int ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0d00ab;
+        public static final int ThemeOverlay_AppCompat_Light=0x7f0d00ac;
+        public static final int Widget_AppCompat_ActionBar=0x7f0d00ad;
+        public static final int Widget_AppCompat_ActionBar_Solid=0x7f0d00ae;
+        public static final int Widget_AppCompat_ActionBar_TabBar=0x7f0d00af;
+        public static final int Widget_AppCompat_ActionBar_TabText=0x7f0d00b0;
+        public static final int Widget_AppCompat_ActionBar_TabView=0x7f0d00b1;
+        public static final int Widget_AppCompat_ActionButton=0x7f0d00b2;
+        public static final int Widget_AppCompat_ActionButton_CloseMode=0x7f0d00b3;
+        public static final int Widget_AppCompat_ActionButton_Overflow=0x7f0d00b4;
+        public static final int Widget_AppCompat_ActionMode=0x7f0d00b5;
+        public static final int Widget_AppCompat_ActivityChooserView=0x7f0d00b6;
+        public static final int Widget_AppCompat_AutoCompleteTextView=0x7f0d00b7;
+        public static final int Widget_AppCompat_CompoundButton_Switch=0x7f0d00b8;
+        public static final int Widget_AppCompat_DrawerArrowToggle=0x7f0d00b9;
+        public static final int Widget_AppCompat_DropDownItem_Spinner=0x7f0d00ba;
+        public static final int Widget_AppCompat_EditText=0x7f0d00bb;
+        public static final int Widget_AppCompat_Light_ActionBar=0x7f0d00bc;
+        public static final int Widget_AppCompat_Light_ActionBar_Solid=0x7f0d00bd;
+        public static final int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0d00be;
+        public static final int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0d00bf;
+        public static final int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0d00c0;
+        public static final int Widget_AppCompat_Light_ActionBar_TabText=0x7f0d00c1;
+        public static final int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0d00c2;
+        public static final int Widget_AppCompat_Light_ActionBar_TabView=0x7f0d00c3;
+        public static final int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0d00c4;
+        public static final int Widget_AppCompat_Light_ActionButton=0x7f0d00c5;
+        public static final int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0d00c6;
+        public static final int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0d00c7;
+        public static final int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0d00c8;
+        public static final int Widget_AppCompat_Light_ActivityChooserView=0x7f0d00c9;
+        public static final int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0d00ca;
+        public static final int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0d00cb;
+        public static final int Widget_AppCompat_Light_ListPopupWindow=0x7f0d00cc;
+        public static final int Widget_AppCompat_Light_ListView_DropDown=0x7f0d00cd;
+        public static final int Widget_AppCompat_Light_PopupMenu=0x7f0d00ce;
+        public static final int Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0d00cf;
+        public static final int Widget_AppCompat_Light_SearchView=0x7f0d00d0;
+        public static final int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0d00d1;
+        public static final int Widget_AppCompat_ListPopupWindow=0x7f0d00d2;
+        public static final int Widget_AppCompat_ListView_DropDown=0x7f0d00d3;
+        public static final int Widget_AppCompat_ListView_Menu=0x7f0d00d4;
+        public static final int Widget_AppCompat_PopupMenu=0x7f0d00d5;
+        public static final int Widget_AppCompat_PopupMenu_Overflow=0x7f0d00d6;
+        public static final int Widget_AppCompat_PopupWindow=0x7f0d00d7;
+        public static final int Widget_AppCompat_ProgressBar=0x7f0d00d8;
+        public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0d00d9;
+        public static final int Widget_AppCompat_SearchView=0x7f0d00da;
+        public static final int Widget_AppCompat_Spinner=0x7f0d00db;
+        public static final int Widget_AppCompat_Spinner_DropDown=0x7f0d00dc;
+        public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0d00dd;
+        public static final int Widget_AppCompat_Toolbar=0x7f0d00de;
+        public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0d00df;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.
@@ -2245,33 +2252,33 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionBar_background mpardalos.org.homeworkmanager:background}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundSplit mpardalos.org.homeworkmanager:backgroundSplit}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundStacked mpardalos.org.homeworkmanager:backgroundStacked}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetEnd mpardalos.org.homeworkmanager:contentInsetEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetLeft mpardalos.org.homeworkmanager:contentInsetLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetRight mpardalos.org.homeworkmanager:contentInsetRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_contentInsetStart mpardalos.org.homeworkmanager:contentInsetStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_customNavigationLayout mpardalos.org.homeworkmanager:customNavigationLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_displayOptions mpardalos.org.homeworkmanager:displayOptions}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_divider mpardalos.org.homeworkmanager:divider}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_elevation mpardalos.org.homeworkmanager:elevation}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_height mpardalos.org.homeworkmanager:height}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_hideOnContentScroll mpardalos.org.homeworkmanager:hideOnContentScroll}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_homeAsUpIndicator mpardalos.org.homeworkmanager:homeAsUpIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_homeLayout mpardalos.org.homeworkmanager:homeLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_icon mpardalos.org.homeworkmanager:icon}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle mpardalos.org.homeworkmanager:indeterminateProgressStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_itemPadding mpardalos.org.homeworkmanager:itemPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_logo mpardalos.org.homeworkmanager:logo}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_navigationMode mpardalos.org.homeworkmanager:navigationMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_popupTheme mpardalos.org.homeworkmanager:popupTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarPadding mpardalos.org.homeworkmanager:progressBarPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarStyle mpardalos.org.homeworkmanager:progressBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_subtitle mpardalos.org.homeworkmanager:subtitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_subtitleTextStyle mpardalos.org.homeworkmanager:subtitleTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_title mpardalos.org.homeworkmanager:title}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBar_titleTextStyle mpardalos.org.homeworkmanager:titleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_background org.mpardalos.homeworkmanager:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundSplit org.mpardalos.homeworkmanager:backgroundSplit}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundStacked org.mpardalos.homeworkmanager:backgroundStacked}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetEnd org.mpardalos.homeworkmanager:contentInsetEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetLeft org.mpardalos.homeworkmanager:contentInsetLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetRight org.mpardalos.homeworkmanager:contentInsetRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_contentInsetStart org.mpardalos.homeworkmanager:contentInsetStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_customNavigationLayout org.mpardalos.homeworkmanager:customNavigationLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_displayOptions org.mpardalos.homeworkmanager:displayOptions}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_divider org.mpardalos.homeworkmanager:divider}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_elevation org.mpardalos.homeworkmanager:elevation}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_height org.mpardalos.homeworkmanager:height}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_hideOnContentScroll org.mpardalos.homeworkmanager:hideOnContentScroll}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_homeAsUpIndicator org.mpardalos.homeworkmanager:homeAsUpIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_homeLayout org.mpardalos.homeworkmanager:homeLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_icon org.mpardalos.homeworkmanager:icon}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle org.mpardalos.homeworkmanager:indeterminateProgressStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_itemPadding org.mpardalos.homeworkmanager:itemPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_logo org.mpardalos.homeworkmanager:logo}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_navigationMode org.mpardalos.homeworkmanager:navigationMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_popupTheme org.mpardalos.homeworkmanager:popupTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarPadding org.mpardalos.homeworkmanager:progressBarPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarStyle org.mpardalos.homeworkmanager:progressBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_subtitle org.mpardalos.homeworkmanager:subtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_subtitleTextStyle org.mpardalos.homeworkmanager:subtitleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_title org.mpardalos.homeworkmanager:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_titleTextStyle org.mpardalos.homeworkmanager:titleTextStyle}</code></td><td></td></tr>
            </table>
            @see #ActionBar_background
            @see #ActionBar_backgroundSplit
@@ -2311,17 +2318,17 @@ containing a value of this type.
             0x7f01001a, 0x7f01001b, 0x7f010076
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#background}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#background}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:background
+          @attr name org.mpardalos.homeworkmanager:background
         */
         public static final int ActionBar_background = 10;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#backgroundSplit}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#backgroundSplit}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2329,11 +2336,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name mpardalos.org.homeworkmanager:backgroundSplit
+          @attr name org.mpardalos.homeworkmanager:backgroundSplit
         */
         public static final int ActionBar_backgroundSplit = 12;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#backgroundStacked}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#backgroundStacked}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2341,11 +2348,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name mpardalos.org.homeworkmanager:backgroundStacked
+          @attr name org.mpardalos.homeworkmanager:backgroundStacked
         */
         public static final int ActionBar_backgroundStacked = 11;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#contentInsetEnd}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#contentInsetEnd}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2357,11 +2364,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:contentInsetEnd
+          @attr name org.mpardalos.homeworkmanager:contentInsetEnd
         */
         public static final int ActionBar_contentInsetEnd = 21;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#contentInsetLeft}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#contentInsetLeft}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2373,11 +2380,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:contentInsetLeft
+          @attr name org.mpardalos.homeworkmanager:contentInsetLeft
         */
         public static final int ActionBar_contentInsetLeft = 22;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#contentInsetRight}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#contentInsetRight}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2389,11 +2396,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:contentInsetRight
+          @attr name org.mpardalos.homeworkmanager:contentInsetRight
         */
         public static final int ActionBar_contentInsetRight = 23;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#contentInsetStart}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#contentInsetStart}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2405,21 +2412,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:contentInsetStart
+          @attr name org.mpardalos.homeworkmanager:contentInsetStart
         */
         public static final int ActionBar_contentInsetStart = 20;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#customNavigationLayout}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#customNavigationLayout}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:customNavigationLayout
+          @attr name org.mpardalos.homeworkmanager:customNavigationLayout
         */
         public static final int ActionBar_customNavigationLayout = 13;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#displayOptions}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#displayOptions}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2437,21 +2444,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>showCustom</code></td><td>0x10</td><td></td></tr>
 <tr><td><code>disableHome</code></td><td>0x20</td><td></td></tr>
 </table>
-          @attr name mpardalos.org.homeworkmanager:displayOptions
+          @attr name org.mpardalos.homeworkmanager:displayOptions
         */
         public static final int ActionBar_displayOptions = 3;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#divider}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#divider}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:divider
+          @attr name org.mpardalos.homeworkmanager:divider
         */
         public static final int ActionBar_divider = 9;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#elevation}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#elevation}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2463,11 +2470,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:elevation
+          @attr name org.mpardalos.homeworkmanager:elevation
         */
         public static final int ActionBar_elevation = 24;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#height}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#height}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2479,11 +2486,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:height
+          @attr name org.mpardalos.homeworkmanager:height
         */
         public static final int ActionBar_height = 0;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#hideOnContentScroll}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#hideOnContentScroll}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2493,51 +2500,51 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:hideOnContentScroll
+          @attr name org.mpardalos.homeworkmanager:hideOnContentScroll
         */
         public static final int ActionBar_hideOnContentScroll = 19;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#homeAsUpIndicator}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:homeAsUpIndicator
+          @attr name org.mpardalos.homeworkmanager:homeAsUpIndicator
         */
         public static final int ActionBar_homeAsUpIndicator = 26;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#homeLayout}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#homeLayout}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:homeLayout
+          @attr name org.mpardalos.homeworkmanager:homeLayout
         */
         public static final int ActionBar_homeLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#icon}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#icon}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:icon
+          @attr name org.mpardalos.homeworkmanager:icon
         */
         public static final int ActionBar_icon = 7;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#indeterminateProgressStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#indeterminateProgressStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:indeterminateProgressStyle
+          @attr name org.mpardalos.homeworkmanager:indeterminateProgressStyle
         */
         public static final int ActionBar_indeterminateProgressStyle = 16;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#itemPadding}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#itemPadding}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2549,21 +2556,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:itemPadding
+          @attr name org.mpardalos.homeworkmanager:itemPadding
         */
         public static final int ActionBar_itemPadding = 18;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#logo}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#logo}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:logo
+          @attr name org.mpardalos.homeworkmanager:logo
         */
         public static final int ActionBar_logo = 8;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#navigationMode}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#navigationMode}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2577,21 +2584,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>listMode</code></td><td>1</td><td></td></tr>
 <tr><td><code>tabMode</code></td><td>2</td><td></td></tr>
 </table>
-          @attr name mpardalos.org.homeworkmanager:navigationMode
+          @attr name org.mpardalos.homeworkmanager:navigationMode
         */
         public static final int ActionBar_navigationMode = 2;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#popupTheme}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#popupTheme}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:popupTheme
+          @attr name org.mpardalos.homeworkmanager:popupTheme
         */
         public static final int ActionBar_popupTheme = 25;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#progressBarPadding}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#progressBarPadding}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2603,21 +2610,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:progressBarPadding
+          @attr name org.mpardalos.homeworkmanager:progressBarPadding
         */
         public static final int ActionBar_progressBarPadding = 17;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#progressBarStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#progressBarStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:progressBarStyle
+          @attr name org.mpardalos.homeworkmanager:progressBarStyle
         */
         public static final int ActionBar_progressBarStyle = 15;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#subtitle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#subtitle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2627,21 +2634,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:subtitle
+          @attr name org.mpardalos.homeworkmanager:subtitle
         */
         public static final int ActionBar_subtitle = 4;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#subtitleTextStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#subtitleTextStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:subtitleTextStyle
+          @attr name org.mpardalos.homeworkmanager:subtitleTextStyle
         */
         public static final int ActionBar_subtitleTextStyle = 6;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#title}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#title}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
@@ -2651,17 +2658,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:title
+          @attr name org.mpardalos.homeworkmanager:title
         */
         public static final int ActionBar_title = 1;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#titleTextStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#titleTextStyle}
           attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:titleTextStyle
+          @attr name org.mpardalos.homeworkmanager:titleTextStyle
         */
         public static final int ActionBar_titleTextStyle = 5;
         /** Attributes that can be used with a ActionBarLayout.
@@ -2713,12 +2720,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionMode_background mpardalos.org.homeworkmanager:background}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_backgroundSplit mpardalos.org.homeworkmanager:backgroundSplit}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_closeItemLayout mpardalos.org.homeworkmanager:closeItemLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_height mpardalos.org.homeworkmanager:height}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_subtitleTextStyle mpardalos.org.homeworkmanager:subtitleTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionMode_titleTextStyle mpardalos.org.homeworkmanager:titleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_background org.mpardalos.homeworkmanager:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_backgroundSplit org.mpardalos.homeworkmanager:backgroundSplit}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_closeItemLayout org.mpardalos.homeworkmanager:closeItemLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_height org.mpardalos.homeworkmanager:height}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_subtitleTextStyle org.mpardalos.homeworkmanager:subtitleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_titleTextStyle org.mpardalos.homeworkmanager:titleTextStyle}</code></td><td></td></tr>
            </table>
            @see #ActionMode_background
            @see #ActionMode_backgroundSplit
@@ -2732,17 +2739,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01000e, 0x7f01001c
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#background}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#background}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:background
+          @attr name org.mpardalos.homeworkmanager:background
         */
         public static final int ActionMode_background = 3;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#backgroundSplit}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#backgroundSplit}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -2750,21 +2757,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name mpardalos.org.homeworkmanager:backgroundSplit
+          @attr name org.mpardalos.homeworkmanager:backgroundSplit
         */
         public static final int ActionMode_backgroundSplit = 4;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#closeItemLayout}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#closeItemLayout}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:closeItemLayout
+          @attr name org.mpardalos.homeworkmanager:closeItemLayout
         */
         public static final int ActionMode_closeItemLayout = 5;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#height}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#height}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
@@ -2776,27 +2783,27 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:height
+          @attr name org.mpardalos.homeworkmanager:height
         */
         public static final int ActionMode_height = 0;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#subtitleTextStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#subtitleTextStyle}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:subtitleTextStyle
+          @attr name org.mpardalos.homeworkmanager:subtitleTextStyle
         */
         public static final int ActionMode_subtitleTextStyle = 2;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#titleTextStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#titleTextStyle}
           attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:titleTextStyle
+          @attr name org.mpardalos.homeworkmanager:titleTextStyle
         */
         public static final int ActionMode_titleTextStyle = 1;
         /** Attributes that can be used with a ActivityChooserView.
@@ -2805,8 +2812,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable mpardalos.org.homeworkmanager:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActivityChooserView_initialActivityCount mpardalos.org.homeworkmanager:initialActivityCount}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable org.mpardalos.homeworkmanager:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActivityChooserView_initialActivityCount org.mpardalos.homeworkmanager:initialActivityCount}</code></td><td></td></tr>
            </table>
            @see #ActivityChooserView_expandActivityOverflowButtonDrawable
            @see #ActivityChooserView_initialActivityCount
@@ -2815,17 +2822,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01001d, 0x7f01001e
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#expandActivityOverflowButtonDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#expandActivityOverflowButtonDrawable}
           attribute's value can be found in the {@link #ActivityChooserView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:expandActivityOverflowButtonDrawable
+          @attr name org.mpardalos.homeworkmanager:expandActivityOverflowButtonDrawable
         */
         public static final int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#initialActivityCount}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#initialActivityCount}
           attribute's value can be found in the {@link #ActivityChooserView} array.
 
 
@@ -2835,7 +2842,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:initialActivityCount
+          @attr name org.mpardalos.homeworkmanager:initialActivityCount
         */
         public static final int ActivityChooserView_initialActivityCount = 0;
         /** Attributes that can be used with a CompatTextView.
@@ -2844,7 +2851,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CompatTextView_textAllCaps mpardalos.org.homeworkmanager:textAllCaps}</code></td><td></td></tr>
+           <tr><td><code>{@link #CompatTextView_textAllCaps org.mpardalos.homeworkmanager:textAllCaps}</code></td><td></td></tr>
            </table>
            @see #CompatTextView_textAllCaps
          */
@@ -2852,14 +2859,14 @@ containing a value of this type.
             0x7f01001f
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#textAllCaps}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#textAllCaps}
           attribute's value can be found in the {@link #CompatTextView} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
-          @attr name mpardalos.org.homeworkmanager:textAllCaps
+          @attr name org.mpardalos.homeworkmanager:textAllCaps
         */
         public static final int CompatTextView_textAllCaps = 0;
         /** Attributes that can be used with a DrawerArrowToggle.
@@ -2868,14 +2875,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_barSize mpardalos.org.homeworkmanager:barSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_color mpardalos.org.homeworkmanager:color}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_drawableSize mpardalos.org.homeworkmanager:drawableSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_gapBetweenBars mpardalos.org.homeworkmanager:gapBetweenBars}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_middleBarArrowSize mpardalos.org.homeworkmanager:middleBarArrowSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_spinBars mpardalos.org.homeworkmanager:spinBars}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_thickness mpardalos.org.homeworkmanager:thickness}</code></td><td></td></tr>
-           <tr><td><code>{@link #DrawerArrowToggle_topBottomBarArrowSize mpardalos.org.homeworkmanager:topBottomBarArrowSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_barSize org.mpardalos.homeworkmanager:barSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_color org.mpardalos.homeworkmanager:color}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_drawableSize org.mpardalos.homeworkmanager:drawableSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_gapBetweenBars org.mpardalos.homeworkmanager:gapBetweenBars}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_middleBarArrowSize org.mpardalos.homeworkmanager:middleBarArrowSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_spinBars org.mpardalos.homeworkmanager:spinBars}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_thickness org.mpardalos.homeworkmanager:thickness}</code></td><td></td></tr>
+           <tr><td><code>{@link #DrawerArrowToggle_topBottomBarArrowSize org.mpardalos.homeworkmanager:topBottomBarArrowSize}</code></td><td></td></tr>
            </table>
            @see #DrawerArrowToggle_barSize
            @see #DrawerArrowToggle_color
@@ -2891,7 +2898,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010024, 0x7f010025, 0x7f010026, 0x7f010027
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#barSize}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#barSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2903,11 +2910,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:barSize
+          @attr name org.mpardalos.homeworkmanager:barSize
         */
         public static final int DrawerArrowToggle_barSize = 6;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#color}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#color}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2918,11 +2925,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:color
+          @attr name org.mpardalos.homeworkmanager:color
         */
         public static final int DrawerArrowToggle_color = 0;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#drawableSize}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#drawableSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2934,11 +2941,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:drawableSize
+          @attr name org.mpardalos.homeworkmanager:drawableSize
         */
         public static final int DrawerArrowToggle_drawableSize = 2;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#gapBetweenBars}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#gapBetweenBars}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2950,11 +2957,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:gapBetweenBars
+          @attr name org.mpardalos.homeworkmanager:gapBetweenBars
         */
         public static final int DrawerArrowToggle_gapBetweenBars = 3;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#middleBarArrowSize}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#middleBarArrowSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2966,11 +2973,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:middleBarArrowSize
+          @attr name org.mpardalos.homeworkmanager:middleBarArrowSize
         */
         public static final int DrawerArrowToggle_middleBarArrowSize = 5;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#spinBars}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#spinBars}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2980,11 +2987,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:spinBars
+          @attr name org.mpardalos.homeworkmanager:spinBars
         */
         public static final int DrawerArrowToggle_spinBars = 1;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#thickness}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#thickness}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -2996,11 +3003,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:thickness
+          @attr name org.mpardalos.homeworkmanager:thickness
         */
         public static final int DrawerArrowToggle_thickness = 7;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#topBottomBarArrowSize}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#topBottomBarArrowSize}
           attribute's value can be found in the {@link #DrawerArrowToggle} array.
 
 
@@ -3012,7 +3019,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:topBottomBarArrowSize
+          @attr name org.mpardalos.homeworkmanager:topBottomBarArrowSize
         */
         public static final int DrawerArrowToggle_topBottomBarArrowSize = 4;
         /** Attributes that can be used with a FloatingActionButton.
@@ -3021,11 +3028,11 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #FloatingActionButton_fab_colorNormal mpardalos.org.homeworkmanager:fab_colorNormal}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_fab_colorPressed mpardalos.org.homeworkmanager:fab_colorPressed}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_fab_colorRipple mpardalos.org.homeworkmanager:fab_colorRipple}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_fab_shadow mpardalos.org.homeworkmanager:fab_shadow}</code></td><td></td></tr>
-           <tr><td><code>{@link #FloatingActionButton_fab_type mpardalos.org.homeworkmanager:fab_type}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_fab_colorNormal org.mpardalos.homeworkmanager:fab_colorNormal}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_fab_colorPressed org.mpardalos.homeworkmanager:fab_colorPressed}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_fab_colorRipple org.mpardalos.homeworkmanager:fab_colorRipple}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_fab_shadow org.mpardalos.homeworkmanager:fab_shadow}</code></td><td></td></tr>
+           <tr><td><code>{@link #FloatingActionButton_fab_type org.mpardalos.homeworkmanager:fab_type}</code></td><td></td></tr>
            </table>
            @see #FloatingActionButton_fab_colorNormal
            @see #FloatingActionButton_fab_colorPressed
@@ -3038,7 +3045,7 @@ containing a value of this type.
             0x7f01002c
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#fab_colorNormal}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#fab_colorNormal}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -3049,11 +3056,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:fab_colorNormal
+          @attr name org.mpardalos.homeworkmanager:fab_colorNormal
         */
         public static final int FloatingActionButton_fab_colorNormal = 1;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#fab_colorPressed}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#fab_colorPressed}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -3064,11 +3071,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:fab_colorPressed
+          @attr name org.mpardalos.homeworkmanager:fab_colorPressed
         */
         public static final int FloatingActionButton_fab_colorPressed = 0;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#fab_colorRipple}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#fab_colorRipple}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -3079,11 +3086,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:fab_colorRipple
+          @attr name org.mpardalos.homeworkmanager:fab_colorRipple
         */
         public static final int FloatingActionButton_fab_colorRipple = 2;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#fab_shadow}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#fab_shadow}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -3093,11 +3100,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:fab_shadow
+          @attr name org.mpardalos.homeworkmanager:fab_shadow
         */
         public static final int FloatingActionButton_fab_shadow = 3;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#fab_type}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#fab_type}
           attribute's value can be found in the {@link #FloatingActionButton} array.
 
 
@@ -3110,7 +3117,7 @@ containing a value of this type.
 <tr><td><code>normal</code></td><td>0</td><td></td></tr>
 <tr><td><code>mini</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name mpardalos.org.homeworkmanager:fab_type
+          @attr name org.mpardalos.homeworkmanager:fab_type
         */
         public static final int FloatingActionButton_fab_type = 4;
         /** Attributes that can be used with a LinearLayoutCompat.
@@ -3124,10 +3131,10 @@ containing a value of this type.
            <tr><td><code>{@link #LinearLayoutCompat_android_gravity android:gravity}</code></td><td></td></tr>
            <tr><td><code>{@link #LinearLayoutCompat_android_orientation android:orientation}</code></td><td></td></tr>
            <tr><td><code>{@link #LinearLayoutCompat_android_weightSum android:weightSum}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayoutCompat_divider mpardalos.org.homeworkmanager:divider}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayoutCompat_dividerPadding mpardalos.org.homeworkmanager:dividerPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayoutCompat_measureWithLargestChild mpardalos.org.homeworkmanager:measureWithLargestChild}</code></td><td></td></tr>
-           <tr><td><code>{@link #LinearLayoutCompat_showDividers mpardalos.org.homeworkmanager:showDividers}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutCompat_divider org.mpardalos.homeworkmanager:divider}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutCompat_dividerPadding org.mpardalos.homeworkmanager:dividerPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutCompat_measureWithLargestChild org.mpardalos.homeworkmanager:measureWithLargestChild}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutCompat_showDividers org.mpardalos.homeworkmanager:showDividers}</code></td><td></td></tr>
            </table>
            @see #LinearLayoutCompat_android_baselineAligned
            @see #LinearLayoutCompat_android_baselineAlignedChildIndex
@@ -3175,17 +3182,17 @@ containing a value of this type.
         */
         public static final int LinearLayoutCompat_android_weightSum = 4;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#divider}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#divider}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:divider
+          @attr name org.mpardalos.homeworkmanager:divider
         */
         public static final int LinearLayoutCompat_divider = 5;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#dividerPadding}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#dividerPadding}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -3197,11 +3204,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:dividerPadding
+          @attr name org.mpardalos.homeworkmanager:dividerPadding
         */
         public static final int LinearLayoutCompat_dividerPadding = 8;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#measureWithLargestChild}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#measureWithLargestChild}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -3211,11 +3218,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:measureWithLargestChild
+          @attr name org.mpardalos.homeworkmanager:measureWithLargestChild
         */
         public static final int LinearLayoutCompat_measureWithLargestChild = 6;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#showDividers}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#showDividers}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
 
 
@@ -3230,7 +3237,7 @@ containing a value of this type.
 <tr><td><code>middle</code></td><td>2</td><td></td></tr>
 <tr><td><code>end</code></td><td>4</td><td></td></tr>
 </table>
-          @attr name mpardalos.org.homeworkmanager:showDividers
+          @attr name org.mpardalos.homeworkmanager:showDividers
         */
         public static final int LinearLayoutCompat_showDividers = 7;
         /** Attributes that can be used with a LinearLayoutCompat_Layout.
@@ -3369,9 +3376,9 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuItem_actionLayout mpardalos.org.homeworkmanager:actionLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuItem_actionProviderClass mpardalos.org.homeworkmanager:actionProviderClass}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuItem_actionViewClass mpardalos.org.homeworkmanager:actionViewClass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_actionLayout org.mpardalos.homeworkmanager:actionLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_actionProviderClass org.mpardalos.homeworkmanager:actionProviderClass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_actionViewClass org.mpardalos.homeworkmanager:actionViewClass}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_alphabeticShortcut android:alphabeticShortcut}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_checkable android:checkable}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_checked android:checked}</code></td><td></td></tr>
@@ -3385,7 +3392,7 @@ containing a value of this type.
            <tr><td><code>{@link #MenuItem_android_title android:title}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_titleCondensed android:titleCondensed}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuItem_android_visible android:visible}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuItem_showAsAction mpardalos.org.homeworkmanager:showAsAction}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_showAsAction org.mpardalos.homeworkmanager:showAsAction}</code></td><td></td></tr>
            </table>
            @see #MenuItem_actionLayout
            @see #MenuItem_actionProviderClass
@@ -3413,17 +3420,17 @@ containing a value of this type.
             0x7f010033
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionLayout}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionLayout}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionLayout
+          @attr name org.mpardalos.homeworkmanager:actionLayout
         */
         public static final int MenuItem_actionLayout = 14;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionProviderClass}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionProviderClass}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -3433,11 +3440,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:actionProviderClass
+          @attr name org.mpardalos.homeworkmanager:actionProviderClass
         */
         public static final int MenuItem_actionProviderClass = 16;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionViewClass}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionViewClass}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -3447,7 +3454,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:actionViewClass
+          @attr name org.mpardalos.homeworkmanager:actionViewClass
         */
         public static final int MenuItem_actionViewClass = 15;
         /**
@@ -3529,7 +3536,7 @@ containing a value of this type.
         */
         public static final int MenuItem_android_visible = 4;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#showAsAction}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#showAsAction}
           attribute's value can be found in the {@link #MenuItem} array.
 
 
@@ -3545,7 +3552,7 @@ containing a value of this type.
 <tr><td><code>withText</code></td><td>4</td><td></td></tr>
 <tr><td><code>collapseActionView</code></td><td>8</td><td></td></tr>
 </table>
-          @attr name mpardalos.org.homeworkmanager:showAsAction
+          @attr name org.mpardalos.homeworkmanager:showAsAction
         */
         public static final int MenuItem_showAsAction = 13;
         /** Attributes that can be used with a MenuView.
@@ -3561,7 +3568,7 @@ containing a value of this type.
            <tr><td><code>{@link #MenuView_android_itemTextAppearance android:itemTextAppearance}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuView_android_verticalDivider android:verticalDivider}</code></td><td></td></tr>
            <tr><td><code>{@link #MenuView_android_windowAnimationStyle android:windowAnimationStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #MenuView_preserveIconSpacing mpardalos.org.homeworkmanager:preserveIconSpacing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_preserveIconSpacing org.mpardalos.homeworkmanager:preserveIconSpacing}</code></td><td></td></tr>
            </table>
            @see #MenuView_android_headerBackground
            @see #MenuView_android_horizontalDivider
@@ -3619,7 +3626,7 @@ containing a value of this type.
         */
         public static final int MenuView_android_windowAnimationStyle = 0;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#preserveIconSpacing}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#preserveIconSpacing}
           attribute's value can be found in the {@link #MenuView} array.
 
 
@@ -3629,7 +3636,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:preserveIconSpacing
+          @attr name org.mpardalos.homeworkmanager:preserveIconSpacing
         */
         public static final int MenuView_preserveIconSpacing = 7;
         /** Attributes that can be used with a PopupWindow.
@@ -3639,7 +3646,7 @@ containing a value of this type.
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #PopupWindow_android_popupBackground android:popupBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #PopupWindow_overlapAnchor mpardalos.org.homeworkmanager:overlapAnchor}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopupWindow_overlapAnchor org.mpardalos.homeworkmanager:overlapAnchor}</code></td><td></td></tr>
            </table>
            @see #PopupWindow_android_popupBackground
            @see #PopupWindow_overlapAnchor
@@ -3654,7 +3661,7 @@ containing a value of this type.
         */
         public static final int PopupWindow_android_popupBackground = 0;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#overlapAnchor}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#overlapAnchor}
           attribute's value can be found in the {@link #PopupWindow} array.
 
 
@@ -3664,7 +3671,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:overlapAnchor
+          @attr name org.mpardalos.homeworkmanager:overlapAnchor
         */
         public static final int PopupWindow_overlapAnchor = 1;
         /** Attributes that can be used with a PopupWindowBackgroundState.
@@ -3673,7 +3680,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #PopupWindowBackgroundState_state_above_anchor mpardalos.org.homeworkmanager:state_above_anchor}</code></td><td></td></tr>
+           <tr><td><code>{@link #PopupWindowBackgroundState_state_above_anchor org.mpardalos.homeworkmanager:state_above_anchor}</code></td><td></td></tr>
            </table>
            @see #PopupWindowBackgroundState_state_above_anchor
          */
@@ -3681,7 +3688,7 @@ containing a value of this type.
             0x7f010036
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#state_above_anchor}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#state_above_anchor}
           attribute's value can be found in the {@link #PopupWindowBackgroundState} array.
 
 
@@ -3691,7 +3698,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:state_above_anchor
+          @attr name org.mpardalos.homeworkmanager:state_above_anchor
         */
         public static final int PopupWindowBackgroundState_state_above_anchor = 0;
         /** Attributes that can be used with a SearchView.
@@ -3704,17 +3711,17 @@ containing a value of this type.
            <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td></td></tr>
            <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td></td></tr>
            <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_closeIcon mpardalos.org.homeworkmanager:closeIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_commitIcon mpardalos.org.homeworkmanager:commitIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_goIcon mpardalos.org.homeworkmanager:goIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_iconifiedByDefault mpardalos.org.homeworkmanager:iconifiedByDefault}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_layout mpardalos.org.homeworkmanager:layout}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_queryBackground mpardalos.org.homeworkmanager:queryBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_queryHint mpardalos.org.homeworkmanager:queryHint}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_searchIcon mpardalos.org.homeworkmanager:searchIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_submitBackground mpardalos.org.homeworkmanager:submitBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_suggestionRowLayout mpardalos.org.homeworkmanager:suggestionRowLayout}</code></td><td></td></tr>
-           <tr><td><code>{@link #SearchView_voiceIcon mpardalos.org.homeworkmanager:voiceIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_closeIcon org.mpardalos.homeworkmanager:closeIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_commitIcon org.mpardalos.homeworkmanager:commitIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_goIcon org.mpardalos.homeworkmanager:goIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_iconifiedByDefault org.mpardalos.homeworkmanager:iconifiedByDefault}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_layout org.mpardalos.homeworkmanager:layout}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_queryBackground org.mpardalos.homeworkmanager:queryBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_queryHint org.mpardalos.homeworkmanager:queryHint}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_searchIcon org.mpardalos.homeworkmanager:searchIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_submitBackground org.mpardalos.homeworkmanager:submitBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_suggestionRowLayout org.mpardalos.homeworkmanager:suggestionRowLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_voiceIcon org.mpardalos.homeworkmanager:voiceIcon}</code></td><td></td></tr>
            </table>
            @see #SearchView_android_focusable
            @see #SearchView_android_imeOptions
@@ -3763,37 +3770,37 @@ containing a value of this type.
         */
         public static final int SearchView_android_maxWidth = 1;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#closeIcon}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#closeIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:closeIcon
+          @attr name org.mpardalos.homeworkmanager:closeIcon
         */
         public static final int SearchView_closeIcon = 7;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#commitIcon}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#commitIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:commitIcon
+          @attr name org.mpardalos.homeworkmanager:commitIcon
         */
         public static final int SearchView_commitIcon = 11;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#goIcon}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#goIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:goIcon
+          @attr name org.mpardalos.homeworkmanager:goIcon
         */
         public static final int SearchView_goIcon = 8;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#iconifiedByDefault}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#iconifiedByDefault}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3803,31 +3810,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:iconifiedByDefault
+          @attr name org.mpardalos.homeworkmanager:iconifiedByDefault
         */
         public static final int SearchView_iconifiedByDefault = 5;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#layout}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#layout}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:layout
+          @attr name org.mpardalos.homeworkmanager:layout
         */
         public static final int SearchView_layout = 4;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#queryBackground}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#queryBackground}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:queryBackground
+          @attr name org.mpardalos.homeworkmanager:queryBackground
         */
         public static final int SearchView_queryBackground = 13;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#queryHint}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#queryHint}
           attribute's value can be found in the {@link #SearchView} array.
 
 
@@ -3837,47 +3844,47 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:queryHint
+          @attr name org.mpardalos.homeworkmanager:queryHint
         */
         public static final int SearchView_queryHint = 6;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#searchIcon}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#searchIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:searchIcon
+          @attr name org.mpardalos.homeworkmanager:searchIcon
         */
         public static final int SearchView_searchIcon = 9;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#submitBackground}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#submitBackground}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:submitBackground
+          @attr name org.mpardalos.homeworkmanager:submitBackground
         */
         public static final int SearchView_submitBackground = 14;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#suggestionRowLayout}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#suggestionRowLayout}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:suggestionRowLayout
+          @attr name org.mpardalos.homeworkmanager:suggestionRowLayout
         */
         public static final int SearchView_suggestionRowLayout = 12;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#voiceIcon}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#voiceIcon}
           attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:voiceIcon
+          @attr name org.mpardalos.homeworkmanager:voiceIcon
         */
         public static final int SearchView_voiceIcon = 10;
         /** Attributes that can be used with a Spinner.
@@ -3893,10 +3900,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #Spinner_android_dropDownWidth android:dropDownWidth}</code></td><td></td></tr>
            <tr><td><code>{@link #Spinner_android_gravity android:gravity}</code></td><td></td></tr>
            <tr><td><code>{@link #Spinner_android_popupBackground android:popupBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled mpardalos.org.homeworkmanager:disableChildrenWhenDisabled}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_popupPromptView mpardalos.org.homeworkmanager:popupPromptView}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_prompt mpardalos.org.homeworkmanager:prompt}</code></td><td></td></tr>
-           <tr><td><code>{@link #Spinner_spinnerMode mpardalos.org.homeworkmanager:spinnerMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled org.mpardalos.homeworkmanager:disableChildrenWhenDisabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_popupPromptView org.mpardalos.homeworkmanager:popupPromptView}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_prompt org.mpardalos.homeworkmanager:prompt}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_spinnerMode org.mpardalos.homeworkmanager:spinnerMode}</code></td><td></td></tr>
            </table>
            @see #Spinner_android_background
            @see #Spinner_android_dropDownHorizontalOffset
@@ -3958,7 +3965,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Spinner_android_popupBackground = 3;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#disableChildrenWhenDisabled}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#disableChildrenWhenDisabled}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -3968,31 +3975,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:disableChildrenWhenDisabled
+          @attr name org.mpardalos.homeworkmanager:disableChildrenWhenDisabled
         */
         public static final int Spinner_disableChildrenWhenDisabled = 10;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#popupPromptView}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#popupPromptView}
           attribute's value can be found in the {@link #Spinner} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:popupPromptView
+          @attr name org.mpardalos.homeworkmanager:popupPromptView
         */
         public static final int Spinner_popupPromptView = 9;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#prompt}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#prompt}
           attribute's value can be found in the {@link #Spinner} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:prompt
+          @attr name org.mpardalos.homeworkmanager:prompt
         */
         public static final int Spinner_prompt = 7;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#spinnerMode}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#spinnerMode}
           attribute's value can be found in the {@link #Spinner} array.
 
 
@@ -4005,7 +4012,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>dialog</code></td><td>0</td><td></td></tr>
 <tr><td><code>dropdown</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name mpardalos.org.homeworkmanager:spinnerMode
+          @attr name org.mpardalos.homeworkmanager:spinnerMode
         */
         public static final int Spinner_spinnerMode = 8;
         /** Attributes that can be used with a SwitchCompat.
@@ -4017,13 +4024,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #SwitchCompat_android_textOff android:textOff}</code></td><td></td></tr>
            <tr><td><code>{@link #SwitchCompat_android_textOn android:textOn}</code></td><td></td></tr>
            <tr><td><code>{@link #SwitchCompat_android_thumb android:thumb}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_showText mpardalos.org.homeworkmanager:showText}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_splitTrack mpardalos.org.homeworkmanager:splitTrack}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_switchMinWidth mpardalos.org.homeworkmanager:switchMinWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_switchPadding mpardalos.org.homeworkmanager:switchPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_switchTextAppearance mpardalos.org.homeworkmanager:switchTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_thumbTextPadding mpardalos.org.homeworkmanager:thumbTextPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #SwitchCompat_track mpardalos.org.homeworkmanager:track}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_showText org.mpardalos.homeworkmanager:showText}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_splitTrack org.mpardalos.homeworkmanager:splitTrack}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_switchMinWidth org.mpardalos.homeworkmanager:switchMinWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_switchPadding org.mpardalos.homeworkmanager:switchPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_switchTextAppearance org.mpardalos.homeworkmanager:switchTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_thumbTextPadding org.mpardalos.homeworkmanager:thumbTextPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchCompat_track org.mpardalos.homeworkmanager:track}</code></td><td></td></tr>
            </table>
            @see #SwitchCompat_android_textOff
            @see #SwitchCompat_android_textOn
@@ -4060,7 +4067,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int SwitchCompat_android_thumb = 2;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#showText}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#showText}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -4070,11 +4077,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:showText
+          @attr name org.mpardalos.homeworkmanager:showText
         */
         public static final int SwitchCompat_showText = 9;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#splitTrack}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#splitTrack}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -4084,11 +4091,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:splitTrack
+          @attr name org.mpardalos.homeworkmanager:splitTrack
         */
         public static final int SwitchCompat_splitTrack = 8;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#switchMinWidth}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#switchMinWidth}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -4100,11 +4107,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:switchMinWidth
+          @attr name org.mpardalos.homeworkmanager:switchMinWidth
         */
         public static final int SwitchCompat_switchMinWidth = 6;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#switchPadding}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#switchPadding}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -4116,21 +4123,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:switchPadding
+          @attr name org.mpardalos.homeworkmanager:switchPadding
         */
         public static final int SwitchCompat_switchPadding = 7;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#switchTextAppearance}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#switchTextAppearance}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:switchTextAppearance
+          @attr name org.mpardalos.homeworkmanager:switchTextAppearance
         */
         public static final int SwitchCompat_switchTextAppearance = 5;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#thumbTextPadding}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#thumbTextPadding}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
@@ -4142,17 +4149,17 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:thumbTextPadding
+          @attr name org.mpardalos.homeworkmanager:thumbTextPadding
         */
         public static final int SwitchCompat_thumbTextPadding = 4;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#track}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#track}
           attribute's value can be found in the {@link #SwitchCompat} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:track
+          @attr name org.mpardalos.homeworkmanager:track
         */
         public static final int SwitchCompat_track = 3;
         /** Attributes that can be used with a Theme.
@@ -4161,89 +4168,89 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Theme_actionBarDivider mpardalos.org.homeworkmanager:actionBarDivider}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarItemBackground mpardalos.org.homeworkmanager:actionBarItemBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarPopupTheme mpardalos.org.homeworkmanager:actionBarPopupTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarSize mpardalos.org.homeworkmanager:actionBarSize}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarSplitStyle mpardalos.org.homeworkmanager:actionBarSplitStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarStyle mpardalos.org.homeworkmanager:actionBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarTabBarStyle mpardalos.org.homeworkmanager:actionBarTabBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarTabStyle mpardalos.org.homeworkmanager:actionBarTabStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarTabTextStyle mpardalos.org.homeworkmanager:actionBarTabTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarTheme mpardalos.org.homeworkmanager:actionBarTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionBarWidgetTheme mpardalos.org.homeworkmanager:actionBarWidgetTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionButtonStyle mpardalos.org.homeworkmanager:actionButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionDropDownStyle mpardalos.org.homeworkmanager:actionDropDownStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionMenuTextAppearance mpardalos.org.homeworkmanager:actionMenuTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionMenuTextColor mpardalos.org.homeworkmanager:actionMenuTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeBackground mpardalos.org.homeworkmanager:actionModeBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeCloseButtonStyle mpardalos.org.homeworkmanager:actionModeCloseButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeCloseDrawable mpardalos.org.homeworkmanager:actionModeCloseDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeCopyDrawable mpardalos.org.homeworkmanager:actionModeCopyDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeCutDrawable mpardalos.org.homeworkmanager:actionModeCutDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeFindDrawable mpardalos.org.homeworkmanager:actionModeFindDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModePasteDrawable mpardalos.org.homeworkmanager:actionModePasteDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModePopupWindowStyle mpardalos.org.homeworkmanager:actionModePopupWindowStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeSelectAllDrawable mpardalos.org.homeworkmanager:actionModeSelectAllDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeShareDrawable mpardalos.org.homeworkmanager:actionModeShareDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeSplitBackground mpardalos.org.homeworkmanager:actionModeSplitBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeStyle mpardalos.org.homeworkmanager:actionModeStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionModeWebSearchDrawable mpardalos.org.homeworkmanager:actionModeWebSearchDrawable}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionOverflowButtonStyle mpardalos.org.homeworkmanager:actionOverflowButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_actionOverflowMenuStyle mpardalos.org.homeworkmanager:actionOverflowMenuStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_activityChooserViewStyle mpardalos.org.homeworkmanager:activityChooserViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarDivider org.mpardalos.homeworkmanager:actionBarDivider}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarItemBackground org.mpardalos.homeworkmanager:actionBarItemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarPopupTheme org.mpardalos.homeworkmanager:actionBarPopupTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarSize org.mpardalos.homeworkmanager:actionBarSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarSplitStyle org.mpardalos.homeworkmanager:actionBarSplitStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarStyle org.mpardalos.homeworkmanager:actionBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarTabBarStyle org.mpardalos.homeworkmanager:actionBarTabBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarTabStyle org.mpardalos.homeworkmanager:actionBarTabStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarTabTextStyle org.mpardalos.homeworkmanager:actionBarTabTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarTheme org.mpardalos.homeworkmanager:actionBarTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionBarWidgetTheme org.mpardalos.homeworkmanager:actionBarWidgetTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionButtonStyle org.mpardalos.homeworkmanager:actionButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionDropDownStyle org.mpardalos.homeworkmanager:actionDropDownStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionMenuTextAppearance org.mpardalos.homeworkmanager:actionMenuTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionMenuTextColor org.mpardalos.homeworkmanager:actionMenuTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeBackground org.mpardalos.homeworkmanager:actionModeBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeCloseButtonStyle org.mpardalos.homeworkmanager:actionModeCloseButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeCloseDrawable org.mpardalos.homeworkmanager:actionModeCloseDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeCopyDrawable org.mpardalos.homeworkmanager:actionModeCopyDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeCutDrawable org.mpardalos.homeworkmanager:actionModeCutDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeFindDrawable org.mpardalos.homeworkmanager:actionModeFindDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModePasteDrawable org.mpardalos.homeworkmanager:actionModePasteDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModePopupWindowStyle org.mpardalos.homeworkmanager:actionModePopupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeSelectAllDrawable org.mpardalos.homeworkmanager:actionModeSelectAllDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeShareDrawable org.mpardalos.homeworkmanager:actionModeShareDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeSplitBackground org.mpardalos.homeworkmanager:actionModeSplitBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeStyle org.mpardalos.homeworkmanager:actionModeStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionModeWebSearchDrawable org.mpardalos.homeworkmanager:actionModeWebSearchDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionOverflowButtonStyle org.mpardalos.homeworkmanager:actionOverflowButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_actionOverflowMenuStyle org.mpardalos.homeworkmanager:actionOverflowMenuStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_activityChooserViewStyle org.mpardalos.homeworkmanager:activityChooserViewStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #Theme_android_windowIsFloating android:windowIsFloating}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_buttonBarButtonStyle mpardalos.org.homeworkmanager:buttonBarButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_buttonBarStyle mpardalos.org.homeworkmanager:buttonBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_colorAccent mpardalos.org.homeworkmanager:colorAccent}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_colorButtonNormal mpardalos.org.homeworkmanager:colorButtonNormal}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_colorControlActivated mpardalos.org.homeworkmanager:colorControlActivated}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_colorControlHighlight mpardalos.org.homeworkmanager:colorControlHighlight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_colorControlNormal mpardalos.org.homeworkmanager:colorControlNormal}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_colorPrimary mpardalos.org.homeworkmanager:colorPrimary}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_colorPrimaryDark mpardalos.org.homeworkmanager:colorPrimaryDark}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_colorSwitchThumbNormal mpardalos.org.homeworkmanager:colorSwitchThumbNormal}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_dividerHorizontal mpardalos.org.homeworkmanager:dividerHorizontal}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_dividerVertical mpardalos.org.homeworkmanager:dividerVertical}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_dropDownListViewStyle mpardalos.org.homeworkmanager:dropDownListViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_dropdownListPreferredItemHeight mpardalos.org.homeworkmanager:dropdownListPreferredItemHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_editTextBackground mpardalos.org.homeworkmanager:editTextBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_editTextColor mpardalos.org.homeworkmanager:editTextColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_homeAsUpIndicator mpardalos.org.homeworkmanager:homeAsUpIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_listChoiceBackgroundIndicator mpardalos.org.homeworkmanager:listChoiceBackgroundIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_listPopupWindowStyle mpardalos.org.homeworkmanager:listPopupWindowStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_listPreferredItemHeight mpardalos.org.homeworkmanager:listPreferredItemHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_listPreferredItemHeightLarge mpardalos.org.homeworkmanager:listPreferredItemHeightLarge}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_listPreferredItemHeightSmall mpardalos.org.homeworkmanager:listPreferredItemHeightSmall}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_listPreferredItemPaddingLeft mpardalos.org.homeworkmanager:listPreferredItemPaddingLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_listPreferredItemPaddingRight mpardalos.org.homeworkmanager:listPreferredItemPaddingRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_panelBackground mpardalos.org.homeworkmanager:panelBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_panelMenuListTheme mpardalos.org.homeworkmanager:panelMenuListTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_panelMenuListWidth mpardalos.org.homeworkmanager:panelMenuListWidth}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_popupMenuStyle mpardalos.org.homeworkmanager:popupMenuStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_popupWindowStyle mpardalos.org.homeworkmanager:popupWindowStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_searchViewStyle mpardalos.org.homeworkmanager:searchViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_selectableItemBackground mpardalos.org.homeworkmanager:selectableItemBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_selectableItemBackgroundBorderless mpardalos.org.homeworkmanager:selectableItemBackgroundBorderless}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_spinnerDropDownItemStyle mpardalos.org.homeworkmanager:spinnerDropDownItemStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_spinnerStyle mpardalos.org.homeworkmanager:spinnerStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_switchStyle mpardalos.org.homeworkmanager:switchStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_textAppearanceLargePopupMenu mpardalos.org.homeworkmanager:textAppearanceLargePopupMenu}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_textAppearanceListItem mpardalos.org.homeworkmanager:textAppearanceListItem}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_textAppearanceListItemSmall mpardalos.org.homeworkmanager:textAppearanceListItemSmall}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_textAppearanceSearchResultSubtitle mpardalos.org.homeworkmanager:textAppearanceSearchResultSubtitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_textAppearanceSearchResultTitle mpardalos.org.homeworkmanager:textAppearanceSearchResultTitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_textAppearanceSmallPopupMenu mpardalos.org.homeworkmanager:textAppearanceSmallPopupMenu}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_textColorSearchUrl mpardalos.org.homeworkmanager:textColorSearchUrl}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_toolbarNavigationButtonStyle mpardalos.org.homeworkmanager:toolbarNavigationButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_toolbarStyle mpardalos.org.homeworkmanager:toolbarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_windowActionBar mpardalos.org.homeworkmanager:windowActionBar}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_windowActionBarOverlay mpardalos.org.homeworkmanager:windowActionBarOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_windowActionModeOverlay mpardalos.org.homeworkmanager:windowActionModeOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_windowFixedHeightMajor mpardalos.org.homeworkmanager:windowFixedHeightMajor}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_windowFixedHeightMinor mpardalos.org.homeworkmanager:windowFixedHeightMinor}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_windowFixedWidthMajor mpardalos.org.homeworkmanager:windowFixedWidthMajor}</code></td><td></td></tr>
-           <tr><td><code>{@link #Theme_windowFixedWidthMinor mpardalos.org.homeworkmanager:windowFixedWidthMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_buttonBarButtonStyle org.mpardalos.homeworkmanager:buttonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_buttonBarStyle org.mpardalos.homeworkmanager:buttonBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_colorAccent org.mpardalos.homeworkmanager:colorAccent}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_colorButtonNormal org.mpardalos.homeworkmanager:colorButtonNormal}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_colorControlActivated org.mpardalos.homeworkmanager:colorControlActivated}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_colorControlHighlight org.mpardalos.homeworkmanager:colorControlHighlight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_colorControlNormal org.mpardalos.homeworkmanager:colorControlNormal}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_colorPrimary org.mpardalos.homeworkmanager:colorPrimary}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_colorPrimaryDark org.mpardalos.homeworkmanager:colorPrimaryDark}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_colorSwitchThumbNormal org.mpardalos.homeworkmanager:colorSwitchThumbNormal}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_dividerHorizontal org.mpardalos.homeworkmanager:dividerHorizontal}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_dividerVertical org.mpardalos.homeworkmanager:dividerVertical}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_dropDownListViewStyle org.mpardalos.homeworkmanager:dropDownListViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_dropdownListPreferredItemHeight org.mpardalos.homeworkmanager:dropdownListPreferredItemHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_editTextBackground org.mpardalos.homeworkmanager:editTextBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_editTextColor org.mpardalos.homeworkmanager:editTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_homeAsUpIndicator org.mpardalos.homeworkmanager:homeAsUpIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_listChoiceBackgroundIndicator org.mpardalos.homeworkmanager:listChoiceBackgroundIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_listPopupWindowStyle org.mpardalos.homeworkmanager:listPopupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_listPreferredItemHeight org.mpardalos.homeworkmanager:listPreferredItemHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_listPreferredItemHeightLarge org.mpardalos.homeworkmanager:listPreferredItemHeightLarge}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_listPreferredItemHeightSmall org.mpardalos.homeworkmanager:listPreferredItemHeightSmall}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_listPreferredItemPaddingLeft org.mpardalos.homeworkmanager:listPreferredItemPaddingLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_listPreferredItemPaddingRight org.mpardalos.homeworkmanager:listPreferredItemPaddingRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_panelBackground org.mpardalos.homeworkmanager:panelBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_panelMenuListTheme org.mpardalos.homeworkmanager:panelMenuListTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_panelMenuListWidth org.mpardalos.homeworkmanager:panelMenuListWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_popupMenuStyle org.mpardalos.homeworkmanager:popupMenuStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_popupWindowStyle org.mpardalos.homeworkmanager:popupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_searchViewStyle org.mpardalos.homeworkmanager:searchViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_selectableItemBackground org.mpardalos.homeworkmanager:selectableItemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_selectableItemBackgroundBorderless org.mpardalos.homeworkmanager:selectableItemBackgroundBorderless}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_spinnerDropDownItemStyle org.mpardalos.homeworkmanager:spinnerDropDownItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_spinnerStyle org.mpardalos.homeworkmanager:spinnerStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_switchStyle org.mpardalos.homeworkmanager:switchStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_textAppearanceLargePopupMenu org.mpardalos.homeworkmanager:textAppearanceLargePopupMenu}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_textAppearanceListItem org.mpardalos.homeworkmanager:textAppearanceListItem}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_textAppearanceListItemSmall org.mpardalos.homeworkmanager:textAppearanceListItemSmall}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_textAppearanceSearchResultSubtitle org.mpardalos.homeworkmanager:textAppearanceSearchResultSubtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_textAppearanceSearchResultTitle org.mpardalos.homeworkmanager:textAppearanceSearchResultTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_textAppearanceSmallPopupMenu org.mpardalos.homeworkmanager:textAppearanceSmallPopupMenu}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_textColorSearchUrl org.mpardalos.homeworkmanager:textColorSearchUrl}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_toolbarNavigationButtonStyle org.mpardalos.homeworkmanager:toolbarNavigationButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_toolbarStyle org.mpardalos.homeworkmanager:toolbarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_windowActionBar org.mpardalos.homeworkmanager:windowActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_windowActionBarOverlay org.mpardalos.homeworkmanager:windowActionBarOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_windowActionModeOverlay org.mpardalos.homeworkmanager:windowActionModeOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_windowFixedHeightMajor org.mpardalos.homeworkmanager:windowFixedHeightMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_windowFixedHeightMinor org.mpardalos.homeworkmanager:windowFixedHeightMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_windowFixedWidthMajor org.mpardalos.homeworkmanager:windowFixedWidthMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_windowFixedWidthMinor org.mpardalos.homeworkmanager:windowFixedWidthMinor}</code></td><td></td></tr>
            </table>
            @see #Theme_actionBarDivider
            @see #Theme_actionBarItemBackground
@@ -4353,37 +4360,37 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01009c, 0x7f01009d, 0x7f01009e
         };
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarDivider}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarDivider}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarDivider
+          @attr name org.mpardalos.homeworkmanager:actionBarDivider
         */
         public static final int Theme_actionBarDivider = 19;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarItemBackground}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarItemBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarItemBackground
+          @attr name org.mpardalos.homeworkmanager:actionBarItemBackground
         */
         public static final int Theme_actionBarItemBackground = 20;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarPopupTheme}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarPopupTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarPopupTheme
+          @attr name org.mpardalos.homeworkmanager:actionBarPopupTheme
         */
         public static final int Theme_actionBarPopupTheme = 13;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarSize}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarSize}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4403,111 +4410,111 @@ containing a value of this type.
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>wrap_content</code></td><td>0</td><td></td></tr>
 </table>
-          @attr name mpardalos.org.homeworkmanager:actionBarSize
+          @attr name org.mpardalos.homeworkmanager:actionBarSize
         */
         public static final int Theme_actionBarSize = 18;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarSplitStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarSplitStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarSplitStyle
+          @attr name org.mpardalos.homeworkmanager:actionBarSplitStyle
         */
         public static final int Theme_actionBarSplitStyle = 15;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarStyle
+          @attr name org.mpardalos.homeworkmanager:actionBarStyle
         */
         public static final int Theme_actionBarStyle = 14;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarTabBarStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarTabBarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarTabBarStyle
+          @attr name org.mpardalos.homeworkmanager:actionBarTabBarStyle
         */
         public static final int Theme_actionBarTabBarStyle = 9;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarTabStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarTabStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarTabStyle
+          @attr name org.mpardalos.homeworkmanager:actionBarTabStyle
         */
         public static final int Theme_actionBarTabStyle = 8;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarTabTextStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarTabTextStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarTabTextStyle
+          @attr name org.mpardalos.homeworkmanager:actionBarTabTextStyle
         */
         public static final int Theme_actionBarTabTextStyle = 10;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarTheme}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarTheme
+          @attr name org.mpardalos.homeworkmanager:actionBarTheme
         */
         public static final int Theme_actionBarTheme = 16;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionBarWidgetTheme}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionBarWidgetTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionBarWidgetTheme
+          @attr name org.mpardalos.homeworkmanager:actionBarWidgetTheme
         */
         public static final int Theme_actionBarWidgetTheme = 17;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionButtonStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionButtonStyle
+          @attr name org.mpardalos.homeworkmanager:actionButtonStyle
         */
         public static final int Theme_actionButtonStyle = 43;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionDropDownStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionDropDownStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionDropDownStyle
+          @attr name org.mpardalos.homeworkmanager:actionDropDownStyle
         */
         public static final int Theme_actionDropDownStyle = 38;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionMenuTextAppearance}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionMenuTextAppearance}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionMenuTextAppearance
+          @attr name org.mpardalos.homeworkmanager:actionMenuTextAppearance
         */
         public static final int Theme_actionMenuTextAppearance = 21;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionMenuTextColor}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionMenuTextColor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4515,167 +4522,167 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionMenuTextColor
+          @attr name org.mpardalos.homeworkmanager:actionMenuTextColor
         */
         public static final int Theme_actionMenuTextColor = 22;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeBackground}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeBackground
+          @attr name org.mpardalos.homeworkmanager:actionModeBackground
         */
         public static final int Theme_actionModeBackground = 25;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeCloseButtonStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeCloseButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeCloseButtonStyle
+          @attr name org.mpardalos.homeworkmanager:actionModeCloseButtonStyle
         */
         public static final int Theme_actionModeCloseButtonStyle = 24;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeCloseDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeCloseDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeCloseDrawable
+          @attr name org.mpardalos.homeworkmanager:actionModeCloseDrawable
         */
         public static final int Theme_actionModeCloseDrawable = 27;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeCopyDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeCopyDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeCopyDrawable
+          @attr name org.mpardalos.homeworkmanager:actionModeCopyDrawable
         */
         public static final int Theme_actionModeCopyDrawable = 29;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeCutDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeCutDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeCutDrawable
+          @attr name org.mpardalos.homeworkmanager:actionModeCutDrawable
         */
         public static final int Theme_actionModeCutDrawable = 28;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeFindDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeFindDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeFindDrawable
+          @attr name org.mpardalos.homeworkmanager:actionModeFindDrawable
         */
         public static final int Theme_actionModeFindDrawable = 33;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModePasteDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModePasteDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModePasteDrawable
+          @attr name org.mpardalos.homeworkmanager:actionModePasteDrawable
         */
         public static final int Theme_actionModePasteDrawable = 30;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModePopupWindowStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModePopupWindowStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModePopupWindowStyle
+          @attr name org.mpardalos.homeworkmanager:actionModePopupWindowStyle
         */
         public static final int Theme_actionModePopupWindowStyle = 35;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeSelectAllDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeSelectAllDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeSelectAllDrawable
+          @attr name org.mpardalos.homeworkmanager:actionModeSelectAllDrawable
         */
         public static final int Theme_actionModeSelectAllDrawable = 31;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeShareDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeShareDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeShareDrawable
+          @attr name org.mpardalos.homeworkmanager:actionModeShareDrawable
         */
         public static final int Theme_actionModeShareDrawable = 32;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeSplitBackground}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeSplitBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeSplitBackground
+          @attr name org.mpardalos.homeworkmanager:actionModeSplitBackground
         */
         public static final int Theme_actionModeSplitBackground = 26;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeStyle
+          @attr name org.mpardalos.homeworkmanager:actionModeStyle
         */
         public static final int Theme_actionModeStyle = 23;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionModeWebSearchDrawable}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionModeWebSearchDrawable}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionModeWebSearchDrawable
+          @attr name org.mpardalos.homeworkmanager:actionModeWebSearchDrawable
         */
         public static final int Theme_actionModeWebSearchDrawable = 34;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionOverflowButtonStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionOverflowButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionOverflowButtonStyle
+          @attr name org.mpardalos.homeworkmanager:actionOverflowButtonStyle
         */
         public static final int Theme_actionOverflowButtonStyle = 11;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#actionOverflowMenuStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#actionOverflowMenuStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:actionOverflowMenuStyle
+          @attr name org.mpardalos.homeworkmanager:actionOverflowMenuStyle
         */
         public static final int Theme_actionOverflowMenuStyle = 12;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#activityChooserViewStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#activityChooserViewStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:activityChooserViewStyle
+          @attr name org.mpardalos.homeworkmanager:activityChooserViewStyle
         */
         public static final int Theme_activityChooserViewStyle = 50;
         /**
@@ -4685,27 +4692,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int Theme_android_windowIsFloating = 0;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#buttonBarButtonStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#buttonBarButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:buttonBarButtonStyle
+          @attr name org.mpardalos.homeworkmanager:buttonBarButtonStyle
         */
         public static final int Theme_buttonBarButtonStyle = 45;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#buttonBarStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#buttonBarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:buttonBarStyle
+          @attr name org.mpardalos.homeworkmanager:buttonBarStyle
         */
         public static final int Theme_buttonBarStyle = 44;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#colorAccent}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#colorAccent}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4716,11 +4723,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:colorAccent
+          @attr name org.mpardalos.homeworkmanager:colorAccent
         */
         public static final int Theme_colorAccent = 77;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#colorButtonNormal}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#colorButtonNormal}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4731,11 +4738,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:colorButtonNormal
+          @attr name org.mpardalos.homeworkmanager:colorButtonNormal
         */
         public static final int Theme_colorButtonNormal = 81;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#colorControlActivated}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#colorControlActivated}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4746,11 +4753,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:colorControlActivated
+          @attr name org.mpardalos.homeworkmanager:colorControlActivated
         */
         public static final int Theme_colorControlActivated = 79;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#colorControlHighlight}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#colorControlHighlight}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4761,11 +4768,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:colorControlHighlight
+          @attr name org.mpardalos.homeworkmanager:colorControlHighlight
         */
         public static final int Theme_colorControlHighlight = 80;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#colorControlNormal}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#colorControlNormal}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4776,11 +4783,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:colorControlNormal
+          @attr name org.mpardalos.homeworkmanager:colorControlNormal
         */
         public static final int Theme_colorControlNormal = 78;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#colorPrimary}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#colorPrimary}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4791,11 +4798,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:colorPrimary
+          @attr name org.mpardalos.homeworkmanager:colorPrimary
         */
         public static final int Theme_colorPrimary = 75;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#colorPrimaryDark}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#colorPrimaryDark}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4806,11 +4813,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:colorPrimaryDark
+          @attr name org.mpardalos.homeworkmanager:colorPrimaryDark
         */
         public static final int Theme_colorPrimaryDark = 76;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#colorSwitchThumbNormal}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#colorSwitchThumbNormal}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4821,41 +4828,41 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:colorSwitchThumbNormal
+          @attr name org.mpardalos.homeworkmanager:colorSwitchThumbNormal
         */
         public static final int Theme_colorSwitchThumbNormal = 82;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#dividerHorizontal}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#dividerHorizontal}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:dividerHorizontal
+          @attr name org.mpardalos.homeworkmanager:dividerHorizontal
         */
         public static final int Theme_dividerHorizontal = 49;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#dividerVertical}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#dividerVertical}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:dividerVertical
+          @attr name org.mpardalos.homeworkmanager:dividerVertical
         */
         public static final int Theme_dividerVertical = 48;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#dropDownListViewStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#dropDownListViewStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:dropDownListViewStyle
+          @attr name org.mpardalos.homeworkmanager:dropDownListViewStyle
         */
         public static final int Theme_dropDownListViewStyle = 67;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#dropdownListPreferredItemHeight}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#dropdownListPreferredItemHeight}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4867,21 +4874,21 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:dropdownListPreferredItemHeight
+          @attr name org.mpardalos.homeworkmanager:dropdownListPreferredItemHeight
         */
         public static final int Theme_dropdownListPreferredItemHeight = 39;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#editTextBackground}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#editTextBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:editTextBackground
+          @attr name org.mpardalos.homeworkmanager:editTextBackground
         */
         public static final int Theme_editTextBackground = 56;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#editTextColor}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#editTextColor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4889,41 +4896,41 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name mpardalos.org.homeworkmanager:editTextColor
+          @attr name org.mpardalos.homeworkmanager:editTextColor
         */
         public static final int Theme_editTextColor = 55;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#homeAsUpIndicator}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:homeAsUpIndicator
+          @attr name org.mpardalos.homeworkmanager:homeAsUpIndicator
         */
         public static final int Theme_homeAsUpIndicator = 42;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#listChoiceBackgroundIndicator}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#listChoiceBackgroundIndicator}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:listChoiceBackgroundIndicator
+          @attr name org.mpardalos.homeworkmanager:listChoiceBackgroundIndicator
         */
         public static final int Theme_listChoiceBackgroundIndicator = 74;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#listPopupWindowStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#listPopupWindowStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:listPopupWindowStyle
+          @attr name org.mpardalos.homeworkmanager:listPopupWindowStyle
         */
         public static final int Theme_listPopupWindowStyle = 68;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#listPreferredItemHeight}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#listPreferredItemHeight}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4935,11 +4942,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:listPreferredItemHeight
+          @attr name org.mpardalos.homeworkmanager:listPreferredItemHeight
         */
         public static final int Theme_listPreferredItemHeight = 62;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#listPreferredItemHeightLarge}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#listPreferredItemHeightLarge}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4951,11 +4958,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:listPreferredItemHeightLarge
+          @attr name org.mpardalos.homeworkmanager:listPreferredItemHeightLarge
         */
         public static final int Theme_listPreferredItemHeightLarge = 64;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#listPreferredItemHeightSmall}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#listPreferredItemHeightSmall}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4967,11 +4974,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:listPreferredItemHeightSmall
+          @attr name org.mpardalos.homeworkmanager:listPreferredItemHeightSmall
         */
         public static final int Theme_listPreferredItemHeightSmall = 63;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#listPreferredItemPaddingLeft}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#listPreferredItemPaddingLeft}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4983,11 +4990,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:listPreferredItemPaddingLeft
+          @attr name org.mpardalos.homeworkmanager:listPreferredItemPaddingLeft
         */
         public static final int Theme_listPreferredItemPaddingLeft = 65;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#listPreferredItemPaddingRight}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#listPreferredItemPaddingRight}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -4999,31 +5006,31 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:listPreferredItemPaddingRight
+          @attr name org.mpardalos.homeworkmanager:listPreferredItemPaddingRight
         */
         public static final int Theme_listPreferredItemPaddingRight = 66;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#panelBackground}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#panelBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:panelBackground
+          @attr name org.mpardalos.homeworkmanager:panelBackground
         */
         public static final int Theme_panelBackground = 71;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#panelMenuListTheme}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#panelMenuListTheme}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:panelMenuListTheme
+          @attr name org.mpardalos.homeworkmanager:panelMenuListTheme
         */
         public static final int Theme_panelMenuListTheme = 73;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#panelMenuListWidth}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#panelMenuListWidth}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5035,151 +5042,151 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:panelMenuListWidth
+          @attr name org.mpardalos.homeworkmanager:panelMenuListWidth
         */
         public static final int Theme_panelMenuListWidth = 72;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#popupMenuStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#popupMenuStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:popupMenuStyle
+          @attr name org.mpardalos.homeworkmanager:popupMenuStyle
         */
         public static final int Theme_popupMenuStyle = 53;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#popupWindowStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#popupWindowStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:popupWindowStyle
+          @attr name org.mpardalos.homeworkmanager:popupWindowStyle
         */
         public static final int Theme_popupWindowStyle = 54;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#searchViewStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#searchViewStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:searchViewStyle
+          @attr name org.mpardalos.homeworkmanager:searchViewStyle
         */
         public static final int Theme_searchViewStyle = 61;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#selectableItemBackground}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#selectableItemBackground}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:selectableItemBackground
+          @attr name org.mpardalos.homeworkmanager:selectableItemBackground
         */
         public static final int Theme_selectableItemBackground = 46;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#selectableItemBackgroundBorderless}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#selectableItemBackgroundBorderless}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:selectableItemBackgroundBorderless
+          @attr name org.mpardalos.homeworkmanager:selectableItemBackgroundBorderless
         */
         public static final int Theme_selectableItemBackgroundBorderless = 47;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#spinnerDropDownItemStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#spinnerDropDownItemStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:spinnerDropDownItemStyle
+          @attr name org.mpardalos.homeworkmanager:spinnerDropDownItemStyle
         */
         public static final int Theme_spinnerDropDownItemStyle = 41;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#spinnerStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#spinnerStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:spinnerStyle
+          @attr name org.mpardalos.homeworkmanager:spinnerStyle
         */
         public static final int Theme_spinnerStyle = 40;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#switchStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#switchStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:switchStyle
+          @attr name org.mpardalos.homeworkmanager:switchStyle
         */
         public static final int Theme_switchStyle = 57;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#textAppearanceLargePopupMenu}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#textAppearanceLargePopupMenu}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:textAppearanceLargePopupMenu
+          @attr name org.mpardalos.homeworkmanager:textAppearanceLargePopupMenu
         */
         public static final int Theme_textAppearanceLargePopupMenu = 36;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#textAppearanceListItem}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#textAppearanceListItem}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:textAppearanceListItem
+          @attr name org.mpardalos.homeworkmanager:textAppearanceListItem
         */
         public static final int Theme_textAppearanceListItem = 69;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#textAppearanceListItemSmall}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#textAppearanceListItemSmall}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:textAppearanceListItemSmall
+          @attr name org.mpardalos.homeworkmanager:textAppearanceListItemSmall
         */
         public static final int Theme_textAppearanceListItemSmall = 70;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#textAppearanceSearchResultSubtitle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#textAppearanceSearchResultSubtitle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:textAppearanceSearchResultSubtitle
+          @attr name org.mpardalos.homeworkmanager:textAppearanceSearchResultSubtitle
         */
         public static final int Theme_textAppearanceSearchResultSubtitle = 59;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#textAppearanceSearchResultTitle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#textAppearanceSearchResultTitle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:textAppearanceSearchResultTitle
+          @attr name org.mpardalos.homeworkmanager:textAppearanceSearchResultTitle
         */
         public static final int Theme_textAppearanceSearchResultTitle = 58;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#textAppearanceSmallPopupMenu}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#textAppearanceSmallPopupMenu}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:textAppearanceSmallPopupMenu
+          @attr name org.mpardalos.homeworkmanager:textAppearanceSmallPopupMenu
         */
         public static final int Theme_textAppearanceSmallPopupMenu = 37;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#textColorSearchUrl}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#textColorSearchUrl}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5187,31 +5194,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          @attr name mpardalos.org.homeworkmanager:textColorSearchUrl
+          @attr name org.mpardalos.homeworkmanager:textColorSearchUrl
         */
         public static final int Theme_textColorSearchUrl = 60;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#toolbarNavigationButtonStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#toolbarNavigationButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:toolbarNavigationButtonStyle
+          @attr name org.mpardalos.homeworkmanager:toolbarNavigationButtonStyle
         */
         public static final int Theme_toolbarNavigationButtonStyle = 52;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#toolbarStyle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#toolbarStyle}
           attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:toolbarStyle
+          @attr name org.mpardalos.homeworkmanager:toolbarStyle
         */
         public static final int Theme_toolbarStyle = 51;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#windowActionBar}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#windowActionBar}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5221,11 +5228,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:windowActionBar
+          @attr name org.mpardalos.homeworkmanager:windowActionBar
         */
         public static final int Theme_windowActionBar = 1;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#windowActionBarOverlay}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5235,11 +5242,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:windowActionBarOverlay
+          @attr name org.mpardalos.homeworkmanager:windowActionBarOverlay
         */
         public static final int Theme_windowActionBarOverlay = 2;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#windowActionModeOverlay}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#windowActionModeOverlay}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5249,11 +5256,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:windowActionModeOverlay
+          @attr name org.mpardalos.homeworkmanager:windowActionModeOverlay
         */
         public static final int Theme_windowActionModeOverlay = 3;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#windowFixedHeightMajor}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#windowFixedHeightMajor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5268,11 +5275,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:windowFixedHeightMajor
+          @attr name org.mpardalos.homeworkmanager:windowFixedHeightMajor
         */
         public static final int Theme_windowFixedHeightMajor = 7;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#windowFixedHeightMinor}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#windowFixedHeightMinor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5287,11 +5294,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:windowFixedHeightMinor
+          @attr name org.mpardalos.homeworkmanager:windowFixedHeightMinor
         */
         public static final int Theme_windowFixedHeightMinor = 5;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#windowFixedWidthMajor}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#windowFixedWidthMajor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5306,11 +5313,11 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:windowFixedWidthMajor
+          @attr name org.mpardalos.homeworkmanager:windowFixedWidthMajor
         */
         public static final int Theme_windowFixedWidthMajor = 4;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#windowFixedWidthMinor}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#windowFixedWidthMinor}
           attribute's value can be found in the {@link #Theme} array.
 
 
@@ -5325,7 +5332,7 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:windowFixedWidthMinor
+          @attr name org.mpardalos.homeworkmanager:windowFixedWidthMinor
         */
         public static final int Theme_windowFixedWidthMinor = 6;
         /** Attributes that can be used with a Toolbar.
@@ -5336,26 +5343,26 @@ containing a value of this type.
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #Toolbar_android_gravity android:gravity}</code></td><td></td></tr>
            <tr><td><code>{@link #Toolbar_android_minHeight android:minHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_collapseContentDescription mpardalos.org.homeworkmanager:collapseContentDescription}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_collapseIcon mpardalos.org.homeworkmanager:collapseIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetEnd mpardalos.org.homeworkmanager:contentInsetEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetLeft mpardalos.org.homeworkmanager:contentInsetLeft}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetRight mpardalos.org.homeworkmanager:contentInsetRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_contentInsetStart mpardalos.org.homeworkmanager:contentInsetStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_maxButtonHeight mpardalos.org.homeworkmanager:maxButtonHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_navigationContentDescription mpardalos.org.homeworkmanager:navigationContentDescription}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_navigationIcon mpardalos.org.homeworkmanager:navigationIcon}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_popupTheme mpardalos.org.homeworkmanager:popupTheme}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_subtitle mpardalos.org.homeworkmanager:subtitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_subtitleTextAppearance mpardalos.org.homeworkmanager:subtitleTextAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_theme mpardalos.org.homeworkmanager:theme}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_title mpardalos.org.homeworkmanager:title}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMarginBottom mpardalos.org.homeworkmanager:titleMarginBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMarginEnd mpardalos.org.homeworkmanager:titleMarginEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMarginStart mpardalos.org.homeworkmanager:titleMarginStart}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMarginTop mpardalos.org.homeworkmanager:titleMarginTop}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleMargins mpardalos.org.homeworkmanager:titleMargins}</code></td><td></td></tr>
-           <tr><td><code>{@link #Toolbar_titleTextAppearance mpardalos.org.homeworkmanager:titleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_collapseContentDescription org.mpardalos.homeworkmanager:collapseContentDescription}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_collapseIcon org.mpardalos.homeworkmanager:collapseIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetEnd org.mpardalos.homeworkmanager:contentInsetEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetLeft org.mpardalos.homeworkmanager:contentInsetLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetRight org.mpardalos.homeworkmanager:contentInsetRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_contentInsetStart org.mpardalos.homeworkmanager:contentInsetStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_maxButtonHeight org.mpardalos.homeworkmanager:maxButtonHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_navigationContentDescription org.mpardalos.homeworkmanager:navigationContentDescription}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_navigationIcon org.mpardalos.homeworkmanager:navigationIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_popupTheme org.mpardalos.homeworkmanager:popupTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_subtitle org.mpardalos.homeworkmanager:subtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_subtitleTextAppearance org.mpardalos.homeworkmanager:subtitleTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_theme org.mpardalos.homeworkmanager:theme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_title org.mpardalos.homeworkmanager:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMarginBottom org.mpardalos.homeworkmanager:titleMarginBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMarginEnd org.mpardalos.homeworkmanager:titleMarginEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMarginStart org.mpardalos.homeworkmanager:titleMarginStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMarginTop org.mpardalos.homeworkmanager:titleMarginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleMargins org.mpardalos.homeworkmanager:titleMargins}</code></td><td></td></tr>
+           <tr><td><code>{@link #Toolbar_titleTextAppearance org.mpardalos.homeworkmanager:titleTextAppearance}</code></td><td></td></tr>
            </table>
            @see #Toolbar_android_gravity
            @see #Toolbar_android_minHeight
@@ -5401,7 +5408,7 @@ containing a value of this type.
         */
         public static final int Toolbar_android_minHeight = 1;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#collapseContentDescription}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#collapseContentDescription}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5411,21 +5418,21 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:collapseContentDescription
+          @attr name org.mpardalos.homeworkmanager:collapseContentDescription
         */
         public static final int Toolbar_collapseContentDescription = 19;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#collapseIcon}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#collapseIcon}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:collapseIcon
+          @attr name org.mpardalos.homeworkmanager:collapseIcon
         */
         public static final int Toolbar_collapseIcon = 18;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#contentInsetEnd}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#contentInsetEnd}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5437,11 +5444,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:contentInsetEnd
+          @attr name org.mpardalos.homeworkmanager:contentInsetEnd
         */
         public static final int Toolbar_contentInsetEnd = 5;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#contentInsetLeft}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#contentInsetLeft}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5453,11 +5460,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:contentInsetLeft
+          @attr name org.mpardalos.homeworkmanager:contentInsetLeft
         */
         public static final int Toolbar_contentInsetLeft = 6;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#contentInsetRight}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#contentInsetRight}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5469,11 +5476,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:contentInsetRight
+          @attr name org.mpardalos.homeworkmanager:contentInsetRight
         */
         public static final int Toolbar_contentInsetRight = 7;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#contentInsetStart}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#contentInsetStart}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5485,11 +5492,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:contentInsetStart
+          @attr name org.mpardalos.homeworkmanager:contentInsetStart
         */
         public static final int Toolbar_contentInsetStart = 4;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#maxButtonHeight}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#maxButtonHeight}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5501,11 +5508,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:maxButtonHeight
+          @attr name org.mpardalos.homeworkmanager:maxButtonHeight
         */
         public static final int Toolbar_maxButtonHeight = 16;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#navigationContentDescription}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#navigationContentDescription}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5515,31 +5522,31 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:navigationContentDescription
+          @attr name org.mpardalos.homeworkmanager:navigationContentDescription
         */
         public static final int Toolbar_navigationContentDescription = 21;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#navigationIcon}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#navigationIcon}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:navigationIcon
+          @attr name org.mpardalos.homeworkmanager:navigationIcon
         */
         public static final int Toolbar_navigationIcon = 20;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#popupTheme}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#popupTheme}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:popupTheme
+          @attr name org.mpardalos.homeworkmanager:popupTheme
         */
         public static final int Toolbar_popupTheme = 8;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#subtitle}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#subtitle}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5549,31 +5556,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:subtitle
+          @attr name org.mpardalos.homeworkmanager:subtitle
         */
         public static final int Toolbar_subtitle = 3;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#subtitleTextAppearance}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#subtitleTextAppearance}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:subtitleTextAppearance
+          @attr name org.mpardalos.homeworkmanager:subtitleTextAppearance
         */
         public static final int Toolbar_subtitleTextAppearance = 10;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#theme}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#theme}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:theme
+          @attr name org.mpardalos.homeworkmanager:theme
         */
         public static final int Toolbar_theme = 17;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#title}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#title}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5583,11 +5590,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:title
+          @attr name org.mpardalos.homeworkmanager:title
         */
         public static final int Toolbar_title = 2;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#titleMarginBottom}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#titleMarginBottom}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5599,11 +5606,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:titleMarginBottom
+          @attr name org.mpardalos.homeworkmanager:titleMarginBottom
         */
         public static final int Toolbar_titleMarginBottom = 15;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#titleMarginEnd}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#titleMarginEnd}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5615,11 +5622,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:titleMarginEnd
+          @attr name org.mpardalos.homeworkmanager:titleMarginEnd
         */
         public static final int Toolbar_titleMarginEnd = 13;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#titleMarginStart}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#titleMarginStart}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5631,11 +5638,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:titleMarginStart
+          @attr name org.mpardalos.homeworkmanager:titleMarginStart
         */
         public static final int Toolbar_titleMarginStart = 12;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#titleMarginTop}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#titleMarginTop}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5647,11 +5654,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:titleMarginTop
+          @attr name org.mpardalos.homeworkmanager:titleMarginTop
         */
         public static final int Toolbar_titleMarginTop = 14;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#titleMargins}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#titleMargins}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
@@ -5663,17 +5670,17 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:titleMargins
+          @attr name org.mpardalos.homeworkmanager:titleMargins
         */
         public static final int Toolbar_titleMargins = 11;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#titleTextAppearance}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#titleTextAppearance}
           attribute's value can be found in the {@link #Toolbar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name mpardalos.org.homeworkmanager:titleTextAppearance
+          @attr name org.mpardalos.homeworkmanager:titleTextAppearance
         */
         public static final int Toolbar_titleTextAppearance = 9;
         /** Attributes that can be used with a View.
@@ -5683,8 +5690,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #View_android_focusable android:focusable}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingEnd mpardalos.org.homeworkmanager:paddingEnd}</code></td><td></td></tr>
-           <tr><td><code>{@link #View_paddingStart mpardalos.org.homeworkmanager:paddingStart}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_paddingEnd org.mpardalos.homeworkmanager:paddingEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_paddingStart org.mpardalos.homeworkmanager:paddingStart}</code></td><td></td></tr>
            </table>
            @see #View_android_focusable
            @see #View_paddingEnd
@@ -5700,7 +5707,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int View_android_focusable = 0;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#paddingEnd}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#paddingEnd}
           attribute's value can be found in the {@link #View} array.
 
 
@@ -5712,11 +5719,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:paddingEnd
+          @attr name org.mpardalos.homeworkmanager:paddingEnd
         */
         public static final int View_paddingEnd = 2;
         /**
-          <p>This symbol is the offset where the {@link mpardalos.org.homeworkmanager.R.attr#paddingStart}
+          <p>This symbol is the offset where the {@link org.mpardalos.homeworkmanager.R.attr#paddingStart}
           attribute's value can be found in the {@link #View} array.
 
 
@@ -5728,7 +5735,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name mpardalos.org.homeworkmanager:paddingStart
+          @attr name org.mpardalos.homeworkmanager:paddingStart
         */
         public static final int View_paddingStart = 1;
         /** Attributes that can be used with a ViewStubCompat.
