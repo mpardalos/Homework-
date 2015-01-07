@@ -22,7 +22,7 @@
     <string name="action_delete_task">Delete Task</string>
     <string name="enter_due_date_toast">Enter due date or use back button to discard task</string>
     <string name="database_time_format" translatable="false">HH:mm:ss</string>
-    <string name="display_date_format" translatable="false">EEEE, d'\n'MMMM y</string>
+    <string name="display_date_format" translatable="false">EEEE, d\'\n\'MMMM y</string>
 
 
 </resources>
