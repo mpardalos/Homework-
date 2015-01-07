@@ -1402,7 +1402,7 @@ containing a value of this type.
         public static final int dialog=0x7f080013;
         public static final int disableHome=0x7f080009;
         public static final int dropdown=0x7f080014;
-        public static final int due_date_field=0x7f080049;
+        public static final int due_date_field=0x7f080047;
         public static final int due_date_input=0x7f080043;
         public static final int due_date_tag=0x7f08001b;
         public static final int edit_query=0x7f080036;
@@ -1443,7 +1443,7 @@ containing a value of this type.
         public static final int subject_input=0x7f080042;
         public static final int submit_area=0x7f08003f;
         public static final int tabMode=0x7f080002;
-        public static final int task_description_field=0x7f080047;
+        public static final int task_description_field=0x7f080049;
         public static final int task_done_checkbox=0x7f080048;
         public static final int title=0x7f08002a;
         public static final int up=0x7f080020;

@@ -12,8 +12,6 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import java.util.Locale;
-
 
 public class TaskEntryCursorAdapter extends ResourceCursorAdapter implements ListAdapter {
 
@@ -32,7 +30,7 @@ public class TaskEntryCursorAdapter extends ResourceCursorAdapter implements Lis
 
         TextView dueDate = (TextView) view.findViewById(R.id.due_date_field);
         DateTimeFormatter dbFormat = DateTimeFormat.forPattern(context.getResources().getString(R.string.database_date_format));
-        DateTimeFormatter displayFormat = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
+        DateTimeFormatter displayFormat = DateTimeFormat.forPattern(context.getString(R.string.display_date_format));
         LocalDate date = dbFormat.parseLocalDate(cursor.getString(cursor.getColumnIndex
                 (TaskDatabaseHelper.DUE_DATE)));
         dueDate.setText(date.toString(displayFormat));
