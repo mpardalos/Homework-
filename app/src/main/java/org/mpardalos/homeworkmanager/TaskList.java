@@ -1,6 +1,8 @@
 package org.mpardalos.homeworkmanager;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -33,10 +35,6 @@ public class TaskList extends ActionBarListActivity {
         setContentView(R.layout.activity_task_list);
 
         this.mDatabase = new TaskDatabaseHelper(this);
-        this.adapter = new TaskEntryCursorAdapter(this, R.layout.task_entry,
-                                                  mDatabase.getTasks(), 0);
-
-        setListAdapter(this.adapter);
 
         ((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView(getListView());
 
@@ -44,8 +42,10 @@ public class TaskList extends ActionBarListActivity {
         setSupportActionBar(toolbar);
 
         getListView().setOnItemClickListener(mOnClickListener);
+        this.adapter = new TaskEntryCursorAdapter(this, R.layout.task_entry,
+                                                  null, 0);
+        new TaskLoader().execute(mDatabase);
     }
-
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
@@ -70,8 +70,9 @@ public class TaskList extends ActionBarListActivity {
         Log.d("Result received, requestCode", String.valueOf(requestCode));
 
         if (requestCode == ADD_TASK_REQUEST && resultCode == RESULT_OK) {
+            LocalDate date = (LocalDate) data.getSerializableExtra("dueDate");
             mDatabase.insertTask(data.getStringExtra("description"),
-                                 (LocalDate) data.getSerializableExtra("dueDate"),
+                                 date,
                                  data.getStringExtra("subject")
                                 );
             refreshList();
@@ -136,7 +137,23 @@ public class TaskList extends ActionBarListActivity {
     }
 
     private void refreshList() {
-        this.adapter.changeCursor(mDatabase.getTasks());
-        this.adapter.notifyDataSetChanged();
+        new TaskLoader().execute(mDatabase);
+    }
+
+    private class TaskLoader extends AsyncTask<TaskDatabaseHelper, Void, Cursor> {
+        protected void onPreExecute() {
+            findViewById(R.id.loading).setVisibility(View.VISIBLE);
+        }
+
+        public Cursor doInBackground(TaskDatabaseHelper... databaseHelpers) {
+            return databaseHelpers[0].getTasks();
+        }
+
+        protected void onPostExecute(Cursor result) {
+            adapter.changeCursor(mDatabase.getTasks());
+            setListAdapter(adapter);
+            adapter.notifyDataSetChanged();
+            findViewById(R.id.loading).setVisibility(View.GONE);
+        }
     }
 }

@@ -7,13 +7,18 @@ android {
         applicationId "org.mpardalos.homeworkmanager"
         minSdkVersion 15
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "alpha-1.01-fix"
     }
     buildTypes {
         release {
-            proguardFile 'C:/Users/Michalis/AndroidStudioProjects/HomeworkList/app/proguard-rules.pro'
-
+            minifyEnabled false
+            //proguardFile 'C:/Users/Michalis/AndroidStudioProjects/HomeworkList/app/proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            //proguardFile 'C:/Users/Michalis/AndroidStudioProjects/HomeworkList/app/proguard-rules.pro'
+            debuggable true
         }
     }
 }
