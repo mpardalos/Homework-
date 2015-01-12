@@ -16,6 +16,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 import java.io.IOError;
+import java.util.HashMap;
 
 
 public class TaskDatabaseHelper extends SQLiteAssetHelper {
@@ -37,6 +38,8 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
     public static final String PERIOD_START = "PeriodStart";
     public static final String PERIOD_END = "PeriodEnd";
     public static final String DAY_OF_WEEK = "WeekDay";
+
+    protected static HashMap<String, Integer> subjectIdMap;
 
     Context mContext;
 
@@ -72,14 +75,23 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
     }
 
     public int getSubjectId(String subject) {
-        SQLiteDatabase db = getReadableDatabase();
-        String query = "SELECT _id FROM " + SUBJECTS_TABLE + " WHERE " + SUBJECT_NAME + "=?";
+        //Builds the Hashmap the first time it is used
+        if (subjectIdMap == null) {
+            SQLiteDatabase db = getReadableDatabase();
+            String query = "SELECT " + SUBJECT_NAME + ", _id FROM " + SUBJECTS_TABLE;
+            Cursor c = db.rawQuery(query, null);
+            c.moveToPosition(-1); //initialize it to -1 so we can iterate on it and not miss the
+            // first item
+            int idColumn = c.getColumnIndex("_id");
+            int nameColumn = c.getColumnIndex(SUBJECT_NAME);
+            subjectIdMap = new HashMap<>();
 
-        String[] selectionArgs = new String[]{subject};
+            while (c.moveToNext()) {
+                subjectIdMap.put(c.getString(nameColumn), c.getInt(idColumn));
+            }
+        }
+        return subjectIdMap.get(subject);
 
-        Cursor c = db.rawQuery(query, selectionArgs);
-        c.moveToFirst();
-        return c.getInt(c.getColumnIndex("_id"));
     }
 
     public Cursor getTasks() {
