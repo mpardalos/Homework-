@@ -25,7 +25,7 @@ public class DatePickerFragment extends DialogFragment
 
         DateTime currentDate = DateTime.now();
         int defaultYear = currentDate.getYear();
-        int defaultMonth = currentDate.getMonthOfYear();
+        int defaultMonth = currentDate.getMonthOfYear() - 1; //JodaTime uses 0-11, android uses 1-12
         int defaultDay = currentDate.getDayOfMonth();
 
         return new DatePickerDialog(getActivity(), this, defaultYear, defaultMonth, defaultDay);
