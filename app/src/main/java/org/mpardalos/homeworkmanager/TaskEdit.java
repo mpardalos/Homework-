@@ -42,7 +42,7 @@ public class TaskEdit extends TaskAdd {
         dueDateInput.setText(((LocalDate) getIntent().getSerializableExtra(TaskDatabaseHelper
                                                                                    .DUE_DATE))
                                      .toString(df));
-        dueDateInput.setTag(R.id.due_date_tag, getIntent().getSerializableExtra
+        dueDateInput.setTag(R.id.due_date, getIntent().getSerializableExtra
                 (TaskDatabaseHelper.DUE_DATE));
 
         ((EditText) findViewById(R.id.description_input)).setText(getIntent().getStringExtra

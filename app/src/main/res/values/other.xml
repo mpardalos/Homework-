@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="due_date_tag" type="id"/>
-    <item name="database_task_id" type="id"/>
+    <item name="due_date" type="id"/>
+    <item name="task_object" type="id"/>
+    <item name="view_holder" type="id"/>
 </resources>

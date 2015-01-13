@@ -1,7 +1,6 @@
 package org.mpardalos.homeworkmanager;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,6 +18,8 @@ import net.danlew.android.joda.JodaTimeAndroid;
 
 import org.joda.time.LocalDate;
 
+import java.util.List;
+
 
 public class TaskList extends ActionBarListActivity {
 
@@ -26,7 +27,7 @@ public class TaskList extends ActionBarListActivity {
     public static final int EDIT_TASK_REQUEST = 3;
 
     TaskDatabaseHelper mDatabase;
-    TaskEntryCursorAdapter adapter;
+    TaskAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +43,20 @@ public class TaskList extends ActionBarListActivity {
         setSupportActionBar(toolbar);
 
         getListView().setOnItemClickListener(mOnClickListener);
-        this.adapter = new TaskEntryCursorAdapter(this, R.layout.task_entry,
-                                                  null, 0);
-        new TaskLoader().execute(mDatabase);
+        this.adapter = new TaskAdapter(this, null);
+        new TaskLoader().execute((Void) null);
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         l.setSelection(position);
-        LocalDate dueDate = (LocalDate) (v.findViewById(R.id.due_date_field).getTag(R.id.due_date_tag));
+        LocalDate dueDate = ((Task) v.getTag(R.id.task_object)).getDueDate();
         String description = (String) ((TextView) v.findViewById(R.id.task_description_field))
                 .getText();
         String subject = (String) ((TextView) v.findViewById(R.id.subject_field)).getText();
-        int databaseId = (Integer) v.getTag(R.id.database_task_id);
+        int databaseId = ((Task) v.getTag(R.id.task_object)).getDatabaseId();
 
+        //Maybe we should pass the Task object directly instead of its fields
         Intent intent = new Intent(getApplicationContext(), TaskEdit.class);
         intent.putExtra(TaskDatabaseHelper.DUE_DATE, dueDate);
         intent.putExtra(TaskDatabaseHelper.DESCRIPTION, description);
@@ -107,7 +108,7 @@ public class TaskList extends ActionBarListActivity {
         switch (id) {
             case R.id.delete_tasks_button:
                 deleteAllTasks();
-                this.adapter.changeCursor(mDatabase.getTasks());
+                this.adapter.changeTaskList(mDatabase.getTasks());
                 this.adapter.notifyDataSetChanged();
                 break;
         }
@@ -121,7 +122,8 @@ public class TaskList extends ActionBarListActivity {
      * the checkbox
      */
     public void onItemChecked(View checkbox) {
-        int itemId = (Integer.parseInt(((View) checkbox.getParent()).getTag(R.id.database_task_id).toString()));
+        int itemId = ((Task) ((View) checkbox.getParent()).getTag(R.id.task_object))
+                .getDatabaseId();
         boolean checked = ((CheckBox) checkbox).isChecked();
 
         mDatabase.setDone(itemId, checked);
@@ -137,20 +139,21 @@ public class TaskList extends ActionBarListActivity {
     }
 
     private void refreshList() {
-        new TaskLoader().execute(mDatabase);
+        new TaskLoader().execute((Void) null);
     }
 
-    private class TaskLoader extends AsyncTask<TaskDatabaseHelper, Void, Cursor> {
+    private class TaskLoader extends AsyncTask<Void, Void, List<Task>> {
         protected void onPreExecute() {
             findViewById(R.id.loading).setVisibility(View.VISIBLE);
         }
 
-        public Cursor doInBackground(TaskDatabaseHelper... databaseHelpers) {
-            return databaseHelpers[0].getTasks();
+        //Bad, bad, bad decision, hopefully only temporary
+        public List<Task> doInBackground(Void... databaseHelpers) {
+            return mDatabase.getTasks();
         }
 
-        protected void onPostExecute(Cursor result) {
-            adapter.changeCursor(mDatabase.getTasks());
+        protected void onPostExecute(List<Task> result) {
+            adapter.changeTaskList(result);
             setListAdapter(adapter);
             adapter.notifyDataSetChanged();
             findViewById(R.id.loading).setVisibility(View.GONE);

@@ -113,7 +113,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         EditText dateInput = (EditText) findViewById(R.id.due_date_input);
         DateTimeFormatter df = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
         dateInput.setText(date.toString(df));
-        dateInput.setTag(R.id.due_date_tag, date);
+        dateInput.setTag(R.id.due_date, date);
     }
 
     //Thanks to @Akhil Jain at from stackoverflow for this method
@@ -133,7 +133,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
     protected boolean setResultFromInput(int result_code) {
         String subject = ((TextView) ((Spinner) findViewById(R.id.subject_input))
                 .getSelectedView().findViewById(android.R.id.text1)).getText().toString();
-        LocalDate dueDate = (LocalDate) findViewById(R.id.due_date_input).getTag(R.id.due_date_tag);
+        LocalDate dueDate = (LocalDate) findViewById(R.id.due_date_input).getTag(R.id.due_date);
         String description = ((EditText) findViewById(R.id.description_input)).getText()
                 .toString();
 

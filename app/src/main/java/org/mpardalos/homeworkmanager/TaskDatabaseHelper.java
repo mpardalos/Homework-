@@ -16,7 +16,9 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 import java.io.IOError;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class TaskDatabaseHelper extends SQLiteAssetHelper {
@@ -94,8 +96,9 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
     }
 
-    public Cursor getTasks() {
+    public List<Task> getTasks() {
         SQLiteDatabase db = getReadableDatabase();
+        DateTimeFormatter dbFormat = DateTimeFormat.forPattern(mContext.getString(R.string.database_date_format));
 
         Cursor c = db.rawQuery(
                 "SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME +
@@ -107,8 +110,22 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
                         TASKS_TABLE +
                         " INNER JOIN " + SUBJECTS_TABLE + " ON (" + TASKS_TABLE + "." +
                         "SubjectId" + "=" + SUBJECTS_TABLE + "." + "\"_id\"" + ")", null);
-        c.moveToFirst();
-        return c;
+        c.moveToPosition(-1);
+
+        int subjColumn = c.getColumnIndex(SUBJECT_NAME);
+        int descriptionColumn = c.getColumnIndex(DESCRIPTION);
+        int idColumn = c.getColumnIndex("_id");
+        int doneColumn = c.getColumnIndex(TASK_DONE);
+        int dateColumn = c.getColumnIndex(DUE_DATE);
+
+        List<Task> tasks = new ArrayList<>();
+        while (c.moveToNext()) {
+            tasks.add(new Task(c.getString(subjColumn), c.getString(descriptionColumn),
+                               dbFormat.parseLocalDate(c.getString(dateColumn)), c.getInt(idColumn),
+                               c.getInt(doneColumn) != 0));
+        }
+
+        return tasks;
     }
 
     public void setDone(int taskId, boolean checked) {
