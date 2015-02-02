@@ -106,6 +106,16 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
 
     public void onDueDateClicked(View view) {
         DatePickerFragment dateInput = new DatePickerFragment();
+        LocalDate previousInput = (LocalDate) view.getTag(R.id.due_date);
+        if (!(previousInput == null)) {
+            Bundle args = new Bundle();
+            args.putSerializable("previousInput", previousInput);
+            dateInput.setArguments(args);
+        } else {
+            Bundle args = new Bundle();
+            args.putSerializable("previousInput", LocalDate.now());
+            dateInput.setArguments(args);
+        }
         dateInput.show(getFragmentManager(), "dueDateInput");
     }
 

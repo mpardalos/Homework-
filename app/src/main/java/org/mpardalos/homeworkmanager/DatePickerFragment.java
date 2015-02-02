@@ -9,7 +9,6 @@ import android.widget.DatePicker;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
 
@@ -23,10 +22,12 @@ public class DatePickerFragment extends DialogFragment
         // Use the current date as the default date in the picker
         JodaTimeAndroid.init(this.getActivity());
 
-        DateTime currentDate = DateTime.now();
-        int defaultYear = currentDate.getYear();
-        int defaultMonth = currentDate.getMonthOfYear() - 1; //JodaTime uses 0-11, android uses 1-12
-        int defaultDay = currentDate.getDayOfMonth();
+        LocalDate previousInput = (LocalDate) getArguments().getSerializable("previousInput");
+
+        int defaultYear = previousInput.getYear();
+        int defaultMonth = previousInput.getMonthOfYear() - 1; //JodaTime uses 0-11,
+        // android uses 1-12
+        int defaultDay = previousInput.getDayOfMonth();
 
         return new DatePickerDialog(getActivity(), this, defaultYear, defaultMonth, defaultDay);
     }
@@ -45,8 +46,8 @@ public class DatePickerFragment extends DialogFragment
 
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        parent.onDateEntered(new LocalDate(year, month + 1, day));//month + 1 because it has to
-        // be from 1-12 for joda and android uses 0-11
+        parent.onDateEntered(new LocalDate(year, month + 1, day));
+        //month + 1 because it has to be from 1-12 for joda and android uses 0-11
     }
 
     public interface onDateEnteredListener {
