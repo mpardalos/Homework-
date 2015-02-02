@@ -63,6 +63,24 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         return c;
     }
 
+    public List<String> getSubjectsInDay(String day) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME + " FROM " +
+                                       SUBJECTS_TABLE +
+                                       " INNER JOIN " + TIMETABLE + " ON " +
+                                       "(" + TIMETABLE + "." + SUBJECT_ID + "==" + SUBJECTS_TABLE
+                                       + "._id)" +
+                                       " WHERE " + TIMETABLE + "." + DAY_OF_WEEK + "== ?;"
+                , new String[]{day.toLowerCase()});
+        c.moveToPosition(-1);
+        List<String> subjectList = new ArrayList<>();
+        int index = c.getColumnIndex(SUBJECT_NAME);
+        while (c.moveToNext()) {
+            subjectList.add(c.getString(index));
+        }
+        return subjectList;
+    }
+
     public Cursor getSubjects() {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
@@ -230,6 +248,11 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
     }
 
     public String getSubjectAtDateTime(DateTime dateTime) throws IllegalArgumentException {
+        if (dateTime.dayOfWeek().getAsText().equals("Saturday") || dateTime.dayOfWeek().getAsText
+                ().equals("Sunday")) {
+            throw new IllegalArgumentException("There is no lesson on a weekend");
+        }
+
         Cursor periods = getPeriods();
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
@@ -239,7 +262,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         DateTimeFormatter timeFormatter = DateTimeFormat.forPattern(mContext.getString(R.string.database_time_format));
         int resultPeriod = -1;
 
-
+        //Find the period
         periods.moveToPosition(-1);
         while (periods.moveToNext()) {
             startTime = timeFormatter.parseLocalTime(periods.getString(periods.getColumnIndex
@@ -247,6 +270,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
             endTime = timeFormatter.parseLocalTime(periods.getString(periods.getColumnIndex
                     (PERIOD_END)));
 
+            //TODO allow for this to be true even 2-3 minutes after the end of the period
             if (startTime.compareTo(requestedTime) <= 0 && requestedTime.compareTo(endTime) < 0) {
                 resultPeriod = periods.getInt(periods.getColumnIndex("_id"));
                 break;
@@ -254,7 +278,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         }
 
         if (resultPeriod == -1) {
-            throw new IllegalArgumentException("There is no class at: " + requestedTime.toString
+            throw new IllegalArgumentException("There is no lesson at: " + requestedTime.toString
                     (timeFormatter));
         }
 
@@ -270,7 +294,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
                 , selectionArgs);
 
         c.moveToFirst();
-        return c.getString(0);
+        return c.getString(c.getColumnIndex(SUBJECT_NAME));
     }
 
 }

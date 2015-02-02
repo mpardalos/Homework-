@@ -58,11 +58,27 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         subjectSpinner.setAdapter(subjectAdapter);
 
         //auto-complete subject based on time
+        String currentSubject = null;
         try {
-            subjectSpinner.setSelection(getIndex(subjectSpinner, mDatabase.getSubjectAtDateTime
-                    (DateTime.now())));
+            currentSubject = mDatabase.getSubjectAtDateTime(DateTime.now());
+            subjectSpinner.setSelection(getIndex(subjectSpinner, currentSubject));
         } catch (IllegalArgumentException e) {
             Log.d("Subject not set: ", e.getMessage());
+        }
+
+        if (currentSubject != null) {
+            for (LocalDate date = LocalDate.now().plusDays(1);
+                 !(date.dayOfWeek().get() == LocalDate.now().dayOfWeek().get());
+                 date = date.plusDays(1)) {
+
+                List<String> subjectsInDay = mDatabase.getSubjectsInDay(date.dayOfWeek()
+                                                                                .getAsText()
+                                                                                .toLowerCase());
+                if (subjectsInDay.contains(currentSubject)) {
+                    onDateEntered(date);
+                    break;
+                }
+            }
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
