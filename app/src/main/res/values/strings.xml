@@ -23,6 +23,10 @@
     <string name="enter_due_date_toast">Enter due date or use back button to discard task</string>
     <string name="database_time_format" translatable="false">HH:mm:ss</string>
     <string name="display_date_format" translatable="false">EEEE, d\'\n\'MMMM y</string>
-
+    <string name="title_activity_setup">SetupActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="add_subject_button">Add Subject</string>
+    <string name="edit_timetable_button">Edit Timetable</string>
+    <string name="delete">Delete</string>
 
 </resources>

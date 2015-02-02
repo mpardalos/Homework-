@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="org.mpardalos.homeworkmanager.TaskList"
+            android:name=".TaskList"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -18,20 +18,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.mpardalos.homeworkmanager.TaskAdd"
+            android:name=".TaskAdd"
             android:label="@string/title_activity_task_add"
-            android:parentActivityName="org.mpardalos.homeworkmanager.TaskList">
+            android:parentActivityName=".TaskList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.mpardalos.homeworkmanager.TaskList"/>
         </activity>
         <activity
-            android:name="org.mpardalos.homeworkmanager.TaskEdit"
+            android:name=".TaskEdit"
             android:label="@string/title_activity_task_details"
-            android:parentActivityName="org.mpardalos.homeworkmanager.TaskList">
+            android:parentActivityName=".TaskList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.mpardalos.homeworkmanager.TaskList"/>
+        </activity>
+        <activity
+            android:name=".SetupActivity"
+            android:label="@string/title_activity_setup">
         </activity>
     </application>
 

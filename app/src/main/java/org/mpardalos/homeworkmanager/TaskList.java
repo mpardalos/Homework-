@@ -111,6 +111,10 @@ public class TaskList extends ActionBarListActivity {
                 this.adapter.changeTaskList(mDatabase.getTasks());
                 this.adapter.notifyDataSetChanged();
                 break;
+
+            case R.id.edit_timetable_button:
+                Intent intent = new Intent(this, SetupActivity.class);
+                startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

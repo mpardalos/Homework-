@@ -3,4 +3,5 @@
     <item name="due_date" type="id"/>
     <item name="task_object" type="id"/>
     <item name="view_holder" type="id"/>
+    <item name="subject_name" type="id"/>
 </resources>

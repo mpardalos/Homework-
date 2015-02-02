@@ -55,7 +55,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
         qb.setTables(PERIOD_TABLE);
-        String[] columns = {"_id", "PeriodStart", "PeriodEnd"};
+        String[] columns = {"_id", PERIOD_START, PERIOD_END};
 
         Cursor c = qb.query(db, columns, null, null, null, null, null);
         c.moveToFirst();
@@ -212,6 +212,21 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         } else {
             Log.d("deleteTask", "Not deleting any task");
         }
+    }
+
+    public void deleteSubject(int subjectId) {
+        if (!(subjectId == -1)) {
+            SQLiteDatabase db = getWritableDatabase();
+            db.delete(SUBJECTS_TABLE, "_id=" + String.valueOf(subjectId), null);
+            Log.d("Deleted subject. Id", String.valueOf(subjectId));
+        } else {
+            Log.d("deleteSubject", "Not deleting any subject");
+        }
+    }
+
+    public void deleteSubject(String subjectName) {
+        int subjectId = getSubjectId(subjectName);
+        deleteSubject(subjectId);
     }
 
     public String getSubjectAtDateTime(DateTime dateTime) throws IllegalArgumentException {

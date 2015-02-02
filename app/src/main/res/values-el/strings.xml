@@ -19,5 +19,6 @@
     <string name="action_delete_task">Διαγραφή Εργασίας</string>
     <string name="enter_due_date_toast">Εισάγετε την ημερομηνία παράδοσης ή πατήστε το κουμπί πίσω για να πετάξετε την εργασία</string>
     <string name="title_activity_task_details">Επεξεργασία Εργασίας</string>
+    <string name="delete">Διαγραφή</string>
 
 </resources>

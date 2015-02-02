@@ -10,4 +10,10 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/edit_timetable_button"
+        android:enabled="false"
+        android:title="@string/edit_timetable_button"
+        app:showAsAction="never"
+        />
 </menu>
