@@ -66,24 +66,26 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
             Log.d("Subject not set: ", e.getMessage());
         }
 
+        //Auto-complete dueDate based on current subject and its next occurrence
         if (currentSubject != null) {
-            for (LocalDate date = LocalDate.now().plusDays(1);
-                 !(date.dayOfWeek().get() == LocalDate.now().dayOfWeek().get());
-                 date = date.plusDays(1)) {
-
-                List<String> subjectsInDay = mDatabase.getSubjectsInDay(date.dayOfWeek()
+            LocalDate dateIterator = LocalDate.now();
+            //Iterate on every day starting from tomorrow until 7 days from today.
+            //(I think a week=7 days everywhere but this should be checked)
+            for (int i = 1; i <= 7; i++) {
+                dateIterator = dateIterator.plusDays(1);
+                List<String> subjectsInDay = mDatabase.getSubjectsInDay(dateIterator.dayOfWeek()
                                                                                 .getAsText()
                                                                                 .toLowerCase());
                 if (subjectsInDay.contains(currentSubject)) {
-                    onDateEntered(date);
+                    onDateEntered(dateIterator);
                     break;
                 }
             }
+
+            Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
+            setSupportActionBar(toolbar);
+
         }
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
-        setSupportActionBar(toolbar);
-
     }
 
     @Override
