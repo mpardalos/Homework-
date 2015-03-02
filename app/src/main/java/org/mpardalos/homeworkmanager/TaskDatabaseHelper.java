@@ -48,19 +48,6 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         this.mContext = context;
     }
 
-    Cursor getPeriods() {
-        SQLiteDatabase db = getReadableDatabase();
-        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-
-        qb.setTables(PERIOD_TABLE);
-        String[] columns = {"_id", PERIOD_START, PERIOD_END};
-
-        Cursor c = qb.query(db, columns, null, null, null, null, null);
-        c.moveToFirst();
-
-        return c;
-    }
-
     public List<String> getSubjectsInDay(String day) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME + " FROM " +
@@ -305,6 +292,19 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         String result = c.getString(c.getColumnIndex(SUBJECT_NAME));
         c.close();
         return result;
+    }
+
+    Cursor getPeriods() {
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        qb.setTables(PERIOD_TABLE);
+        String[] columns = {"_id", PERIOD_START, PERIOD_END};
+
+        Cursor c = qb.query(db, columns, null, null, null, null, null);
+        c.moveToFirst();
+
+        return c;
     }
 
 }

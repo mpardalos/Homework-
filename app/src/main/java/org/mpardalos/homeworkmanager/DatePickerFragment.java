@@ -15,6 +15,10 @@ import org.joda.time.LocalDate;
 public class DatePickerFragment extends DialogFragment
         implements DatePickerDialog.OnDateSetListener {
 
+    public interface onDateEnteredListener {
+        public void onDateEntered(LocalDate date);
+    }
+
     onDateEnteredListener parent;
 
     @Override
@@ -48,9 +52,5 @@ public class DatePickerFragment extends DialogFragment
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
         parent.onDateEntered(new LocalDate(year, month + 1, day));
         //month + 1 because it has to be from 1-12 for joda and android uses 0-11
-    }
-
-    public interface onDateEnteredListener {
-        public void onDateEntered(LocalDate date);
     }
 }

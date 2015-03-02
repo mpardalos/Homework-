@@ -33,60 +33,6 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
     protected TaskDatabaseHelper mDatabase;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        JodaTimeAndroid.init(this);
-        setContentView(R.layout.activity_task_add_or_edit);
-        this.mDatabase = new TaskDatabaseHelper(this);
-
-        //Populate subject selection spinner
-        Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
-        Cursor subjectCursor = mDatabase.getSubjects();
-        List<String> subjects = new ArrayList<>();
-        subjectCursor.moveToPosition(-1);
-        /* points the cursor to the next entry and also
-        stops the loop if we reached the last element */
-        while (subjectCursor.moveToNext()) {
-            //Gets the subject that the cursor is currently pointing to
-            subjects.add(subjectCursor.getString(1));
-        }
-
-
-        ArrayAdapter<String> subjectAdapter =
-                new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subjects);
-        subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        subjectSpinner.setAdapter(subjectAdapter);
-
-        //auto-complete subject based on time
-        String currentSubject = null;
-        try {
-            currentSubject = mDatabase.getSubjectAtDateTime(DateTime.now());
-            subjectSpinner.setSelection(getIndex(subjectSpinner, currentSubject));
-        } catch (IllegalArgumentException e) {
-            Log.d("Subject not set: ", e.getMessage());
-        }
-
-        //Auto-complete dueDate based on current subject and its next occurrence
-        if (currentSubject != null) {
-            LocalDate dateIterator = LocalDate.now();
-            //Iterate on every day starting from tomorrow until 7 days from today.
-            //(I think a week=7 days everywhere but this should be checked)
-            for (int i = 1; i <= 7; i++) {
-                dateIterator = dateIterator.plusDays(1);
-                List<String> subjectsInDay = mDatabase.getSubjectsInDay(dateIterator.dayOfWeek()
-                                                                                .getAsText()
-                                                                                .toLowerCase());
-                if (subjectsInDay.contains(currentSubject)) {
-                    onDateEntered(dateIterator);
-                    break;
-                }
-            }
-        }
-        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
-        setSupportActionBar(toolbar);
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_task_add, menu);
@@ -139,6 +85,60 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         DateTimeFormatter df = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
         dateInput.setText(date.toString(df));
         dateInput.setTag(R.id.due_date, date);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        JodaTimeAndroid.init(this);
+        setContentView(R.layout.activity_task_add_or_edit);
+        this.mDatabase = new TaskDatabaseHelper(this);
+
+        //Populate subject selection spinner
+        Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
+        Cursor subjectCursor = mDatabase.getSubjects();
+        List<String> subjects = new ArrayList<>();
+        subjectCursor.moveToPosition(-1);
+        /* points the cursor to the next entry and also
+        stops the loop if we reached the last element */
+        while (subjectCursor.moveToNext()) {
+            //Gets the subject that the cursor is currently pointing to
+            subjects.add(subjectCursor.getString(1));
+        }
+
+
+        ArrayAdapter<String> subjectAdapter =
+                new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subjects);
+        subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        subjectSpinner.setAdapter(subjectAdapter);
+
+        //auto-complete subject based on time
+        String currentSubject = null;
+        try {
+            currentSubject = mDatabase.getSubjectAtDateTime(DateTime.now());
+            subjectSpinner.setSelection(getIndex(subjectSpinner, currentSubject));
+        } catch (IllegalArgumentException e) {
+            Log.d("Subject not set: ", e.getMessage());
+        }
+
+        //Auto-complete dueDate based on current subject and its next occurrence
+        if (currentSubject != null) {
+            LocalDate dateIterator = LocalDate.now();
+            //Iterate on every day starting from tomorrow until 7 days from today.
+            //(I think a week=7 days everywhere but this should be checked)
+            for (int i = 1; i <= 7; i++) {
+                dateIterator = dateIterator.plusDays(1);
+                List<String> subjectsInDay = mDatabase.getSubjectsInDay(dateIterator.dayOfWeek()
+                                                                                .getAsText()
+                                                                                .toLowerCase());
+                if (subjectsInDay.contains(currentSubject)) {
+                    onDateEntered(dateIterator);
+                    break;
+                }
+            }
+        }
+        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
+        setSupportActionBar(toolbar);
     }
 
     //Thanks to @Akhil Jain at from stackoverflow for this method

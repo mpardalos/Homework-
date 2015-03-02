@@ -19,29 +19,27 @@ import java.util.List;
 
 public class TaskList extends ActionBarListActivity {
 
+    private class TaskLoader extends AsyncTask<Void, Void, List<Task>> {
+        //Bad, bad, bad decision, hopefully only temporary
+        public List<Task> doInBackground(Void... databaseHelpers) {
+            return mDatabase.getTasks();
+        }
+
+        protected void onPreExecute() {
+            findViewById(R.id.loading).setVisibility(View.VISIBLE);
+        }
+
+        protected void onPostExecute(List<Task> result) {
+            adapter.changeTaskList(result);
+            setListAdapter(adapter);
+            adapter.notifyDataSetChanged();
+            findViewById(R.id.loading).setVisibility(View.GONE);
+        }
+    }
     public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
     public static final int EDIT_TASK_REQUEST = 3;
-
     TaskDatabaseHelper mDatabase;
     TaskAdapter adapter;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        JodaTimeAndroid.init(this);
-        setContentView(R.layout.activity_task_list);
-
-        this.mDatabase = new TaskDatabaseHelper(this);
-
-        ((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView(getListView());
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
-        setSupportActionBar(toolbar);
-
-        getListView().setOnItemClickListener(mOnClickListener);
-        this.adapter = new TaskAdapter(this, null);
-        new TaskLoader().execute((Void) null);
-    }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
@@ -50,22 +48,6 @@ public class TaskList extends ActionBarListActivity {
         intent.putExtra("task", (Task) v.getTag(R.id.task_object));
 
         startActivityForResult(intent, EDIT_TASK_REQUEST);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == ADD_TASK_REQUEST && resultCode == RESULT_OK) {
-            mDatabase.insertTask((Task) data.getParcelableExtra("task"));//task must implement
-            // Parcelable
-            refreshList();
-
-        } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_DELETE_TASK) {
-            mDatabase.deleteTask(((Task) data.getParcelableExtra("task")).getDatabaseId());
-            refreshList();
-        } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_EDIT_TASK) {
-            mDatabase.modifyTask((Task) data.getParcelableExtra("task"));
-            refreshList();
-        }
     }
 
     @Override
@@ -124,21 +106,37 @@ public class TaskList extends ActionBarListActivity {
         new TaskLoader().execute((Void) null);
     }
 
-    private class TaskLoader extends AsyncTask<Void, Void, List<Task>> {
-        protected void onPreExecute() {
-            findViewById(R.id.loading).setVisibility(View.VISIBLE);
-        }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        JodaTimeAndroid.init(this);
+        setContentView(R.layout.activity_task_list);
 
-        //Bad, bad, bad decision, hopefully only temporary
-        public List<Task> doInBackground(Void... databaseHelpers) {
-            return mDatabase.getTasks();
-        }
+        this.mDatabase = new TaskDatabaseHelper(this);
 
-        protected void onPostExecute(List<Task> result) {
-            adapter.changeTaskList(result);
-            setListAdapter(adapter);
-            adapter.notifyDataSetChanged();
-            findViewById(R.id.loading).setVisibility(View.GONE);
+        ((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView(getListView());
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
+        setSupportActionBar(toolbar);
+
+        getListView().setOnItemClickListener(mOnClickListener);
+        this.adapter = new TaskAdapter(this, null);
+        new TaskLoader().execute((Void) null);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == ADD_TASK_REQUEST && resultCode == RESULT_OK) {
+            mDatabase.insertTask((Task) data.getParcelableExtra("task"));//task must implement
+            // Parcelable
+            refreshList();
+
+        } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_DELETE_TASK) {
+            mDatabase.deleteTask(((Task) data.getParcelableExtra("task")).getDatabaseId());
+            refreshList();
+        } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_EDIT_TASK) {
+            mDatabase.modifyTask((Task) data.getParcelableExtra("task"));
+            refreshList();
         }
     }
 }

@@ -17,6 +17,13 @@ import java.util.List;
 
 
 public class TaskAdapter extends BaseAdapter implements ListAdapter {
+    static class TaskViewHolder {
+        TextView subject;
+        TextView taskDescription;
+        TextView dueDate;
+        CheckBox checkBox;
+    }
+
     private final LayoutInflater mInflater;
     private final Context mContext;
     private List<Task> mTasks;
@@ -76,12 +83,5 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
 
     public void changeTaskList(List<Task> Tasks) {
         this.mTasks = Tasks;
-    }
-
-    static class TaskViewHolder {
-        TextView subject;
-        TextView taskDescription;
-        TextView dueDate;
-        CheckBox checkBox;
     }
 }
