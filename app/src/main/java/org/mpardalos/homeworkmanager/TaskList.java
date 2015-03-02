@@ -4,19 +4,15 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.melnykov.fab.FloatingActionButton;
 
 import net.danlew.android.joda.JodaTimeAndroid;
-
-import org.joda.time.LocalDate;
 
 import java.util.List;
 
@@ -50,42 +46,24 @@ public class TaskList extends ActionBarListActivity {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         l.setSelection(position);
-        LocalDate dueDate = ((Task) v.getTag(R.id.task_object)).getDueDate();
-        String description = (String) ((TextView) v.findViewById(R.id.task_description_field))
-                .getText();
-        String subject = (String) ((TextView) v.findViewById(R.id.subject_field)).getText();
-        int databaseId = ((Task) v.getTag(R.id.task_object)).getDatabaseId();
-
-        //Maybe we should pass the Task object directly instead of its fields
         Intent intent = new Intent(getApplicationContext(), TaskEdit.class);
-        intent.putExtra(TaskDatabaseHelper.DUE_DATE, dueDate);
-        intent.putExtra(TaskDatabaseHelper.DESCRIPTION, description);
-        intent.putExtra(TaskDatabaseHelper.SUBJECT_NAME, subject);
-        intent.putExtra("_id", databaseId);
+        intent.putExtra("task", (Task) v.getTag(R.id.task_object));
 
         startActivityForResult(intent, EDIT_TASK_REQUEST);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d("Result received, requestCode", String.valueOf(requestCode));
-
         if (requestCode == ADD_TASK_REQUEST && resultCode == RESULT_OK) {
-            LocalDate date = (LocalDate) data.getSerializableExtra("dueDate");
-            mDatabase.insertTask(data.getStringExtra("description"),
-                                 date,
-                                 data.getStringExtra("subject")
-                                );
+            mDatabase.insertTask((Task) data.getParcelableExtra("task"));//task must implement
+            // Parcelable
             refreshList();
 
         } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_DELETE_TASK) {
-            mDatabase.deleteTask(data.getIntExtra("_id", -1));
+            mDatabase.deleteTask(((Task) data.getParcelableExtra("task")).getDatabaseId());
             refreshList();
         } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_EDIT_TASK) {
-            mDatabase.modifyTask(data.getIntExtra("_id", 500),
-                                 data.getStringExtra("description"),
-                                 (LocalDate) data.getSerializableExtra("dueDate"),
-                                 data.getStringExtra("subject"));
+            mDatabase.modifyTask((Task) data.getParcelableExtra("task"));
             refreshList();
         }
     }

@@ -7,8 +7,8 @@ android {
         applicationId "org.mpardalos.homeworkmanager"
         minSdkVersion 15
         targetSdkVersion 21
-        versionCode 3
-        versionName "alpha-1.01-fix"
+        versionCode 5
+        versionName "alpha-1.1"
     }
     buildTypes {
         release {

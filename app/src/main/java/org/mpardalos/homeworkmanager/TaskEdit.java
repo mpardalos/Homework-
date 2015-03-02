@@ -3,10 +3,12 @@ package org.mpardalos.homeworkmanager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
@@ -31,22 +33,22 @@ public class TaskEdit extends TaskAdd {
         super.onCreate(savedInstanceState);
         JodaTimeAndroid.init(this);
         Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
-        ((Spinner) findViewById(R.id.subject_input)).setSelection(getIndex(subjectSpinner,
-                                                                           getIntent()
-                                                                                   .getStringExtra
-                                                                                           (TaskDatabaseHelper.SUBJECT_NAME)));
+        ((Spinner) findViewById(R.id.subject_input))
+                .setSelection(getIndex(subjectSpinner,
+                                       ((Task) getIntent().getParcelableExtra("task")).getSubject()
+                                      ));
 
         DateTimeFormatter df = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
         EditText dueDateInput = (EditText) findViewById(R.id.due_date_input);
 
-        dueDateInput.setText(((LocalDate) getIntent().getSerializableExtra(TaskDatabaseHelper
-                                                                                   .DUE_DATE))
+        dueDateInput.setText(((Task) getIntent().getParcelableExtra("task")).getDueDate()
                                      .toString(df));
-        dueDateInput.setTag(R.id.due_date, getIntent().getSerializableExtra
-                (TaskDatabaseHelper.DUE_DATE));
+        dueDateInput.setTag(R.id.due_date, ((Task) getIntent().getParcelableExtra("task"))
+                .getDueDate());
 
-        ((EditText) findViewById(R.id.description_input)).setText(getIntent().getStringExtra
-                (TaskDatabaseHelper.DESCRIPTION));
+        ((EditText) findViewById(R.id.description_input)).setText(((Task) getIntent()
+                .getParcelableExtra("task")).getDescription());
+
     }
 
     @Override
@@ -65,7 +67,7 @@ public class TaskEdit extends TaskAdd {
         int id = item.getItemId();
         switch (id) {
             case R.id.action_delete_task:
-                setResultDeleteTask();
+                setResultFromInput(RESULT_DELETE_TASK);
                 finish();
                 return true;
             case android.R.id.home:
@@ -77,16 +79,27 @@ public class TaskEdit extends TaskAdd {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setResultDeleteTask() {
-        Intent intent = new Intent();
-        int _id = getIntent().getIntExtra("_id", -1);
-
-        //Set the result code to RESULT_DELETE_TASK only if an _id was passed to the activity
-        if (!(_id == -1)) {
-            intent.putExtra("_id", _id);
-            setResult(RESULT_DELETE_TASK, intent);
-        } else {
-            setResult(RESULT_CANCELED);
+    @Override
+    protected boolean setResultFromInput(int result_code) {
+        LocalDate dueDate = (LocalDate) findViewById(R.id.due_date_input).getTag(R.id.due_date);
+        if (dueDate == null) {
+            return false;
         }
+        String subject = ((TextView) ((Spinner) findViewById(R.id.subject_input))
+                .getSelectedView().findViewById(android.R.id.text1)).getText().toString();
+        String description = ((EditText) findViewById(R.id.description_input)).getText()
+                .toString();
+        int databaseId = ((Task) getIntent().getParcelableExtra("task")).getDatabaseId();
+
+        Log.i("Task to be added: ", "Subject: " + subject);
+        Log.i("Task to be added: ", "Due Date: " + dueDate);
+        Log.i("Task to be added: ", "Description: " + description);
+
+        Intent result = new Intent();
+        result.putExtra(
+                "task",
+                new Task(subject, description, dueDate, databaseId, false));
+        setResult(result_code, result);
+        return true;
     }
 }

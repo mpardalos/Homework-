@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 
 public abstract class ActionBarListActivity extends ActionBarActivity {
-    protected AdapterView.OnItemClickListener mOnClickListener = new AdapterView
+    protected final AdapterView.OnItemClickListener mOnClickListener = new AdapterView
             .OnItemClickListener() {
         public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             onListItemClick((ListView) parent, v, position, id);

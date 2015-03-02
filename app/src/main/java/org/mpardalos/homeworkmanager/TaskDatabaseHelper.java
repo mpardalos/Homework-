@@ -23,34 +23,32 @@ import java.util.List;
 
 public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
-    public static final String DB_NAME = "database.db";
-    public static final int DB_VERSION = 1;
-
-    public static final String TASKS_TABLE = "Tasks";
-    public static final String SUBJECTS_TABLE = "Subjects";
-    public static final String PERIOD_TABLE = "Periods";
-    public static final String TIMETABLE = "TimeTable";
-
-    public static final String TASK_DONE = "Done";
     public static final String SUBJECT_NAME = "SubjName";
-    public static final String SUBJECT_ID = "SubjectId";
-    public static final String TEACHER_NAME = "TeacherName";
-    public static final String DESCRIPTION = "TaskDescr";
-    public static final String DUE_DATE = "DueDate";
-    public static final String PERIOD_START = "PeriodStart";
-    public static final String PERIOD_END = "PeriodEnd";
-    public static final String DAY_OF_WEEK = "WeekDay";
+    private static final String DB_NAME = "database.db";
+    private static final int DB_VERSION = 1;
+    private static final String TASKS_TABLE = "Tasks";
+    private static final String SUBJECTS_TABLE = "Subjects";
+    private static final String PERIOD_TABLE = "Periods";
+    private static final String TIMETABLE = "TimeTable";
+    private static final String TASK_DONE = "Done";
+    private static final String SUBJECT_ID = "SubjectId";
+    private static final String TEACHER_NAME = "TeacherName";
+    private static final String DESCRIPTION = "TaskDescr";
+    private static final String DUE_DATE = "DueDate";
+    private static final String PERIOD_START = "PeriodStart";
+    private static final String PERIOD_END = "PeriodEnd";
+    private static final String DAY_OF_WEEK = "WeekDay";
 
-    protected static HashMap<String, Integer> subjectIdMap;
+    private static HashMap<String, Integer> subjectIdMap;
 
-    Context mContext;
+    private final Context mContext;
 
     public TaskDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.mContext = context;
     }
 
-    public Cursor getPeriods() {
+    Cursor getPeriods() {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
@@ -78,6 +76,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         while (c.moveToNext()) {
             subjectList.add(c.getString(index));
         }
+        c.close();
         return subjectList;
     }
 
@@ -109,6 +108,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
             while (c.moveToNext()) {
                 subjectIdMap.put(c.getString(nameColumn), c.getInt(idColumn));
             }
+            c.close();
         }
         return subjectIdMap.get(subject);
 
@@ -139,9 +139,10 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         List<Task> tasks = new ArrayList<>();
         while (c.moveToNext()) {
             tasks.add(new Task(c.getString(subjColumn), c.getString(descriptionColumn),
-                               dbFormat.parseLocalDate(c.getString(dateColumn)), c.getInt(idColumn),
-                               c.getInt(doneColumn) != 0));
+                               dbFormat.parseLocalDate(c.getString(dateColumn)),
+                               c.getInt(idColumn), (c.getInt(doneColumn) != 0)));
         }
+        c.close();
 
         return tasks;
     }
@@ -171,8 +172,10 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
     }
 
-    public void insertTask(String description, LocalDate dueDate, String subject)
-            throws IllegalArgumentException {
+    public void insertTask(Task task) throws IllegalArgumentException {
+        String description = task.getDescription();
+        LocalDate dueDate = task.getDueDate();
+        String subject = task.getSubject();
 
         if (description == null || dueDate == null || subject == null) {
             throw new IllegalArgumentException("All arguments must be non null");
@@ -182,34 +185,38 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         DateTimeFormatter dbDateFormat = DateTimeFormat.forPattern(mContext.getResources()
                                                                            .getString(R.string.database_date_format));
 
-        ContentValues task = new ContentValues();
-        task.put(DESCRIPTION, description);
-        task.put(DUE_DATE, dueDate.toString(dbDateFormat));
-        task.put(SUBJECT_ID, getSubjectId(subject));
-        task.put(TASK_DONE, false);
+        ContentValues taskCV = new ContentValues();
+        taskCV.put(DESCRIPTION, description);
+        taskCV.put(DUE_DATE, dueDate.toString(dbDateFormat));
+        taskCV.put(SUBJECT_ID, getSubjectId(subject));
+        taskCV.put(TASK_DONE, false);
 
-        db.insert(TASKS_TABLE, null, task);
+        db.insert(TASKS_TABLE, null, taskCV);
     }
 
-    public void modifyTask(int _id, String description, LocalDate dueDate, String subject) {
+    public void modifyTask(Task task) {
+        if (task.getDatabaseId() == -1) {
+            throw new IllegalArgumentException("Could not modify task. Task does not have a " +
+                                                       "database entry.");
+        }
         SQLiteDatabase db = getWritableDatabase();
         DateTimeFormatter dbDateFormat = DateTimeFormat.forPattern(mContext.getResources()
                                                                            .getString(R.string.database_date_format));
-        ContentValues task = new ContentValues();
-        if (description != null) {
-            task.put(DESCRIPTION, description);
+        ContentValues taskCV = new ContentValues();
+        if (task.getDescription() != null) {
+            taskCV.put(DESCRIPTION, task.getDescription());
         }
-        if (dueDate != null) {
-            task.put(DUE_DATE, dueDate.toString(dbDateFormat));
+        if (task.getDueDate() != null) {
+            taskCV.put(DUE_DATE, task.getDueDate().toString(dbDateFormat));
         }
-        if (subject != null) {
-            task.put(SUBJECT_ID, getSubjectId(subject));
+        if (task.getSubject() != null) {
+            taskCV.put(SUBJECT_ID, getSubjectId(task.getSubject()));
         }
 
         String selection = "_id LIKE ?";
-        String[] selectionArgs = {String.valueOf(_id)};
+        String[] selectionArgs = {String.valueOf(task.getDatabaseId())};
 
-        db.update(TASKS_TABLE, task, selection, selectionArgs);
+        db.update(TASKS_TABLE, taskCV, selection, selectionArgs);
     }
 
     public void deleteAllTasks() throws IOError {
@@ -294,7 +301,10 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
                 , selectionArgs);
 
         c.moveToFirst();
-        return c.getString(c.getColumnIndex(SUBJECT_NAME));
+        //Using a temp var so that we can close the Cursor
+        String result = c.getString(c.getColumnIndex(SUBJECT_NAME));
+        c.close();
+        return result;
     }
 
 }

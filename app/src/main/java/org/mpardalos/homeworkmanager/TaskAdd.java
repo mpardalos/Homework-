@@ -81,11 +81,9 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
                     break;
                 }
             }
-
-            Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
-            setSupportActionBar(toolbar);
-
         }
+        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
+        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -98,7 +96,6 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         }
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -158,10 +155,19 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         return index;
     }
 
+    /**
+     * @param result_code the result code to be passed with the result. Used for subclasses of this
+     *                    activity
+     * @return Whether the result was set.
+     */
     protected boolean setResultFromInput(int result_code) {
+        LocalDate dueDate = (LocalDate) findViewById(R.id.due_date_input).getTag(R.id.due_date);
+        //Used by onOptionsItemSelected t show the "please enter due_
+        if (dueDate == null) {
+            return false;
+        }
         String subject = ((TextView) ((Spinner) findViewById(R.id.subject_input))
                 .getSelectedView().findViewById(android.R.id.text1)).getText().toString();
-        LocalDate dueDate = (LocalDate) findViewById(R.id.due_date_input).getTag(R.id.due_date);
         String description = ((EditText) findViewById(R.id.description_input)).getText()
                 .toString();
 
@@ -170,12 +176,10 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         Log.i("Task to be added: ", "Description: " + description);
 
         Intent result = new Intent();
-
-        result.putExtra("_id", getIntent().getIntExtra("_id", -1));//The _id will never be -1
-        result.putExtra("subject", subject);
-        result.putExtra("dueDate", dueDate);
-        result.putExtra("description", description);
+        result.putExtra(
+                "task",
+                new Task(subject, description, dueDate, false));
         setResult(result_code, result);
-        return dueDate != null;
+        return true;
     }
 }

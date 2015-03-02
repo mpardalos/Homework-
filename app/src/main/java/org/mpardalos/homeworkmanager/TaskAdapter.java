@@ -17,9 +17,9 @@ import java.util.List;
 
 
 public class TaskAdapter extends BaseAdapter implements ListAdapter {
-    private LayoutInflater mInflater;
+    private final LayoutInflater mInflater;
+    private final Context mContext;
     private List<Task> mTasks;
-    private Context mContext;
 
     public TaskAdapter(Context context, List<Task> tasks) {
         this.mContext = context;
@@ -54,7 +54,7 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
         LocalDate date = task.getDueDate();
         holder.dueDate.setText(date.toString(displayFormat));
         convertView.setTag(R.id.task_object, task); //Used to get any info about the task
-        //DONT  get info directly from the child views
+        //DON'T  get info directly from the child views
 
         return convertView;
     }
