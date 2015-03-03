@@ -264,8 +264,9 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
             endTime = timeFormatter.parseLocalTime(periods.getString(periods.getColumnIndex
                     (PERIOD_END)));
 
-            //TODO allow for this to be true even 2-3 minutes after the end of the period
-            if (startTime.compareTo(requestedTime) <= 0 && requestedTime.compareTo(endTime) < 0) {
+
+            if (requestedTime.compareTo(startTime) >= 0 &&
+                    requestedTime.compareTo(endTime.plusMinutes(3)) < 0) {
                 resultPeriod = periods.getInt(periods.getColumnIndex("_id"));
                 break;
             }
