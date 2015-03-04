@@ -36,10 +36,29 @@ public class TaskList extends ActionBarListActivity {
             findViewById(R.id.loading).setVisibility(View.GONE);
         }
     }
+
     public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
     public static final int EDIT_TASK_REQUEST = 3;
     TaskDatabaseHelper mDatabase;
     TaskAdapter adapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        JodaTimeAndroid.init(this);
+        setContentView(R.layout.activity_task_list);
+
+        this.mDatabase = new TaskDatabaseHelper(this);
+
+        ((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView(getListView());
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
+        setSupportActionBar(toolbar);
+
+        getListView().setOnItemClickListener(mOnClickListener);
+        this.adapter = new TaskAdapter(this, null);
+        new TaskLoader().execute((Void) null);
+    }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
@@ -86,11 +105,11 @@ public class TaskList extends ActionBarListActivity {
      * the checkbox
      */
     public void onItemChecked(View checkbox) {
-        int itemId = ((Task) ((View) checkbox.getParent()).getTag(R.id.task_object))
+        int databaseId = ((Task) ((View) checkbox.getParent()).getTag(R.id.task_object))
                 .getDatabaseId();
         boolean checked = ((CheckBox) checkbox).isChecked();
 
-        mDatabase.setDone(itemId, checked);
+        mDatabase.setDone(databaseId, checked);
     }
 
     public void deleteAllTasks() {
@@ -103,24 +122,6 @@ public class TaskList extends ActionBarListActivity {
     }
 
     private void refreshList() {
-        new TaskLoader().execute((Void) null);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        JodaTimeAndroid.init(this);
-        setContentView(R.layout.activity_task_list);
-
-        this.mDatabase = new TaskDatabaseHelper(this);
-
-        ((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView(getListView());
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
-        setSupportActionBar(toolbar);
-
-        getListView().setOnItemClickListener(mOnClickListener);
-        this.adapter = new TaskAdapter(this, null);
         new TaskLoader().execute((Void) null);
     }
 

@@ -77,7 +77,6 @@ public class Task implements Parcelable {
         dest.writeInt(done ? 1 : 0);
     }
 
-
     public String getSubject() {
         return subject;
     }
@@ -92,6 +91,10 @@ public class Task implements Parcelable {
 
     public boolean isDone() {
         return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
 
     /**

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -35,7 +36,7 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         Task task = mTasks.get(position);
         TaskViewHolder holder;
 
@@ -47,6 +48,18 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
             holder.taskDescription = (TextView) convertView.findViewById(R.id.task_description_field);
             holder.dueDate = (TextView) convertView.findViewById(R.id.due_date_field);
             holder.checkBox = (CheckBox) convertView.findViewById(R.id.task_done_checkbox);
+            //Used to store the state of the checkbox.
+            //Without this the checkbox resets when the row goes out of the screen
+            holder.checkBox.setOnCheckedChangeListener(
+                    new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                            if (buttonView.getTag(R.id.item_position) != null) {
+                                int itemPosition = (Integer) buttonView.getTag(R.id.item_position);
+                                mTasks.get(itemPosition).setDone(buttonView.isChecked());
+                            }
+                        }
+                    });
 
             convertView.setTag(R.id.view_holder, holder);
         } else {
@@ -56,12 +69,15 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
         holder.subject.setText(task.getSubject());
         holder.taskDescription.setText(task.getDescription());
         holder.checkBox.setChecked(task.isDone());
+        //See the listener added to the checkbox above
+        holder.checkBox.setTag(R.id.item_position, position);
 
         DateTimeFormatter displayFormat = DateTimeFormat.forPattern(mContext.getString(R.string.display_date_format));
         LocalDate date = task.getDueDate();
         holder.dueDate.setText(date.toString(displayFormat));
-        convertView.setTag(R.id.task_object, task); //Used to get any info about the task
+        //Used to get any info about the task
         //DON'T  get info directly from the child views
+        convertView.setTag(R.id.task_object, task);
 
         return convertView;
     }
