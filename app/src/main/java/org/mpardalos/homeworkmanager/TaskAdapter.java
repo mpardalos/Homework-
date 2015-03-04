@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -50,16 +49,15 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
             holder.checkBox = (CheckBox) convertView.findViewById(R.id.task_done_checkbox);
             //Used to store the state of the checkbox.
             //Without this the checkbox resets when the row goes out of the screen
-            holder.checkBox.setOnCheckedChangeListener(
-                    new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                            if (buttonView.getTag(R.id.item_position) != null) {
-                                int itemPosition = (Integer) buttonView.getTag(R.id.item_position);
-                                mTasks.get(itemPosition).setDone(buttonView.isChecked());
-                            }
-                        }
-                    });
+            holder.checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (v.getTag(R.id.item_position) != null) {
+                        int itemPosition = (Integer) v.getTag(R.id.item_position);
+                        mTasks.get(itemPosition).setDone(((CheckBox) v).isChecked());
+                    }
+                }
+            });
 
             convertView.setTag(R.id.view_holder, holder);
         } else {
