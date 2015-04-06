@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -57,33 +58,53 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
 
+        autocompleteSubject(subjectSpinner);
+
+        //Auto-complete dueDate based on current subject and its next occurrence
+        subjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String subject = null;
+                if (view != null) {
+                    subject = (String) ((TextView) view.findViewById(android.R.id.text1))
+                            .getText();
+                }
+
+                if (subject != null) {
+                    LocalDate dateIterator = LocalDate.now();
+                    //Iterate on every day starting from tomorrow until 7 days from today.
+                    //(I think a week=7 days everywhere but this should be checked)
+                    for (int i = 1; i <= 7; i++) {
+                        dateIterator = dateIterator.plusDays(1);
+                        List<String> subjectsInDay = mDatabase.getSubjectsInDay(dateIterator
+                                                                                        .dayOfWeek()
+                                                                                        .getAsText()
+                                                                                        .toLowerCase());
+                        if (subjectsInDay.contains(subject)) {
+                            onDateEntered(dateIterator);
+                            break;
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
+        setSupportActionBar(toolbar);
+    }
+
+    private void autocompleteSubject(Spinner subjectSpinner) {
         //auto-complete subject based on time
-        String currentSubject = null;
+        String currentSubject;
         try {
             currentSubject = mDatabase.getSubjectAtDateTime(DateTime.now());
             subjectSpinner.setSelection(getIndex(subjectSpinner, currentSubject));
         } catch (IllegalArgumentException e) {
             Log.d("Subject not set: ", e.getMessage());
         }
-
-        //Auto-complete dueDate based on current subject and its next occurrence
-        if (currentSubject != null) {
-            LocalDate dateIterator = LocalDate.now();
-            //Iterate on every day starting from tomorrow until 7 days from today.
-            //(I think a week=7 days everywhere but this should be checked)
-            for (int i = 1; i <= 7; i++) {
-                dateIterator = dateIterator.plusDays(1);
-                List<String> subjectsInDay = mDatabase.getSubjectsInDay(dateIterator.dayOfWeek()
-                                                                                .getAsText()
-                                                                                .toLowerCase());
-                if (subjectsInDay.contains(currentSubject)) {
-                    onDateEntered(dateIterator);
-                    break;
-                }
-            }
-        }
-        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
-        setSupportActionBar(toolbar);
     }
 
     @Override
