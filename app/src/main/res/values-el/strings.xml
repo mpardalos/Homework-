@@ -22,5 +22,7 @@
     <string name="delete">Διαγραφή</string>
     <string name="edit_timetable_button">Τροποποίηση προγράμματος</string>
     <string name="add_subject_button">Προσθήκη μαθήματος</string>
+    <string name="add_photo">Λήψη Φωτογραφίας</string>
+    <string name="edit_subjects">Επεξεργασία μαθημάτων</string>
 
 </resources>

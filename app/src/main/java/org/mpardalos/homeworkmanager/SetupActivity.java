@@ -32,7 +32,7 @@ public class SetupActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
-            View rootView = inflater.inflate(R.layout.fragment_subjects_setup, container, false);
+            View rootView = inflater.inflate(R.layout.edit_subjects, container, false);
 
             Cursor subjectCursor = mDatabase.getSubjects();
             ArrayList<String> subjects = new ArrayList<>();
@@ -44,7 +44,7 @@ public class SetupActivity extends ActionBarActivity {
 
             setListAdapter(
                     new ArrayAdapter<String>(getActivity().getApplicationContext(),
-                                             R.layout.subject_list_entry, android.R.id.text1,
+                                             R.layout.subject, android.R.id.text1,
                                              subjects) {
 
                         public View getView(int position, View convertView, ViewGroup parent) {
@@ -78,7 +78,7 @@ public class SetupActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setup);
+        setContentView(R.layout.setup);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
                     .add(R.id.fragment_placeholder, new SubjectSetupFragment())
@@ -89,7 +89,7 @@ public class SetupActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_setup, menu);
+        getMenuInflater().inflate(R.menu.setup, menu);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);

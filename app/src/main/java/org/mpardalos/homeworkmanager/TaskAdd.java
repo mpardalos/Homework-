@@ -37,7 +37,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         JodaTimeAndroid.init(this);
-        setContentView(R.layout.activity_task_add_or_edit);
+        setContentView(R.layout.add_or_edit_task);
         this.mDatabase = new TaskDatabaseHelper(this);
 
         //Populate subject selection spinner
@@ -110,7 +110,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_task_add, menu);
+        getMenuInflater().inflate(R.menu.task_add, menu);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);

@@ -27,5 +27,7 @@
     <string name="add_subject_button">Add Subject</string>
     <string name="edit_timetable_button">Edit Timetable</string>
     <string name="delete">Delete</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="edit_subjects">Edit Subjects</string>
 
 </resources>

@@ -46,7 +46,7 @@ public class TaskList extends ActionBarListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         JodaTimeAndroid.init(this);
-        setContentView(R.layout.activity_task_list);
+        setContentView(R.layout.task_list);
 
         this.mDatabase = new TaskDatabaseHelper(this);
 
@@ -72,7 +72,7 @@ public class TaskList extends ActionBarListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_task_list_menu, menu);
+        getMenuInflater().inflate(R.menu.task_list, menu);
         return true;
     }
 

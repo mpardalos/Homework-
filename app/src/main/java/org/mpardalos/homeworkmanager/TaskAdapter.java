@@ -40,7 +40,7 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
         TaskViewHolder holder;
 
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.task_entry, parent, false);
+            convertView = mInflater.inflate(R.layout.task, parent, false);
             holder = new TaskViewHolder();
 
             holder.subject = (TextView) convertView.findViewById(R.id.subject_field);

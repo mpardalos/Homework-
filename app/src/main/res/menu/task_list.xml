@@ -5,15 +5,13 @@
 
     <item
         android:id="@+id/delete_tasks_button"
-        android:enabled="true"
         android:title="@string/delete_tasks_button"
-        app:showAsAction="never"
-        />
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/edit_timetable_button"
         android:enabled="false"
         android:title="@string/edit_timetable_button"
-        app:showAsAction="never"
-        />
+        app:showAsAction="never"/>
+
 </menu>

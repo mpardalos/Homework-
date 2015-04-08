@@ -54,7 +54,7 @@ public class TaskEdit extends TaskAdd {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_task_edit, menu);
+        getMenuInflater().inflate(R.menu.task_edit, menu);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
