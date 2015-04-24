@@ -67,7 +67,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         return subjectList;
     }
 
-    public Cursor getSubjects() {
+    public ArrayList<String> getSubjects() {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
@@ -77,7 +77,13 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         Cursor c = qb.query(db, columns, null, null, null, null, null, null);
         c.moveToFirst();
 
-        return c;
+        ArrayList<String> subjects = new ArrayList<>();
+        while (c.moveToNext()) {
+            //Gets the subject that the cursor is currently pointing to
+            subjects.add(c.getString(1));
+        }
+
+        return subjects;
     }
 
     public int getSubjectId(String subject) {
