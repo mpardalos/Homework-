@@ -92,7 +92,7 @@ public class TaskList extends ActionBarListActivity {
                 break;
 
             case R.id.edit_timetable_button:
-                Intent intent = new Intent(this, SetupActivity.class);
+                Intent intent = new Intent(this, EditSubjects.class);
                 startActivity(intent);
         }
 

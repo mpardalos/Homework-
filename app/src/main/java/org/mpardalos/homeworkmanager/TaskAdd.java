@@ -1,7 +1,6 @@
 package org.mpardalos.homeworkmanager;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -42,16 +41,7 @@ public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onD
 
         //Populate subject selection spinner
         Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
-        Cursor subjectCursor = mDatabase.getSubjects();
-        List<String> subjects = new ArrayList<>();
-        subjectCursor.moveToPosition(-1);
-        /* points the cursor to the next entry and also
-        stops the loop if we reached the last element */
-        while (subjectCursor.moveToNext()) {
-            //Gets the subject that the cursor is currently pointing to
-            subjects.add(subjectCursor.getString(1));
-        }
-
+        ArrayList<String> subjects = mDatabase.getSubjects();
 
         ArrayAdapter<String> subjectAdapter =
                 new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subjects);

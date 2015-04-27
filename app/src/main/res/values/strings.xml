@@ -29,5 +29,8 @@
     <string name="delete">Delete</string>
     <string name="add_photo">Add Photo</string>
     <string name="edit_subjects">Edit Subjects</string>
+    <string name="title_activity_edit_subjects">Edit Subjects</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>
