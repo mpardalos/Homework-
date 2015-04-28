@@ -1,101 +1,74 @@
 package org.mpardalos.homeworkmanager;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import java.util.List;
+import java.util.ArrayList;
 
+class TaskViewHolder extends RecyclerView.ViewHolder {
+    TextView subject;
+    TextView taskDescription;
+    TextView dueDate;
+    CheckBox doneCheckBox;
 
-public class TaskAdapter extends BaseAdapter implements ListAdapter {
-    static class TaskViewHolder {
-        TextView subject;
-        TextView taskDescription;
-        TextView dueDate;
-        CheckBox checkBox;
+    public TaskViewHolder(View itemView) {
+        super(itemView);
+        subject = (TextView) itemView.findViewById(R.id.subject_field);
+        taskDescription = (TextView) itemView.findViewById(R.id.task_description_field);
+        dueDate = (TextView) itemView.findViewById(R.id.due_date_field);
+        doneCheckBox = (CheckBox) itemView.findViewById(R.id.task_done_checkbox);
     }
+}
 
-    private final LayoutInflater mInflater;
-    private final Context mContext;
-    private List<Task> mTasks;
+public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
+    private ArrayList<Task> mTasks;
+    private Context mContext;
 
-    public TaskAdapter(Context context, List<Task> tasks) {
-        this.mContext = context;
-        this.mInflater = LayoutInflater.from(mContext);
-        this.mTasks = tasks;
+    public TaskAdapter(Context context, ArrayList<Task> tasks) {
+        mContext = context;
+        mTasks = tasks;
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        Task task = mTasks.get(position);
-        TaskViewHolder holder;
+    public TaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task, parent,
+                                                                         false);
+        TaskViewHolder holder = new TaskViewHolder(itemView);
 
-        if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.task, parent, false);
-            holder = new TaskViewHolder();
-
-            holder.subject = (TextView) convertView.findViewById(R.id.subject_field);
-            holder.taskDescription = (TextView) convertView.findViewById(R.id.task_description_field);
-            holder.dueDate = (TextView) convertView.findViewById(R.id.due_date_field);
-            holder.checkBox = (CheckBox) convertView.findViewById(R.id.task_done_checkbox);
-            //Used to store the state of the checkbox.
-            //Without this the checkbox resets when the row goes out of the screen
-            holder.checkBox.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (v.getTag(R.id.item_position) != null) {
-                        int itemPosition = (Integer) v.getTag(R.id.item_position);
-                        mTasks.get(itemPosition).setDone(((CheckBox) v).isChecked());
-                    }
+        //Without this the checkbox resets when it is not visible
+        holder.doneCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.getTag(R.id.item_position) != null) {
+                    int itemPosition = (Integer) v.getTag(R.id.item_position);
+                    mTasks.get(itemPosition).setDone(((CheckBox) v).isChecked());
                 }
-            });
+            }
+        });
 
-            convertView.setTag(R.id.view_holder, holder);
-        } else {
-            holder = (TaskViewHolder) convertView.getTag(R.id.view_holder);
-        }
+        return holder;
+    }
 
+    @Override
+    public void onBindViewHolder(TaskViewHolder holder, int position) {
+        Task task = mTasks.get(position);
         holder.subject.setText(task.getSubject());
         holder.taskDescription.setText(task.getDescription());
-        holder.checkBox.setChecked(task.isDone());
-        //See the listener added to the checkbox above
-        holder.checkBox.setTag(R.id.item_position, position);
-
         DateTimeFormatter displayFormat = DateTimeFormat.forPattern(mContext.getString(R.string.display_date_format));
-        LocalDate date = task.getDueDate();
-        holder.dueDate.setText(date.toString(displayFormat));
-        //Used to get any info about the task
-        //DON'T  get info directly from the child views
-        convertView.setTag(R.id.task_object, task);
-
-        return convertView;
+        holder.dueDate.setText(task.getDueDate().toString(displayFormat));
+        holder.doneCheckBox.setChecked(task.isDone());
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return mTasks.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return mTasks.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    public void changeTaskList(List<Task> Tasks) {
-        this.mTasks = Tasks;
     }
 }
