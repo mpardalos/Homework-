@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+
+import com.melnykov.fab.FloatingActionButton;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
@@ -29,8 +32,9 @@ public class TaskList extends ActionBarActivity {
             findViewById(R.id.loading).setVisibility(View.VISIBLE);
         }
 
-        protected void onPostExecute(ArrayList<Task> result) {
-            adapter.changeTaskList(result);
+        protected void onPostExecute(List<Task> result) {
+            adapter.changeTaskList((ArrayList<Task>) result);
+            mTaskRecyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
             findViewById(R.id.loading).setVisibility(View.GONE);
         }
@@ -50,9 +54,12 @@ public class TaskList extends ActionBarActivity {
 
         this.mDatabase = new TaskDatabaseHelper(this);
         this.mTaskRecyclerView = (RecyclerView) findViewById(R.id.task_list);
+        LinearLayoutManager lm = new LinearLayoutManager(this);
+        lm.setOrientation(LinearLayoutManager.VERTICAL);
+        mTaskRecyclerView.setLayoutManager(lm);
 
-        //TODO Find a floating action button library compatible with RecyclerView
-        //((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView
+        ((FloatingActionButton) findViewById(R.id.add_task_button))
+                .attachToRecyclerView(mTaskRecyclerView);
         // (mTaskRecyclerView);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
@@ -61,7 +68,7 @@ public class TaskList extends ActionBarActivity {
         //TODO Find another way to do the onClick Listeners
         //mTaskRecyclerView.setOnItemClickListener(mOnClickListener);
         this.adapter = new TaskAdapter(this, null);
-        new TaskLoader().execute((Void) null);
+        new TaskLoader().execute();
     }
 
     /*
@@ -95,10 +102,11 @@ public class TaskList extends ActionBarActivity {
                 this.adapter.changeTaskList((ArrayList<Task>) mDatabase.getTasks());
                 this.adapter.notifyDataSetChanged();
                 break;
-
+/*
             case R.id.edit_timetable_button:
                 Intent intent = new Intent(this, EditSubjects.class);
                 startActivity(intent);
+*/
         }
 
         return super.onOptionsItemSelected(item);
