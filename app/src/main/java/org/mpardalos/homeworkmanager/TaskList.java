@@ -53,14 +53,36 @@ public class TaskList extends ActionBarActivity {
         setContentView(R.layout.task_list);
 
         this.mDatabase = new TaskDatabaseHelper(this);
+
         this.mTaskRecyclerView = (RecyclerView) findViewById(R.id.task_list);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         lm.setOrientation(LinearLayoutManager.VERTICAL);
         mTaskRecyclerView.setLayoutManager(lm);
+        mTaskRecyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(this,
+                                              new RecyclerItemClickListener.OnItemClickListener() {
+
+                                                  @Override
+                                                  public void onItemClick(View v, int position) {
+                                                      Intent intent = new Intent
+                                                              (getApplicationContext(),
+                                                               TaskEdit.class);
+                                                      intent.putExtra("task",
+                                                                      (Task) v.getTag(R.id.task_object));
+
+                                                      startActivityForResult(intent,
+                                                                             EDIT_TASK_REQUEST);
+                                                  }
+
+                                                  @Override
+                                                  public void onItemLongPress(View childView,
+                                                                              int position) {
+                                                  }
+                                              }));
+
 
         ((FloatingActionButton) findViewById(R.id.add_task_button))
                 .attachToRecyclerView(mTaskRecyclerView);
-        // (mTaskRecyclerView);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
@@ -71,15 +93,6 @@ public class TaskList extends ActionBarActivity {
         new TaskLoader().execute();
     }
 
-    /*
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        l.setSelection(position);
-        Intent intent = new Intent(getApplicationContext(), TaskEdit.class);
-        intent.putExtra("task", (Task) v.getTag(R.id.task_object));
-
-        startActivityForResult(intent, EDIT_TASK_REQUEST);
-    }
-    */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -13,22 +13,24 @@ import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 
-class TaskViewHolder extends RecyclerView.ViewHolder {
-    TextView subject;
-    TextView taskDescription;
-    TextView dueDate;
-    CheckBox doneCheckBox;
 
-    public TaskViewHolder(View itemView) {
-        super(itemView);
-        subject = (TextView) itemView.findViewById(R.id.subject_field);
-        taskDescription = (TextView) itemView.findViewById(R.id.task_description_field);
-        dueDate = (TextView) itemView.findViewById(R.id.due_date_field);
-        doneCheckBox = (CheckBox) itemView.findViewById(R.id.task_done_checkbox);
+public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
+
+    protected class TaskViewHolder extends RecyclerView.ViewHolder {
+        TextView subject;
+        TextView taskDescription;
+        TextView dueDate;
+        CheckBox doneCheckBox;
+
+        public TaskViewHolder(View itemView) {
+            super(itemView);
+            subject = (TextView) itemView.findViewById(R.id.subject_field);
+            taskDescription = (TextView) itemView.findViewById(R.id.task_description_field);
+            dueDate = (TextView) itemView.findViewById(R.id.due_date_field);
+            doneCheckBox = (CheckBox) itemView.findViewById(R.id.task_done_checkbox);
+        }
     }
-}
 
-public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
     private ArrayList<Task> mTasks;
     private Context mContext;
 
@@ -65,6 +67,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskViewHolder> {
         DateTimeFormatter displayFormat = DateTimeFormat.forPattern(mContext.getString(R.string.display_date_format));
         holder.dueDate.setText(task.getDueDate().toString(displayFormat));
         holder.doneCheckBox.setChecked(task.isDone());
+        holder.itemView.setTag(R.id.task_object, task);
     }
 
     @Override
