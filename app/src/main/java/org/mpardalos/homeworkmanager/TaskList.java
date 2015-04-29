@@ -3,21 +3,21 @@ package org.mpardalos.homeworkmanager;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.ListView;
-
-import com.melnykov.fab.FloatingActionButton;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class TaskList extends ActionBarListActivity {
+public class TaskList extends ActionBarActivity {
 
     private class TaskLoader extends AsyncTask<Void, Void, List<Task>> {
         //Bad, bad, bad decision, hopefully only temporary
@@ -29,14 +29,14 @@ public class TaskList extends ActionBarListActivity {
             findViewById(R.id.loading).setVisibility(View.VISIBLE);
         }
 
-        protected void onPostExecute(List<Task> result) {
+        protected void onPostExecute(ArrayList<Task> result) {
             adapter.changeTaskList(result);
-            setListAdapter(adapter);
             adapter.notifyDataSetChanged();
             findViewById(R.id.loading).setVisibility(View.GONE);
         }
     }
 
+    private RecyclerView mTaskRecyclerView;
     public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
     public static final int EDIT_TASK_REQUEST = 3;
     TaskDatabaseHelper mDatabase;
@@ -49,18 +49,22 @@ public class TaskList extends ActionBarListActivity {
         setContentView(R.layout.task_list);
 
         this.mDatabase = new TaskDatabaseHelper(this);
+        this.mTaskRecyclerView = (RecyclerView) findViewById(R.id.task_list);
 
-        ((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView(getListView());
+        //TODO Find a floating action button library compatible with RecyclerView
+        //((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView
+        // (mTaskRecyclerView);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
 
-        getListView().setOnItemClickListener(mOnClickListener);
+        //TODO Find another way to do the onClick Listeners
+        //mTaskRecyclerView.setOnItemClickListener(mOnClickListener);
         this.adapter = new TaskAdapter(this, null);
         new TaskLoader().execute((Void) null);
     }
 
-    @Override
+    /*
     public void onListItemClick(ListView l, View v, int position, long id) {
         l.setSelection(position);
         Intent intent = new Intent(getApplicationContext(), TaskEdit.class);
@@ -68,6 +72,7 @@ public class TaskList extends ActionBarListActivity {
 
         startActivityForResult(intent, EDIT_TASK_REQUEST);
     }
+    */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,7 +92,7 @@ public class TaskList extends ActionBarListActivity {
         switch (id) {
             case R.id.delete_tasks_button:
                 deleteAllTasks();
-                this.adapter.changeTaskList(mDatabase.getTasks());
+                this.adapter.changeTaskList((ArrayList<Task>) mDatabase.getTasks());
                 this.adapter.notifyDataSetChanged();
                 break;
 
