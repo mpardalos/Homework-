@@ -1,84 +1,65 @@
 package org.mpardalos.homeworkmanager;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import java.util.List;
+import java.util.ArrayList;
 
 
-public class TaskAdapter extends BaseAdapter implements ListAdapter {
-    static class TaskViewHolder {
+public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
+
+    protected class TaskViewHolder extends RecyclerView.ViewHolder {
         TextView subject;
         TextView taskDescription;
         TextView dueDate;
+
+        public TaskViewHolder(View itemView) {
+            super(itemView);
+            subject = (TextView) itemView.findViewById(R.id.subject_field);
+            taskDescription = (TextView) itemView.findViewById(R.id.task_description_field);
+            dueDate = (TextView) itemView.findViewById(R.id.due_date_field);
+        }
     }
 
-    private final LayoutInflater mInflater;
-    private final Context mContext;
-    private List<Task> mTasks;
+    private ArrayList<Task> mTasks;
+    private Context mContext;
 
-    public TaskAdapter(Context context, List<Task> tasks) {
-        this.mContext = context;
-        this.mInflater = LayoutInflater.from(mContext);
-        this.mTasks = tasks;
+    public TaskAdapter(Context context, ArrayList<Task> tasks) {
+        mContext = context;
+        mTasks = tasks;
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public TaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.task, parent,
+                                                                         false);
+
+        return new TaskViewHolder(itemView);
+    }
+
+    @Override
+    public void onBindViewHolder(TaskViewHolder holder, int position) {
         Task task = mTasks.get(position);
-        TaskViewHolder holder;
-
-        if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.task, parent, false);
-            holder = new TaskViewHolder();
-
-            holder.subject = (TextView) convertView.findViewById(R.id.subject_field);
-            holder.taskDescription = (TextView) convertView.findViewById(R.id.task_description_field);
-            holder.dueDate = (TextView) convertView.findViewById(R.id.due_date_field);
-
-            convertView.setTag(R.id.view_holder, holder);
-        } else {
-            holder = (TaskViewHolder) convertView.getTag(R.id.view_holder);
-        }
-
         holder.subject.setText(task.getSubject());
         holder.taskDescription.setText(task.getDescription());
-
         DateTimeFormatter displayFormat = DateTimeFormat.forPattern(mContext.getString(R.string.display_date_format));
-        LocalDate date = task.getDueDate();
-        holder.dueDate.setText(date.toString(displayFormat));
-        //Used to get any info about the task
-        //DON'T  get info directly from the child views
-        convertView.setTag(R.id.task_object, task);
-
-        return convertView;
+        holder.dueDate.setText(task.getDueDate().toString(displayFormat));
+        holder.itemView.setTag(R.id.task_object, task);
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return mTasks.size();
     }
 
-    @Override
-    public Object getItem(int position) {
-        return mTasks.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    public void changeTaskList(List<Task> Tasks) {
-        this.mTasks = Tasks;
+    public void changeTaskList(ArrayList<Task> tasks) {
+        this.mTasks = tasks;
     }
 }

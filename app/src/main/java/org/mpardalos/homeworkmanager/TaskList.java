@@ -3,20 +3,23 @@ package org.mpardalos.homeworkmanager;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class TaskList extends ActionBarListActivity {
+public class TaskList extends ActionBarActivity {
 
     private class TaskLoader extends AsyncTask<Void, Void, List<Task>> {
         //Bad, bad, bad decision, hopefully only temporary
@@ -29,13 +32,14 @@ public class TaskList extends ActionBarListActivity {
         }
 
         protected void onPostExecute(List<Task> result) {
-            adapter.changeTaskList(result);
-            setListAdapter(adapter);
+            adapter.changeTaskList((ArrayList<Task>) result);
+            mTaskRecyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
             findViewById(R.id.loading).setVisibility(View.GONE);
         }
     }
 
+    private RecyclerView mTaskRecyclerView;
     public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
     public static final int EDIT_TASK_REQUEST = 3;
     TaskDatabaseHelper mDatabase;
@@ -49,23 +53,41 @@ public class TaskList extends ActionBarListActivity {
 
         this.mDatabase = new TaskDatabaseHelper(this);
 
-        ((FloatingActionButton) findViewById(R.id.add_task_button)).attachToListView(getListView());
+        this.mTaskRecyclerView = (RecyclerView) findViewById(R.id.task_list);
+        LinearLayoutManager lm = new LinearLayoutManager(this);
+        lm.setOrientation(LinearLayoutManager.VERTICAL);
+        mTaskRecyclerView.setLayoutManager(lm);
+        mTaskRecyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(this,
+                                              new RecyclerItemClickListener.OnItemClickListener() {
+
+                                                  @Override
+                                                  public void onItemClick(View v, int position) {
+                                                      Intent intent = new Intent
+                                                              (getApplicationContext(),
+                                                               TaskEdit.class);
+                                                      intent.putExtra("task",
+                                                                      (Task) v.getTag(R.id.task_object));
+
+                                                      startActivityForResult(intent,
+                                                                             EDIT_TASK_REQUEST);
+                                                  }
+
+                                                  @Override
+                                                  public void onItemLongPress(View childView,
+                                                                              int position) {
+                                                  }
+                                              }));
+
+
+        ((FloatingActionButton) findViewById(R.id.add_task_button))
+                .attachToRecyclerView(mTaskRecyclerView);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
 
-        getListView().setOnItemClickListener(mOnClickListener);
         this.adapter = new TaskAdapter(this, null);
-        new TaskLoader().execute((Void) null);
-    }
-
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        l.setSelection(position);
-        Intent intent = new Intent(getApplicationContext(), TaskEdit.class);
-        intent.putExtra("task", (Task) v.getTag(R.id.task_object));
-
-        startActivityForResult(intent, EDIT_TASK_REQUEST);
+        new TaskLoader().execute();
     }
 
     @Override
@@ -86,14 +108,9 @@ public class TaskList extends ActionBarListActivity {
         switch (id) {
             case R.id.delete_tasks_button:
                 deleteAllTasks();
-                this.adapter.changeTaskList(mDatabase.getTasks());
+                this.adapter.changeTaskList((ArrayList<Task>) mDatabase.getTasks());
                 this.adapter.notifyDataSetChanged();
                 break;
-/*
-            case R.id.edit_timetable_button:
-                Intent intent = new Intent(this, EditSubjects.class);
-                startActivity(intent);
-*/
         }
 
         return super.onOptionsItemSelected(item);

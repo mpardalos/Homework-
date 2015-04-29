@@ -32,18 +32,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.mpardalos.homeworkmanager.TaskList"/>
         </activity>
-        <activity
-            android:name=".SetupActivity"
-            android:label="@string/title_activity_setup">
-        </activity>
-        <activity
-            android:name=".EditSubjects"
-            android:label="@string/title_activity_edit_subjects"
-            android:parentActivityName=".TaskList">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.mpardalos.homeworkmanager.TaskList"/>
-        </activity>
     </application>
 
 </manifest>
