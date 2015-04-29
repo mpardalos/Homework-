@@ -14,7 +14,6 @@
         android:layout_marginStart="15dp"
         android:layout_toEndOf="@+id/due_date_field"
         android:layout_toRightOf="@+id/due_date_field"
-        android:layout_toStartOf="@+id/task_done_checkbox"
         android:text="Άλγεβρα"
         android:textColor="#000000"
         android:textSize="@dimen/task_title_font_size"/>
@@ -26,22 +25,10 @@
         android:layout_alignLeft="@+id/subject_field"
         android:layout_alignStart="@+id/subject_field"
         android:layout_below="@+id/subject_field"
-        android:layout_toLeftOf="@+id/task_done_checkbox"
-        android:layout_toStartOf="@+id/task_done_checkbox"
         android:text="σελ 15 ασκ. 5, 7, 8, 9 ,10\nσελ 16 ασκ 5, 6, 7"
         android:textColor="#000000"
         android:textSize="@dimen/task_description_font_size"/>
 
-
-    <CheckBox
-        android:id="@+id/task_done_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:focusable="false"
-        android:onClick="onItemChecked"/>
 
     <TextView
         android:id="@+id/due_date_field"

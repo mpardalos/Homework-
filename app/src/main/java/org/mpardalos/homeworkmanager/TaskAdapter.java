@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -21,7 +20,6 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
         TextView subject;
         TextView taskDescription;
         TextView dueDate;
-        CheckBox checkBox;
     }
 
     private final LayoutInflater mInflater;
@@ -46,18 +44,6 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
             holder.subject = (TextView) convertView.findViewById(R.id.subject_field);
             holder.taskDescription = (TextView) convertView.findViewById(R.id.task_description_field);
             holder.dueDate = (TextView) convertView.findViewById(R.id.due_date_field);
-            holder.checkBox = (CheckBox) convertView.findViewById(R.id.task_done_checkbox);
-            //Used to store the state of the checkbox.
-            //Without this the checkbox resets when the row goes out of the screen
-            holder.checkBox.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (v.getTag(R.id.item_position) != null) {
-                        int itemPosition = (Integer) v.getTag(R.id.item_position);
-                        mTasks.get(itemPosition).setDone(((CheckBox) v).isChecked());
-                    }
-                }
-            });
 
             convertView.setTag(R.id.view_holder, holder);
         } else {
@@ -66,9 +52,6 @@ public class TaskAdapter extends BaseAdapter implements ListAdapter {
 
         holder.subject.setText(task.getSubject());
         holder.taskDescription.setText(task.getDescription());
-        holder.checkBox.setChecked(task.isDone());
-        //See the listener added to the checkbox above
-        holder.checkBox.setTag(R.id.item_position, position);
 
         DateTimeFormatter displayFormat = DateTimeFormat.forPattern(mContext.getString(R.string.display_date_format));
         LocalDate date = task.getDueDate();

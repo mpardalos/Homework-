@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
@@ -90,26 +89,14 @@ public class TaskList extends ActionBarListActivity {
                 this.adapter.changeTaskList(mDatabase.getTasks());
                 this.adapter.notifyDataSetChanged();
                 break;
-
+/*
             case R.id.edit_timetable_button:
                 Intent intent = new Intent(this, EditSubjects.class);
                 startActivity(intent);
+*/
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * Called when a checkbox is clicked.
-     * Updates the state of the database entry associated with the item to reflect the state of
-     * the checkbox
-     */
-    public void onItemChecked(View checkbox) {
-        int databaseId = ((Task) ((View) checkbox.getParent()).getTag(R.id.task_object))
-                .getDatabaseId();
-        boolean checked = ((CheckBox) checkbox).isChecked();
-
-        mDatabase.setDone(databaseId, checked);
     }
 
     public void deleteAllTasks() {
