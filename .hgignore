@@ -6,4 +6,5 @@ app/build/*
 build/*
 .navigation/*
 *.iml
+*/*.iml
 

@@ -32,5 +32,6 @@
     <string name="title_activity_edit_subjects">Edit Subjects</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_subject_edit">Edit Subjects</string>
 
 </resources>

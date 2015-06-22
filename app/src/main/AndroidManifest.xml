@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="org.mpardalos.homeworkmanager">
+<manifest
+    package="org.mpardalos.homeworkmanager"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -27,6 +28,14 @@
         <activity
             android:name=".TaskEdit"
             android:label="@string/title_activity_task_details"
+            android:parentActivityName=".TaskList">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.mpardalos.homeworkmanager.TaskList"/>
+        </activity>
+        <activity
+            android:name=".SubjectEdit"
+            android:label="@string/title_activity_subject_edit"
             android:parentActivityName=".TaskList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

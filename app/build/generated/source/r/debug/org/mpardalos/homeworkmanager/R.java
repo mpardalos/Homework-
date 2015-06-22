@@ -1368,10 +1368,11 @@ containing a value of this type.
         public static final int ic_action_camera=0x7f020034;
         public static final int ic_action_discard=0x7f020035;
         public static final int ic_action_new=0x7f020036;
-        public static final int ic_launcher=0x7f020037;
-        public static final int logo=0x7f020038;
-        public static final int shadow=0x7f020039;
-        public static final int shadow_mini=0x7f02003a;
+        public static final int ic_chevron_right=0x7f020037;
+        public static final int ic_launcher=0x7f020038;
+        public static final int logo=0x7f020039;
+        public static final int shadow=0x7f02003a;
+        public static final int shadow_mini=0x7f02003b;
     }
     public static final class id {
         public static final int action_bar=0x7f080037;
@@ -1382,34 +1383,34 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f080025;
         public static final int action_bar_title=0x7f080024;
         public static final int action_context_bar=0x7f080038;
-        public static final int action_delete_task=0x7f080052;
+        public static final int action_delete_task=0x7f080053;
         public static final int action_menu_divider=0x7f080018;
         public static final int action_menu_presenter=0x7f080019;
         public static final int action_mode_bar=0x7f080034;
         public static final int action_mode_bar_stub=0x7f080033;
         public static final int action_mode_close_button=0x7f080026;
-        public static final int action_settings=0x7f080050;
+        public static final int action_settings=0x7f080051;
         public static final int activity_chooser_view_content=0x7f080027;
-        public static final int add_photo=0x7f080051;
-        public static final int add_subject_button=0x7f080048;
-        public static final int add_task_button=0x7f08004f;
+        public static final int add_photo=0x7f080052;
+        public static final int add_subject_button=0x7f080049;
+        public static final int add_task_button=0x7f080050;
         public static final int always=0x7f080010;
         public static final int beginning=0x7f08000b;
         public static final int checkbox=0x7f08002f;
         public static final int collapseActionView=0x7f080012;
         public static final int decor_content_parent=0x7f080035;
         public static final int default_activity_button=0x7f08002a;
-        public static final int delete_button=0x7f080049;
-        public static final int delete_tasks_button=0x7f080053;
+        public static final int delete_button=0x7f08004a;
+        public static final int delete_tasks_button=0x7f080054;
         public static final int description_input=0x7f080047;
         public static final int dialog=0x7f080013;
         public static final int disableHome=0x7f080009;
         public static final int dropdown=0x7f080014;
         public static final int due_date=0x7f08001a;
-        public static final int due_date_field=0x7f08004b;
+        public static final int due_date_field=0x7f08004c;
         public static final int due_date_input=0x7f080046;
         public static final int edit_query=0x7f080039;
-        public static final int edit_timetable_button=0x7f080054;
+        public static final int edit_subjects_button=0x7f080055;
         public static final int end=0x7f08000d;
         public static final int expand_activities_button=0x7f080028;
         public static final int expanded_menu=0x7f08002e;
@@ -1421,7 +1422,7 @@ containing a value of this type.
         public static final int item_position=0x7f08001c;
         public static final int listMode=0x7f080001;
         public static final int list_item=0x7f08002b;
-        public static final int loading=0x7f08004e;
+        public static final int loading=0x7f08004f;
         public static final int middle=0x7f08000c;
         public static final int mini=0x7f08000a;
         public static final int never=0x7f08000e;
@@ -1445,13 +1446,14 @@ containing a value of this type.
         public static final int showHome=0x7f080005;
         public static final int showTitle=0x7f080007;
         public static final int split_action_bar=0x7f08001f;
-        public static final int subject_field=0x7f08004a;
+        public static final int subject_field=0x7f08004b;
         public static final int subject_input=0x7f080045;
+        public static final int subject_list=0x7f080048;
         public static final int subject_name=0x7f080020;
         public static final int submit_area=0x7f080042;
         public static final int tabMode=0x7f080002;
-        public static final int task_description_field=0x7f08004c;
-        public static final int task_list=0x7f08004d;
+        public static final int task_description_field=0x7f08004d;
+        public static final int task_list=0x7f08004e;
         public static final int task_object=0x7f080021;
         public static final int title=0x7f08002d;
         public static final int up=0x7f080022;
@@ -1495,7 +1497,7 @@ containing a value of this type.
         public static final int task_list=0x7f03001c;
     }
     public static final class menu {
-        public static final int menu_edit_subjects=0x7f0e0000;
+        public static final int edit_subjects=0x7f0e0000;
         public static final int setup=0x7f0e0001;
         public static final int task_add=0x7f0e0002;
         public static final int task_edit=0x7f0e0003;
@@ -2026,8 +2028,9 @@ containing a value of this type.
         public static final int task_title_field=0x7f0c0037;
         public static final int title_activity_edit_subjects=0x7f0c0038;
         public static final int title_activity_setup=0x7f0c0039;
-        public static final int title_activity_task_add=0x7f0c003a;
-        public static final int title_activity_task_details=0x7f0c003b;
+        public static final int title_activity_subject_edit=0x7f0c003a;
+        public static final int title_activity_task_add=0x7f0c003b;
+        public static final int title_activity_task_details=0x7f0c003c;
     }
     public static final class style {
         public static final int AppTheme=0x7f0d0000;

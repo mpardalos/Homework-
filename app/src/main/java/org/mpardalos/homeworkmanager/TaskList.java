@@ -10,9 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.melnykov.fab.FloatingActionButton;
-
 import net.danlew.android.joda.JodaTimeAndroid;
 
 import java.util.ArrayList;
@@ -21,29 +19,11 @@ import java.util.List;
 
 public class TaskList extends ActionBarActivity {
 
-    private class TaskLoader extends AsyncTask<Void, Void, List<Task>> {
-        //Bad, bad, bad decision, hopefully only temporary
-        public List<Task> doInBackground(Void... databaseHelpers) {
-            return mDatabase.getTasks();
-        }
-
-        protected void onPreExecute() {
-            findViewById(R.id.loading).setVisibility(View.VISIBLE);
-        }
-
-        protected void onPostExecute(List<Task> result) {
-            adapter.changeTaskList((ArrayList<Task>) result);
-            mTaskRecyclerView.setAdapter(adapter);
-            adapter.notifyDataSetChanged();
-            findViewById(R.id.loading).setVisibility(View.GONE);
-        }
-    }
-
-    private RecyclerView mTaskRecyclerView;
     public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
     public static final int EDIT_TASK_REQUEST = 3;
     TaskDatabaseHelper mDatabase;
     TaskAdapter adapter;
+    private RecyclerView mTaskRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,25 +39,25 @@ public class TaskList extends ActionBarActivity {
         mTaskRecyclerView.setLayoutManager(lm);
         mTaskRecyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(this,
-                                              new RecyclerItemClickListener.OnItemClickListener() {
+                        new RecyclerItemClickListener.OnItemClickListener() {
 
-                                                  @Override
-                                                  public void onItemClick(View v, int position) {
-                                                      Intent intent = new Intent
-                                                              (getApplicationContext(),
-                                                               TaskEdit.class);
-                                                      intent.putExtra("task",
-                                                                      (Task) v.getTag(R.id.task_object));
+                            @Override
+                            public void onItemClick(View v, int position) {
+                                Intent intent = new Intent
+                                        (getApplicationContext(),
+                                                TaskEdit.class);
+                                intent.putExtra("task",
+                                        (Task) v.getTag(R.id.task_object));
 
-                                                      startActivityForResult(intent,
-                                                                             EDIT_TASK_REQUEST);
-                                                  }
+                                startActivityForResult(intent,
+                                        EDIT_TASK_REQUEST);
+                            }
 
-                                                  @Override
-                                                  public void onItemLongPress(View childView,
-                                                                              int position) {
-                                                  }
-                                              }));
+                            @Override
+                            public void onItemLongPress(View childView,
+                                                        int position) {
+                            }
+                        }));
 
 
         ((FloatingActionButton) findViewById(R.id.add_task_button))
@@ -111,6 +91,9 @@ public class TaskList extends ActionBarActivity {
                 this.adapter.changeTaskList((ArrayList<Task>) mDatabase.getTasks());
                 this.adapter.notifyDataSetChanged();
                 break;
+            case R.id.edit_subjects_button:
+                startActivity(new Intent(this, SubjectEdit.class));
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -142,6 +125,24 @@ public class TaskList extends ActionBarActivity {
         } else if (requestCode == EDIT_TASK_REQUEST && resultCode == TaskEdit.RESULT_EDIT_TASK) {
             mDatabase.modifyTask((Task) data.getParcelableExtra("task"));
             refreshList();
+        }
+    }
+
+    private class TaskLoader extends AsyncTask<Void, Void, List<Task>> {
+        //Bad, bad, bad decision, hopefully only temporary
+        public List<Task> doInBackground(Void... databaseHelpers) {
+            return mDatabase.getTasks();
+        }
+
+        protected void onPreExecute() {
+            findViewById(R.id.loading).setVisibility(View.VISIBLE);
+        }
+
+        protected void onPostExecute(List<Task> result) {
+            adapter.changeTaskList((ArrayList<Task>) result);
+            mTaskRecyclerView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+            findViewById(R.id.loading).setVisibility(View.GONE);
         }
     }
 }
