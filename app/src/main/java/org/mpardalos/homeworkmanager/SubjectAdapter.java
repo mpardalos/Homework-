@@ -33,6 +33,10 @@ class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectHolder> 
         return mSubjects.size();
     }
 
+    public void remove(int position) {
+        mSubjects.remove(position);
+    }
+
     class SubjectHolder extends RecyclerView.ViewHolder {
         TextView title;
 
@@ -41,5 +45,4 @@ class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectHolder> 
             title = (TextView) itemView.findViewById(R.id.subject_name);
         }
     }
-
 }

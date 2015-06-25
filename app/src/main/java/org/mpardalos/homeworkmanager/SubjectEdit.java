@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -26,6 +27,21 @@ public class SubjectEdit extends ActionBarActivity {
         lm.setOrientation(LinearLayoutManager.VERTICAL);
         mSubjectList.setLayoutManager(lm);
         mSubjectList.setAdapter(new SubjectAdapter(mDatabase.getSubjects()));
+        ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                mDatabase.deleteSubject(((SubjectAdapter.SubjectHolder) viewHolder).title.getText().toString());
+                ((SubjectAdapter) mSubjectList.getAdapter()).remove(viewHolder.getAdapterPosition());
+                mSubjectList.getAdapter().notifyDataSetChanged();
+            }
+        };
+        ItemTouchHelper swipeToDelete = new ItemTouchHelper(callback);
+        swipeToDelete.attachToRecyclerView(mSubjectList);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);

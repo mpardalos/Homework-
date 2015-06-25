@@ -3,27 +3,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
-    <Button
-        android:id="@+id/delete_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:focusable="false"
-        android:text="@string/delete"
-        />
-
     <TextView
         android:id="@id/subject_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@id/delete_button"
-        android:layout_toStartOf="@id/delete_button"
-        android:text="a Subject"
-        android:textColor="@color/primary_text"/>
+        android:theme="@style/SingleLineListItem"/>
 </RelativeLayout>

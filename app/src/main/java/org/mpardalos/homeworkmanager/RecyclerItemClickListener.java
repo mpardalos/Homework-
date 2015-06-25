@@ -44,6 +44,10 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
         // Not needed.
     }
 
+    @Override
+    public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+    }
+
     /**
      * A click listener for items.
      */
@@ -55,7 +59,7 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
          * @param childView View of the item that was clicked.
          * @param position  Position of the item that was clicked.
          */
-        public void onItemClick(View childView, int position);
+        void onItemClick(View childView, int position);
 
         /**
          * Called when an item is long pressed.
@@ -63,7 +67,7 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
          * @param childView View of the item that was long pressed.
          * @param position  Position of the item that was long pressed.
          */
-        public void onItemLongPress(View childView, int position);
+        void onItemLongPress(View childView, int position);
 
     }
 
