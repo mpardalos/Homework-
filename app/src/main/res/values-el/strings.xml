@@ -24,5 +24,7 @@
     <string name="add_subject_button">Προσθήκη μαθήματος</string>
     <string name="add_photo">Λήψη Φωτογραφίας</string>
     <string name="edit_subjects">Επεξεργασία μαθημάτων</string>
+    <string name="undo_action">Αναίρεση</string>
+    <string name="task_deleted">1 διαγράφηκε</string>
 
 </resources>

@@ -115,14 +115,6 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
                 listener.onItemLongPress(childView, childViewPosition);
             }
         }
-
-        @Override
-        public boolean onDown(MotionEvent event) {
-            // Best practice to always return true here.
-            // http://developer.android.com/training/gestures/detector.html#detect
-            return true;
-        }
-
     }
 
 }

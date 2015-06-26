@@ -33,5 +33,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_subject_edit">Edit Subjects</string>
+    <string name="undo_action">Undo</string>
+    <string name="task_deleted">1 Deleted</string>
 
 </resources>

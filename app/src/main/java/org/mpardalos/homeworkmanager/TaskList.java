@@ -3,14 +3,15 @@ package org.mpardalos.homeworkmanager;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import com.melnykov.fab.FloatingActionButton;
 import net.danlew.android.joda.JodaTimeAndroid;
 
 import java.util.ArrayList;
@@ -30,6 +31,8 @@ public class TaskList extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         JodaTimeAndroid.init(this);
         setContentView(R.layout.task_list);
+        //((CoordinatorLayout) findViewById(R.id.fab_coordinator)).
+
 
         this.mDatabase = new TaskDatabaseHelper(this);
 
@@ -59,9 +62,37 @@ public class TaskList extends ActionBarActivity {
                             }
                         }));
 
+        ItemTouchHelper.SimpleCallback swipeCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
 
-        ((FloatingActionButton) findViewById(R.id.add_task_button))
-                .attachToRecyclerView(mTaskRecyclerView);
+            @Override
+            public void onSwiped(final RecyclerView.ViewHolder viewHolder, int direction) {
+                mDatabase.deleteTask(((Task) viewHolder.itemView.getTag(R.id.task_object)).getDatabaseId());
+                final int original_position = viewHolder.getAdapterPosition();
+                final Task deletedTask = (Task) viewHolder.itemView.getTag(R.id.task_object);
+
+                ((UndoAdapter) mTaskRecyclerView.getAdapter()).remove(viewHolder.getAdapterPosition());
+                mTaskRecyclerView.getAdapter().notifyDataSetChanged();
+
+                Snackbar undoSB = Snackbar.make(findViewById(R.id.fab_coordinator), R.string.task_deleted, Snackbar.LENGTH_LONG);
+                undoSB.setAction(R.string.undo_action, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ((UndoAdapter) mTaskRecyclerView.getAdapter()).restore(original_position);
+                        mTaskRecyclerView.getAdapter().notifyDataSetChanged();
+                        //TODO make this keep its original position (When it is added back to the DB it's put in the end)
+                        mDatabase.insertTask(deletedTask);
+                    }
+                });
+                undoSB.show();
+            }
+        };
+
+        ItemTouchHelper swipeToDelete = new ItemTouchHelper(swipeCallback);
+        swipeToDelete.attachToRecyclerView(mTaskRecyclerView);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
