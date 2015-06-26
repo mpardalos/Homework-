@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class SubjectEdit extends ActionBarActivity {
@@ -70,4 +72,14 @@ public class SubjectEdit extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void addSubject(View v) {
+        String name = ((TextView) findViewById(R.id.new_subject_input)).getText().toString();
+        ((SubjectAdapter) mSubjectList.getAdapter()).add(name);
+        mSubjectList.getAdapter().notifyDataSetChanged();
+        mSubjectList.scrollToPosition(mSubjectList.getAdapter().getItemCount() - 1);
+        mDatabase.addSubject(name);
+    }
 }
+
+

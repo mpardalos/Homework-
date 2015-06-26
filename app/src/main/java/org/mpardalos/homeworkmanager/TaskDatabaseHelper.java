@@ -6,9 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.util.Log;
-
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
-
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
@@ -301,6 +299,13 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         return result;
     }
 
+    public void addSubject(String name) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues subjectCV = new ContentValues();
+        subjectCV.put(SUBJECT_NAME, name);
+        db.insert(SUBJECTS_TABLE, null, subjectCV);
+    }
+
     Cursor getPeriods() {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
@@ -313,5 +318,6 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
         return c;
     }
+
 
 }

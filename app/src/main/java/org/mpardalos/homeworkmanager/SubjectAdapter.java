@@ -37,6 +37,10 @@ class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectHolder> 
         mSubjects.remove(position);
     }
 
+    public void add(String name) {
+        mSubjects.add(name);
+    }
+
     class SubjectHolder extends RecyclerView.ViewHolder {
         TextView title;
 
