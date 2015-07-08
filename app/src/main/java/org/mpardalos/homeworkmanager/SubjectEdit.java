@@ -1,8 +1,9 @@
 package org.mpardalos.homeworkmanager;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -10,10 +11,11 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
-public class SubjectEdit extends ActionBarActivity {
+public class SubjectEdit extends AppCompatActivity {
     TaskDatabaseHelper mDatabase;
     RecyclerView mSubjectList;
 
@@ -36,10 +38,23 @@ public class SubjectEdit extends ActionBarActivity {
             }
 
             @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+            public void onSwiped(final RecyclerView.ViewHolder viewHolder, int direction) {
+                //The methods after this modify the viewHolder so we have to keep the original position
+                final int originalPosition = viewHolder.getAdapterPosition();
+
                 mDatabase.deleteSubject(((SubjectAdapter.SubjectHolder) viewHolder).title.getText().toString());
                 ((SubjectAdapter) mSubjectList.getAdapter()).remove(viewHolder.getAdapterPosition());
                 mSubjectList.getAdapter().notifyDataSetChanged();
+
+                Snackbar.make(mSubjectList, R.string.item_deleted, Snackbar.LENGTH_LONG)
+                        .setAction(R.string.undo_action, new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                ((SubjectAdapter) mSubjectList.getAdapter()).restore(originalPosition);
+                                mSubjectList.getAdapter().notifyDataSetChanged();
+                                mDatabase.addSubject(((SubjectAdapter.SubjectHolder) viewHolder).title.getText().toString());
+                            }
+                        }).show();
             }
         };
         ItemTouchHelper swipeToDelete = new ItemTouchHelper(callback);
@@ -73,12 +88,14 @@ public class SubjectEdit extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void addSubject(View v) {
+    public void onAddSubjectButtonPressed(View v) {
         String name = ((TextView) findViewById(R.id.new_subject_input)).getText().toString();
         ((SubjectAdapter) mSubjectList.getAdapter()).add(name);
         mSubjectList.getAdapter().notifyDataSetChanged();
         mSubjectList.scrollToPosition(mSubjectList.getAdapter().getItemCount() - 1);
         mDatabase.addSubject(name);
+
+        ((EditText) findViewById(R.id.new_subject_input)).setText("");
     }
 }
 

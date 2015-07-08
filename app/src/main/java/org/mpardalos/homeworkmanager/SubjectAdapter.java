@@ -7,14 +7,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
-class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectHolder> {
+class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectHolder> implements UndoAdapter {
 
     private ArrayList<String> mSubjects;
+    private HashMap<Integer, String> mRemovedSubjects;
 
     SubjectAdapter(ArrayList<String> subjects) {
         this.mSubjects = subjects;
+        this.mRemovedSubjects = new HashMap<>();
     }
 
     @Override
@@ -34,7 +37,13 @@ class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectHolder> 
     }
 
     public void remove(int position) {
+        mRemovedSubjects.put(position, mSubjects.get(position));
         mSubjects.remove(position);
+    }
+
+    @Override
+    public void restore(int position) {
+        mSubjects.add(position, mRemovedSubjects.get(position));
     }
 
     public void add(String name) {

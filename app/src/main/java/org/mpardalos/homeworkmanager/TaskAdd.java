@@ -3,21 +3,14 @@ package org.mpardalos.homeworkmanager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import net.danlew.android.joda.JodaTimeAndroid;
-
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
@@ -28,7 +21,7 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class TaskAdd extends ActionBarActivity implements DatePickerFragment.onDateEnteredListener {
+public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onDateEnteredListener {
 
     protected TaskDatabaseHelper mDatabase;
 

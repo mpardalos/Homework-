@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TaskList extends ActionBarActivity {
+public class TaskList extends AppCompatActivity {
 
     public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
     public static final int EDIT_TASK_REQUEST = 3;
@@ -77,7 +77,7 @@ public class TaskList extends ActionBarActivity {
                 ((UndoAdapter) mTaskRecyclerView.getAdapter()).remove(viewHolder.getAdapterPosition());
                 mTaskRecyclerView.getAdapter().notifyDataSetChanged();
 
-                Snackbar undoSB = Snackbar.make(findViewById(R.id.fab_coordinator), R.string.task_deleted, Snackbar.LENGTH_LONG);
+                Snackbar undoSB = Snackbar.make(findViewById(R.id.fab_coordinator), R.string.item_deleted, Snackbar.LENGTH_LONG);
                 undoSB.setAction(R.string.undo_action, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
