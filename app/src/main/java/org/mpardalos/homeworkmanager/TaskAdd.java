@@ -58,8 +58,6 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
 
-        autocompleteSubject(subjectSpinner);
-
         //Auto-complete dueDate based on current subject and its next occurrence
         subjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -94,17 +92,6 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         });
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
-    }
-
-    private void autocompleteSubject(Spinner subjectSpinner) {
-        //auto-complete subject based on time
-        String currentSubject;
-        try {
-            currentSubject = mDatabase.getSubjectAtDateTime(DateTime.now());
-            subjectSpinner.setSelection(getIndex(subjectSpinner, currentSubject));
-        } catch (IllegalArgumentException e) {
-            Log.d("Subject not set: ", e.getMessage());
-        }
     }
 
     @Override

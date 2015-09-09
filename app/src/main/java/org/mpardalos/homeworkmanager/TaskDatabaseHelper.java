@@ -21,12 +21,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.util.Log;
-import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
-import org.joda.time.LocalTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -36,27 +34,62 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class TaskDatabaseHelper extends SQLiteAssetHelper {
+public class TaskDatabaseHelper extends SQLiteOpenHelper {
+    private static final String DB_NAME = "data.db";
+    private static final int DB_VERSION = 2;
 
     public static final String SUBJECT_NAME = "SubjName";
-    private static final String DB_NAME = "database.db";
-    private static final int DB_VERSION = 1;
     private static final String TASKS_TABLE = "Tasks";
     private static final String SUBJECTS_TABLE = "Subjects";
-    private static final String PERIOD_TABLE = "Periods";
     private static final String TIMETABLE = "TimeTable";
     private static final String TASK_DONE = "Done";
     private static final String SUBJECT_ID = "SubjectId";
-    private static final String TEACHER_NAME = "TeacherName";
-    private static final String DESCRIPTION = "TaskDescr";
+    private static final String TASK_DESCRIPTION = "TaskDescr";
     private static final String DUE_DATE = "DueDate";
-    private static final String PERIOD_START = "PeriodStart";
-    private static final String PERIOD_END = "PeriodEnd";
     private static final String DAY_OF_WEEK = "WeekDay";
+    private static final String TASK_PHOTO = "TaskPhoto";
+
+    private static final String createSubjects = "CREATE TABLE " + SUBJECTS_TABLE +
+            " (" +
+            "_id INTEGER PRIMARY KEY NOT NULL, " +
+            SUBJECT_NAME + " TEXT NOT NULL" +
+            ");";
+
+    private static final String createTasks = "CREATE TABLE " + TASKS_TABLE +
+            "(" +
+            "_id INTEGER PRIMARY KEY NOT NULL, " +
+            TASK_DESCRIPTION + " TEXT," +
+            TASK_PHOTO + " BLOB, " +
+            DUE_DATE + " TEXT, " +
+            TASK_DONE + " INTEGER NOT NULL, " +
+            SUBJECT_ID + " INTEGER NOT NULL" +
+            ");";
+
+    private static final String createTimeTable = "CREATE TABLE " + TIMETABLE +
+            "(" +
+            "_id INTEGER PRIMARY KEY NOT NULL, " +
+            DAY_OF_WEEK + " TEXT NOT NULL, " +
+            SUBJECT_ID + " INTEGER NOT NULL, " +
+            "FOREIGN KEY (" + SUBJECT_ID + ") REFERENCES " + SUBJECTS_TABLE + " (_id) DEFERRABLE INITIALLY DEFERRED" +
+            ");";
+
 
     private static HashMap<String, Integer> subjectIdMap;
 
     private final Context mContext;
+
+    public void onCreate(SQLiteDatabase db) {
+        Log.d("create db", createSubjects);
+        Log.d("create db", createTasks);
+        Log.d("create db", createTimeTable);
+        db.execSQL(createSubjects);
+        db.execSQL(createTasks);
+        db.execSQL(createTimeTable);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    }
 
     public TaskDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -66,11 +99,11 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
     public List<String> getSubjectsInDay(String day) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME + " FROM " +
-                                       SUBJECTS_TABLE +
-                                       " INNER JOIN " + TIMETABLE + " ON " +
-                                       "(" + TIMETABLE + "." + SUBJECT_ID + "==" + SUBJECTS_TABLE
-                                       + "._id)" +
-                                       " WHERE " + TIMETABLE + "." + DAY_OF_WEEK + "== ?;"
+                SUBJECTS_TABLE +
+                " INNER JOIN " + TIMETABLE + " ON " +
+                "(" + TIMETABLE + "." + SUBJECT_ID + "==" + SUBJECTS_TABLE
+                + "._id)" +
+                " WHERE " + TIMETABLE + "." + DAY_OF_WEEK + "== ?;"
                 , new String[]{day.toLowerCase()});
         c.moveToPosition(-1);
         List<String> subjectList = new ArrayList<>();
@@ -87,10 +120,10 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
         qb.setTables(SUBJECTS_TABLE);
-        String[] columns = new String[]{"_id", SUBJECT_NAME, TEACHER_NAME};
+        String[] columns = new String[]{"_id", SUBJECT_NAME};
 
         Cursor c = qb.query(db, columns, null, null, null, null, null, null);
-        c.moveToFirst();
+        c.moveToPosition(-1);
 
         ArrayList<String> subjects = new ArrayList<>();
         while (c.moveToNext()) {
@@ -107,8 +140,8 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
             SQLiteDatabase db = getReadableDatabase();
             String query = "SELECT " + SUBJECT_NAME + ", _id FROM " + SUBJECTS_TABLE;
             Cursor c = db.rawQuery(query, null);
-            c.moveToPosition(-1); //initialize it to -1 so we can iterate on it and not miss the
-            // first item
+            // initialize it to -1 so we can iterate on it and not miss the first item
+            c.moveToPosition(-1);
             int idColumn = c.getColumnIndex("_id");
             int nameColumn = c.getColumnIndex(SUBJECT_NAME);
             subjectIdMap = new HashMap<>();
@@ -128,7 +161,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
         Cursor c = db.rawQuery(
                 "SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME +
-                        "," + TASKS_TABLE + "." + DESCRIPTION +
+                        "," + TASKS_TABLE + "." + TASK_DESCRIPTION +
                         "," + TASKS_TABLE + "." + "\"_id\"" +
                         "," + TASKS_TABLE + "." + TASK_DONE +
                         "," + TASKS_TABLE + "." + DUE_DATE +
@@ -139,7 +172,7 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         c.moveToPosition(-1);
 
         int subjColumn = c.getColumnIndex(SUBJECT_NAME);
-        int descriptionColumn = c.getColumnIndex(DESCRIPTION);
+        int descriptionColumn = c.getColumnIndex(TASK_DESCRIPTION);
         int idColumn = c.getColumnIndex("_id");
         int doneColumn = c.getColumnIndex(TASK_DONE);
         int dateColumn = c.getColumnIndex(DUE_DATE);
@@ -147,8 +180,8 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         List<Task> tasks = new ArrayList<>();
         while (c.moveToNext()) {
             tasks.add(new Task(c.getString(subjColumn), c.getString(descriptionColumn),
-                               dbFormat.parseLocalDate(c.getString(dateColumn)),
-                               c.getInt(idColumn), (c.getInt(doneColumn) != 0)));
+                    dbFormat.parseLocalDate(c.getString(dateColumn)),
+                    c.getInt(idColumn), (c.getInt(doneColumn) != 0)));
         }
         c.close();
 
@@ -191,10 +224,10 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
 
         SQLiteDatabase db = getWritableDatabase();
         DateTimeFormatter dbDateFormat = DateTimeFormat.forPattern(mContext.getResources()
-                                                                           .getString(R.string.database_date_format));
+                .getString(R.string.database_date_format));
 
         ContentValues taskCV = new ContentValues();
-        taskCV.put(DESCRIPTION, description);
+        taskCV.put(TASK_DESCRIPTION, description);
         taskCV.put(DUE_DATE, dueDate.toString(dbDateFormat));
         taskCV.put(SUBJECT_ID, getSubjectId(subject));
         taskCV.put(TASK_DONE, false);
@@ -205,14 +238,14 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
     public void modifyTask(Task task) {
         if (task.getDatabaseId() == -1) {
             throw new IllegalArgumentException("Could not modify task. Task does not have a " +
-                                                       "database entry.");
+                    "database entry.");
         }
         SQLiteDatabase db = getWritableDatabase();
         DateTimeFormatter dbDateFormat = DateTimeFormat.forPattern(mContext.getResources()
-                                                                           .getString(R.string.database_date_format));
+                .getString(R.string.database_date_format));
         ContentValues taskCV = new ContentValues();
         if (task.getDescription() != null) {
-            taskCV.put(DESCRIPTION, task.getDescription());
+            taskCV.put(TASK_DESCRIPTION, task.getDescription());
         }
         if (task.getDueDate() != null) {
             taskCV.put(DUE_DATE, task.getDueDate().toString(dbDateFormat));
@@ -262,79 +295,11 @@ public class TaskDatabaseHelper extends SQLiteAssetHelper {
         deleteSubject(subjectId);
     }
 
-    public String getSubjectAtDateTime(DateTime dateTime) throws IllegalArgumentException {
-        if (dateTime.dayOfWeek().getAsText().equals("Saturday") || dateTime.dayOfWeek().getAsText
-                ().equals("Sunday")) {
-            throw new IllegalArgumentException("There is no lesson on a weekend");
-        }
-
-        Cursor periods = getPeriods();
-        SQLiteDatabase db = getReadableDatabase();
-        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-        LocalTime requestedTime = dateTime.toLocalTime();
-        LocalTime startTime;
-        LocalTime endTime;
-        DateTimeFormatter timeFormatter = DateTimeFormat.forPattern(mContext.getString(R.string.database_time_format));
-        int resultPeriod = -1;
-
-        //Find the period
-        periods.moveToPosition(-1);
-        while (periods.moveToNext()) {
-            startTime = timeFormatter.parseLocalTime(periods.getString(periods.getColumnIndex
-                    (PERIOD_START)));
-            endTime = timeFormatter.parseLocalTime(periods.getString(periods.getColumnIndex
-                    (PERIOD_END)));
-
-
-            if (requestedTime.compareTo(startTime) >= 0 &&
-                    requestedTime.compareTo(endTime.plusMinutes(3)) < 0) {
-                resultPeriod = periods.getInt(periods.getColumnIndex("_id"));
-                break;
-            }
-        }
-
-        if (resultPeriod == -1) {
-            throw new IllegalArgumentException("There is no lesson at: " + requestedTime.toString
-                    (timeFormatter));
-        }
-
-        String dayOfWeek = dateTime.dayOfWeek().getAsText().toLowerCase();
-        qb.setTables(TIMETABLE);
-        String[] selectionArgs = new String[]{dayOfWeek, String.valueOf(resultPeriod)};
-        Cursor c = db.rawQuery("SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME +
-                                       " FROM " + SUBJECTS_TABLE + " INNER JOIN " + TIMETABLE + "" +
-                                       " ON (" + SUBJECTS_TABLE + "._id=" + TIMETABLE + "" +
-                                       ".SubjectId)" +
-                                       " WHERE (" + TIMETABLE + "." + DAY_OF_WEEK + "= ?" + " AND" +
-                                       " " + TIMETABLE + ".PeriodId= ? )"
-                , selectionArgs);
-
-        c.moveToFirst();
-        //Using a temp var so that we can close the Cursor
-        String result = c.getString(c.getColumnIndex(SUBJECT_NAME));
-        c.close();
-        return result;
-    }
-
     public void addSubject(String name) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues subjectCV = new ContentValues();
         subjectCV.put(SUBJECT_NAME, name);
-        db.insert(SUBJECTS_TABLE, null, subjectCV);
+        Log.d("task id", String.valueOf(db.insert(SUBJECTS_TABLE, null, subjectCV)));
+
     }
-
-    Cursor getPeriods() {
-        SQLiteDatabase db = getReadableDatabase();
-        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-
-        qb.setTables(PERIOD_TABLE);
-        String[] columns = {"_id", PERIOD_START, PERIOD_END};
-
-        Cursor c = qb.query(db, columns, null, null, null, null, null);
-        c.moveToFirst();
-
-        return c;
-    }
-
-
 }
