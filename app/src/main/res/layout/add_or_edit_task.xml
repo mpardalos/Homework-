@@ -1,10 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                tools:context="org.homeworkmanager.TaskAdd">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.homeworkmanager.TaskAdd">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/action_bar"
@@ -14,8 +14,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        />
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,27 +25,27 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="org.homeworkmanager.TaskAdd">
+        tools:context="org.homeworkmanager.TaskAdd"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/subject_heading"/>
+            android:text="@string/subject_heading" />
 
         <Spinner
             android:id="@+id/subject_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="@dimen/task_add_input_seperator_height"/>
+            android:layout_height="@dimen/task_add_input_seperator_height" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/due_date_heading"/>
+            android:text="@string/due_date_heading" />
 
         <android.widget.EditText
             android:id="@+id/due_date_input"
@@ -55,22 +54,28 @@
             android:focusable="false"
             android:hint="@string/due_date_input"
             android:inputType="date"
-            android:onClick="onDueDateClicked"/>
+            android:onClick="onDueDateClicked" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="@dimen/task_add_input_seperator_height"/>
+            android:layout_height="@dimen/task_add_input_seperator_height" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/description_heading"/>
+            android:text="@string/description_heading" />
 
         <EditText
             android:id="@+id/description_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/description_input"
-            android:inputType="textMultiLine"/>
+            android:inputType="textMultiLine" />
+
+        <ImageView
+            android:id="@+id/image_preview"
+            android:layout_width="211dp"
+            android:layout_height="160dp"
+            android:layout_weight="0.27"/>
     </LinearLayout>
 </RelativeLayout>

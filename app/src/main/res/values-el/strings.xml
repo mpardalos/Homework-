@@ -26,5 +26,6 @@
     <string name="edit_subjects">Επεξεργασία μαθημάτων</string>
     <string name="undo_action">Αναίρεση</string>
     <string name="item_deleted">1 διαγράφηκε</string>
+    <string name="camera_unavailable">Η συσκευή σας δεν εχει κάμερα</string>
 
 </resources>

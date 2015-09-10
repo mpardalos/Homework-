@@ -35,5 +35,6 @@
     <string name="title_activity_subject_edit">Edit Subjects</string>
     <string name="undo_action">Undo</string>
     <string name="item_deleted">1 Deleted</string>
+    <string name="camera_unavailable">Your device doesn\'t have a camera</string>
 
 </resources>
