@@ -107,12 +107,14 @@ public class SubjectEdit extends AppCompatActivity {
 
     public void onAddSubjectButtonPressed(View v) {
         String name = ((TextView) findViewById(R.id.new_subject_input)).getText().toString();
-        ((SubjectAdapter) mSubjectList.getAdapter()).add(name);
-        mSubjectList.getAdapter().notifyDataSetChanged();
-        mSubjectList.scrollToPosition(mSubjectList.getAdapter().getItemCount() - 1);
-        mDatabase.addSubject(name);
-
-        ((EditText) findViewById(R.id.new_subject_input)).setText("");
+        // Do not allow empty or all-whitespace subjects
+        if  (name.trim().length() > 0) {
+            ((SubjectAdapter) mSubjectList.getAdapter()).add(name);
+            mSubjectList.getAdapter().notifyDataSetChanged();
+            mSubjectList.scrollToPosition(mSubjectList.getAdapter().getItemCount() - 1);
+            mDatabase.addSubject(name);
+            ((EditText) findViewById(R.id.new_subject_input)).setText("");
+        }
     }
 }
 
