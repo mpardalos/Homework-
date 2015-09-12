@@ -26,6 +26,8 @@ import org.joda.time.LocalDate;
  * Represents a specific homework task/assignment.
  */
 public class Task implements Parcelable {
+    public static final int NO_DATABASE_ID = -1;
+
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
         public Task createFromParcel(Parcel in) {
             return new Task(in);
@@ -48,7 +50,7 @@ public class Task implements Parcelable {
      * @param subject     the name of the subject of the task
      * @param description a description of the task
      * @param dueDate     date when the task is due
-     * @param databaseId  the _id field of the entry of the task in the database
+     * @param databaseId  the _id field of the entry of the task in the database, NO_DATABASE_ID if none exists
      * @param done        whether the task is done
      */
     public Task(String subject, String description, LocalDate dueDate, int databaseId,
@@ -57,17 +59,6 @@ public class Task implements Parcelable {
         this.description = description;
         this.dueDate = dueDate;
         this.databaseId = databaseId;
-        this.done = done;
-    }
-
-    public Task(String subject, String description, LocalDate dueDate, boolean done) {
-        /**
-         * Use when the task does not yet exist in the database or we don't know its id
-         */
-        this.subject = subject;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.databaseId = -1;
         this.done = done;
     }
 
