@@ -28,7 +28,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 import net.danlew.android.joda.JodaTimeAndroid;
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -184,9 +183,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         Log.i("Task to be added: ", "Description: " + description);
 
         Intent result = new Intent();
-        result.putExtra(
-                "task",
-                new Task(subject, description, dueDate, false));
+        result.putExtra("task", new Task(subject, description, dueDate, Task.NO_DATABASE_ID, false));
         setResult(result_code, result);
         return true;
     }
