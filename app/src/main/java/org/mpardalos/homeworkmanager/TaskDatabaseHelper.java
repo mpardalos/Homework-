@@ -28,6 +28,7 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.io.File;
 import java.io.IOError;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,7 +48,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
     private static final String TASK_DESCRIPTION = "TaskDescr";
     private static final String DUE_DATE = "DueDate";
     private static final String DAY_OF_WEEK = "WeekDay";
-    private static final String TASK_PHOTO = "TaskPhoto";
+    private static final String TASK_PHOTO_LOCATION = "TaskPhoto";
 
     private static final String createSubjects = "CREATE TABLE " + SUBJECTS_TABLE +
             " (" +
@@ -59,7 +60,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
             "(" +
             "_id INTEGER PRIMARY KEY NOT NULL, " +
             TASK_DESCRIPTION + " TEXT," +
-            TASK_PHOTO + " BLOB, " +
+            TASK_PHOTO_LOCATION + " TEXT, " +
             DUE_DATE + " TEXT, " +
             TASK_DONE + " INTEGER NOT NULL, " +
             SUBJECT_ID + " INTEGER NOT NULL" +
@@ -165,6 +166,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
                         "," + TASKS_TABLE + "." + "\"_id\"" +
                         "," + TASKS_TABLE + "." + TASK_DONE +
                         "," + TASKS_TABLE + "." + DUE_DATE +
+                        "," + TASKS_TABLE + "." + TASK_PHOTO_LOCATION +
                         " FROM " +
                         TASKS_TABLE +
                         " INNER JOIN " + SUBJECTS_TABLE + " ON (" + TASKS_TABLE + "." +
@@ -176,12 +178,24 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         int idColumn = c.getColumnIndex("_id");
         int doneColumn = c.getColumnIndex(TASK_DONE);
         int dateColumn = c.getColumnIndex(DUE_DATE);
+        int photoLocationColumn = c.getColumnIndex(TASK_PHOTO_LOCATION);
 
         List<Task> tasks = new ArrayList<>();
+        File photoFile;
         while (c.moveToNext()) {
-            tasks.add(new Task(c.getString(subjColumn), c.getString(descriptionColumn),
-                    dbFormat.parseLocalDate(c.getString(dateColumn)),
-                    c.getInt(idColumn), (c.getInt(doneColumn) != 0)));
+            try {
+                photoFile = new File((c.getString(photoLocationColumn)));
+            } catch (NullPointerException e) {
+                photoFile = null;
+            }
+            tasks.add(
+                    new Task(c.getString(subjColumn),
+                            c.getString(descriptionColumn),
+                            dbFormat.parseLocalDate(c.getString(dateColumn)),
+                            c.getInt(idColumn),
+                            (c.getInt(doneColumn) != 0),
+                            photoFile
+                            ));
         }
         c.close();
 
@@ -231,6 +245,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         taskCV.put(DUE_DATE, dueDate.toString(dbDateFormat));
         taskCV.put(SUBJECT_ID, getSubjectId(subject));
         taskCV.put(TASK_DONE, false);
+        taskCV.put(TASK_PHOTO_LOCATION, task.getPhotoFile().getAbsolutePath());
 
         db.insert(TASKS_TABLE, null, taskCV);
     }
@@ -252,6 +267,9 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         }
         if (task.getSubject() != null) {
             taskCV.put(SUBJECT_ID, getSubjectId(task.getSubject()));
+        }
+        if (task.getPhotoFile() != null) {
+            taskCV.put(TASK_PHOTO_LOCATION, task.getPhotoFile().getAbsolutePath());
         }
 
         String selection = "_id LIKE ?";

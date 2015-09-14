@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -65,6 +66,8 @@ public class TaskEdit extends TaskAdd {
 
         ((EditText) findViewById(R.id.description_input)).setText(((Task) getIntent()
                 .getParcelableExtra("task")).getDescription());
+
+        ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(((Task) getIntent().getParcelableExtra("task")).getPhoto());
 
     }
 
@@ -111,11 +114,16 @@ public class TaskEdit extends TaskAdd {
         Log.i("Task to be added: ", "Subject: " + subject);
         Log.i("Task to be added: ", "Due Date: " + dueDate);
         Log.i("Task to be added: ", "Description: " + description);
+        String photoPath;
+        if (mPhotoFile != null) {
+            photoPath = mPhotoFile.getAbsolutePath();
+        } else {
+            photoPath = "None";
+        }
+        Log.i("Task to be added: ", "Photo path: " + photoPath);
 
         Intent result = new Intent();
-        result.putExtra(
-                "task",
-                new Task(subject, description, dueDate, databaseId, false));
+        result.putExtra("task", new Task(subject, description, dueDate, databaseId, false, mPhotoFile));
         setResult(result_code, result);
         return true;
     }

@@ -18,7 +18,13 @@
 package org.mpardalos.homeworkmanager;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,7 +38,11 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -40,6 +50,9 @@ import java.util.Locale;
 public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onDateEnteredListener {
 
     protected TaskDatabaseHelper mDatabase;
+    protected File mPhotoFile;
+
+    private static final int IMAGE_CAPTURE_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +87,9 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
                     for (int i = 1; i <= 7; i++) {
                         dateIterator = dateIterator.plusDays(1);
                         List<String> subjectsInDay = mDatabase.getSubjectsInDay(dateIterator
-                                                                                        .dayOfWeek()
-                                                                                        .getAsText()
-                                                                                        .toLowerCase());
+                                .dayOfWeek()
+                                .getAsText()
+                                .toLowerCase());
                         if (subjectsInDay.contains(subject)) {
                             onDateEntered(dateIterator);
                             break;
@@ -117,6 +130,34 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
                     Toast.makeText(this, R.string.enter_due_date_toast, Toast.LENGTH_LONG).show();
                 }
                 return true;
+
+            case R.id.add_photo:
+                if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+                    Toast.makeText(this, R.string.camera_unavailable, Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    // If there was a photo file previously try to delete it and log if it wasn't possible
+                    if (mPhotoFile != null) {
+                        if (!mPhotoFile.delete()) {
+                            Log.w("Old Photo", "Could not delete old photo");
+                        }
+                    }
+
+                    try {
+                        mPhotoFile = createPhotoFile();
+                    } catch (IOException e) {
+                        Toast.makeText(this, R.string.cannot_write_photo_to_disk, Toast.LENGTH_SHORT).show();
+                    }
+
+                    if (mPhotoFile != null) {
+                        Log.i("Photo Path", mPhotoFile.getAbsolutePath());
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mPhotoFile));
+                        startActivityForResult(takePictureIntent, IMAGE_CAPTURE_REQUEST);
+                    }
+                }
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -146,6 +187,14 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         DateTimeFormatter df = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
         dateInput.setText(date.toString(df));
         dateInput.setTag(R.id.due_date, date);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == IMAGE_CAPTURE_REQUEST && resultCode == RESULT_OK) {
+            Bitmap image = BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath());
+            ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(image);
+        }
     }
 
     //Thanks to @Akhil Jain at from stackoverflow for this method
@@ -183,8 +232,14 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         Log.i("Task to be added: ", "Description: " + description);
 
         Intent result = new Intent();
-        result.putExtra("task", new Task(subject, description, dueDate, Task.NO_DATABASE_ID, false));
+        result.putExtra("task", new Task(subject, description, dueDate, Task.NO_DATABASE_ID, false, mPhotoFile));
         setResult(result_code, result);
         return true;
+    }
+
+    private File createPhotoFile() throws IOException {
+        File directory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        return new File(directory, timeStamp + ".jpg");
     }
 }
