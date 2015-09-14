@@ -36,5 +36,6 @@
     <string name="undo_action">Undo</string>
     <string name="item_deleted">1 Deleted</string>
     <string name="camera_unavailable">Your device doesn\'t have a camera</string>
+    <string name="cannot_write_photo_to_disk">Can\'t write photo to memory</string>
 
 </resources>

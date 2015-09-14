@@ -20,7 +20,10 @@ package org.mpardalos.homeworkmanager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +38,11 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -43,6 +50,7 @@ import java.util.Locale;
 public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onDateEnteredListener {
 
     protected TaskDatabaseHelper mDatabase;
+    private File mPhotoFile;
 
     private static final int IMAGE_CAPTURE_REQUEST = 1;
 
@@ -130,7 +138,24 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
                 }
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivityForResult(takePictureIntent, IMAGE_CAPTURE_REQUEST);
+                    // If there was a photo file previously try to delete it and log if it wasn't possible
+                    if (mPhotoFile != null) {
+                        if (!mPhotoFile.delete()) {
+                            Log.w("Old Photo", "Could not delete old photo");
+                        }
+                    }
+
+                    try {
+                        mPhotoFile = createPhotoFile();
+                    } catch (IOException e) {
+                        Toast.makeText(this, R.string.cannot_write_photo_to_disk, Toast.LENGTH_SHORT).show();
+                    }
+
+                    if (mPhotoFile != null) {
+                        Log.i("Photo Path", mPhotoFile.getAbsolutePath());
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mPhotoFile));
+                        startActivityForResult(takePictureIntent, IMAGE_CAPTURE_REQUEST);
+                    }
                 }
 
         }
@@ -167,8 +192,8 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == IMAGE_CAPTURE_REQUEST && resultCode == RESULT_OK) {
-            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-            ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(thumbnail);
+            Bitmap image = BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath());
+            ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(image);
         }
     }
 
@@ -212,5 +237,11 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
                 new Task(subject, description, dueDate, false));
         setResult(result_code, result);
         return true;
+    }
+
+    private File createPhotoFile() throws IOException {
+        File directory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        return new File(directory, timeStamp + ".jpg");
     }
 }
