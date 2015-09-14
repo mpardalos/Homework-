@@ -114,11 +114,16 @@ public class TaskEdit extends TaskAdd {
         Log.i("Task to be added: ", "Subject: " + subject);
         Log.i("Task to be added: ", "Due Date: " + dueDate);
         Log.i("Task to be added: ", "Description: " + description);
+        String photoPath;
+        if (mPhotoFile != null) {
+            photoPath = mPhotoFile.getAbsolutePath();
+        } else {
+            photoPath = "None";
+        }
+        Log.i("Task to be added: ", "Photo path: " + photoPath);
 
         Intent result = new Intent();
-        // (Last argument) keep the photo the same
-        result.putExtra("task", new Task(subject, description, dueDate, databaseId, false,
-                                ((Task) getIntent().getParcelableExtra("task")).getPhotoFile() ));
+        result.putExtra("task", new Task(subject, description, dueDate, databaseId, false, mPhotoFile));
         setResult(result_code, result);
         return true;
     }

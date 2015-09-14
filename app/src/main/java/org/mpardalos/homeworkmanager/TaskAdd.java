@@ -50,7 +50,7 @@ import java.util.Locale;
 public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onDateEnteredListener {
 
     protected TaskDatabaseHelper mDatabase;
-    private File mPhotoFile;
+    protected File mPhotoFile;
 
     private static final int IMAGE_CAPTURE_REQUEST = 1;
 

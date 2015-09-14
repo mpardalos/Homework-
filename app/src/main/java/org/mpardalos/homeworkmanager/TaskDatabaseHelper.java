@@ -268,6 +268,9 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         if (task.getSubject() != null) {
             taskCV.put(SUBJECT_ID, getSubjectId(task.getSubject()));
         }
+        if (task.getPhotoFile() != null) {
+            taskCV.put(TASK_PHOTO_LOCATION, task.getPhotoFile().getAbsolutePath());
+        }
 
         String selection = "_id LIKE ?";
         String[] selectionArgs = {String.valueOf(task.getDatabaseId())};
