@@ -204,6 +204,11 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         String description = task.getDescription();
         LocalDate dueDate = task.getDueDate();
         String subject = task.getSubject();
+        String photoPath = null;
+        if (task.getPhotoFile() != null) {
+            photoPath = task.getPhotoFile().getAbsolutePath();
+        }
+
 
         if (description == null || dueDate == null || subject == null) {
             throw new IllegalArgumentException("All arguments must be non null");
@@ -218,7 +223,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         taskCV.put(DUE_DATE, dueDate.toString(dbDateFormat));
         taskCV.put(SUBJECT_ID, getSubjectId(subject));
         taskCV.put(TASK_DONE, false);
-        taskCV.put(TASK_PHOTO_LOCATION, task.getPhotoFile().getAbsolutePath());
+        taskCV.put(TASK_PHOTO_LOCATION, photoPath);
 
         db.insert(TASKS_TABLE, null, taskCV);
     }
