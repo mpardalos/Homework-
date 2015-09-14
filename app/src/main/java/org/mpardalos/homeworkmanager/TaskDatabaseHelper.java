@@ -176,7 +176,6 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         int subjColumn = c.getColumnIndex(SUBJECT_NAME);
         int descriptionColumn = c.getColumnIndex(TASK_DESCRIPTION);
         int idColumn = c.getColumnIndex("_id");
-        int doneColumn = c.getColumnIndex(TASK_DONE);
         int dateColumn = c.getColumnIndex(DUE_DATE);
         int photoLocationColumn = c.getColumnIndex(TASK_PHOTO_LOCATION);
 
@@ -193,38 +192,12 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
                             c.getString(descriptionColumn),
                             dbFormat.parseLocalDate(c.getString(dateColumn)),
                             c.getInt(idColumn),
-                            (c.getInt(doneColumn) != 0),
                             photoFile
                             ));
         }
         c.close();
 
         return tasks;
-    }
-
-    public void setDone(int taskId, boolean checked) {
-        SQLiteDatabase db = getWritableDatabase();
-        int value;
-        if (checked) {
-            value = 1;
-        } else {
-            value = 0;
-        }
-
-        // New value for one column
-        ContentValues values = new ContentValues();
-        values.put(TASK_DONE, value);
-
-        // Which row to update, based on the ID
-        String selection = "_id" + " LIKE ?";
-        String[] selectionArgs = {String.valueOf(taskId)};
-
-        db.update(
-                TASKS_TABLE,
-                values,
-                selection,
-                selectionArgs);
-
     }
 
     public void insertTask(Task task) throws IllegalArgumentException {

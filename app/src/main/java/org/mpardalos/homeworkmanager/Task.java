@@ -45,7 +45,6 @@ public class Task implements Parcelable {
     private String mSubject;
     private String mDescription;
     private LocalDate mDueDate;
-    private boolean mDone;
     private int mDatabaseId;
     private File mPhotoFile;
 
@@ -56,15 +55,13 @@ public class Task implements Parcelable {
      * @param description a Description of the task
      * @param dueDate     date when the task is due
      * @param databaseId  the _id field of the entry of the task in the database, NO_DATABASE_ID if none exists
-     * @param done        whether the task is Done
      * @param photoFile   the file which contains the task's photo
      */
-    public Task(String subject, String description, LocalDate dueDate, int databaseId, boolean done, File photoFile) {
+    public Task(String subject, String description, LocalDate dueDate, int databaseId, File photoFile) {
         this.mSubject = subject;
         this.mDescription = description;
         this.mDueDate = dueDate;
         this.mDatabaseId = databaseId;
-        this.mDone = done;
         this.mPhotoFile = photoFile;
     }
 
@@ -74,7 +71,6 @@ public class Task implements Parcelable {
         this.mDescription = in.readString();
         this.mDueDate = (LocalDate) in.readSerializable();
         this.mDatabaseId = in.readInt();
-        this.mDone = in.readInt() != 0;
         this.mPhotoFile = (File) in.readSerializable();
     }
 
@@ -89,7 +85,6 @@ public class Task implements Parcelable {
         dest.writeString(mDescription);
         dest.writeSerializable(mDueDate);
         dest.writeInt(mDatabaseId);
-        dest.writeInt(mDone ? 1 : 0);
         dest.writeSerializable(mPhotoFile);
     }
 
@@ -103,14 +98,6 @@ public class Task implements Parcelable {
 
     public LocalDate getDueDate() {
         return mDueDate;
-    }
-
-    public boolean isDone() {
-        return mDone;
-    }
-
-    public void setDone(boolean done) {
-        this.mDone = done;
     }
 
     /**

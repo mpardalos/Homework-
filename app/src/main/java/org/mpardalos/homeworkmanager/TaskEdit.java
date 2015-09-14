@@ -120,7 +120,7 @@ public class TaskEdit extends TaskAdd {
         Log.i("Task to be added: ", "Photo path: " + photoPath);
 
         Intent result = new Intent();
-        result.putExtra("task", new Task(subject, description, dueDate, databaseId, false, mPhotoFile));
+        result.putExtra("task", new Task(subject, description, dueDate, databaseId, mPhotoFile));
         setResult(result_code, result);
         return true;
     }
