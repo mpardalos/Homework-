@@ -232,7 +232,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         Log.i("Task to be added: ", "Description: " + description);
 
         Intent result = new Intent();
-        result.putExtra("task", new Task(subject, description, dueDate, Task.NO_DATABASE_ID, false));
+        result.putExtra("task", new Task(subject, description, dueDate, Task.NO_DATABASE_ID, false, mPhotoFile));
         setResult(result_code, result);
         return true;
     }
