@@ -17,10 +17,14 @@
 
 package org.mpardalos.homeworkmanager;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import org.joda.time.LocalDate;
+
+import java.io.File;
 
 /**
  * Represents a specific homework task/assignment.
@@ -43,6 +47,7 @@ public class Task implements Parcelable {
     private LocalDate dueDate;
     private boolean done;
     private int databaseId;
+    private File photoFile;
 
     /**
      * Use when the Task already exists in the database, which means that its id is known
@@ -52,14 +57,15 @@ public class Task implements Parcelable {
      * @param dueDate     date when the task is due
      * @param databaseId  the _id field of the entry of the task in the database, NO_DATABASE_ID if none exists
      * @param done        whether the task is done
+     * @param photoFile   the file which contains the task's photo
      */
-    public Task(String subject, String description, LocalDate dueDate, int databaseId,
-                boolean done) {
+    public Task(String subject, String description, LocalDate dueDate, int databaseId, boolean done, File photoFile) {
         this.subject = subject;
         this.description = description;
         this.dueDate = dueDate;
         this.databaseId = databaseId;
         this.done = done;
+        this.photoFile = photoFile;
     }
 
     public Task(Parcel in) {
@@ -69,6 +75,7 @@ public class Task implements Parcelable {
         this.dueDate = (LocalDate) in.readSerializable();
         this.databaseId = in.readInt();
         this.done = in.readInt() != 0;
+        this.photoFile = (File) in.readSerializable();
     }
 
     @Override
@@ -83,6 +90,7 @@ public class Task implements Parcelable {
         dest.writeSerializable(dueDate);
         dest.writeInt(databaseId);
         dest.writeInt(done ? 1 : 0);
+        dest.writeSerializable(photoFile);
     }
 
     public String getSubject() {
@@ -111,4 +119,18 @@ public class Task implements Parcelable {
     public int getDatabaseId() {
         return databaseId;
     }
+
+    public Bitmap getPhoto() {
+        if (photoFile != null) {
+            return BitmapFactory.decodeFile(photoFile.getAbsolutePath());
+        }
+
+        return null;
+    }
+
+    public File getPhotoFile() {
+        return photoFile;
+    }
+
+
 }
