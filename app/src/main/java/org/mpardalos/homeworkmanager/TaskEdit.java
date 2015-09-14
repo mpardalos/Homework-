@@ -50,24 +50,21 @@ public class TaskEdit extends TaskAdd {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         JodaTimeAndroid.init(this);
+
+        Task task = getIntent().getParcelableExtra("task");
+
         Spinner subjectSpinner = (Spinner) findViewById(R.id.subject_input);
-        ((Spinner) findViewById(R.id.subject_input))
-                .setSelection(getIndex(subjectSpinner,
-                                       ((Task) getIntent().getParcelableExtra("task")).getSubject()
-                                      ));
+        ((Spinner) findViewById(R.id.subject_input)).setSelection(getIndex(subjectSpinner, task.getSubject()));
 
         DateTimeFormatter df = DateTimeFormat.fullDate().withLocale(Locale.getDefault());
         EditText dueDateInput = (EditText) findViewById(R.id.due_date_input);
 
-        dueDateInput.setText(((Task) getIntent().getParcelableExtra("task")).getDueDate()
-                                     .toString(df));
-        dueDateInput.setTag(R.id.due_date, ((Task) getIntent().getParcelableExtra("task"))
-                .getDueDate());
+        dueDateInput.setText(task.getDueDate().toString(df));
+        dueDateInput.setTag(R.id.due_date, task.getDueDate());
 
-        ((EditText) findViewById(R.id.description_input)).setText(((Task) getIntent()
-                .getParcelableExtra("task")).getDescription());
+        ((EditText) findViewById(R.id.description_input)).setText(task.getDescription());
 
-        ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(((Task) getIntent().getParcelableExtra("task")).getPhoto());
+        ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(task.getPhoto());
 
     }
 

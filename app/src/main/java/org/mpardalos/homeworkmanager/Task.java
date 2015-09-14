@@ -42,40 +42,40 @@ public class Task implements Parcelable {
         }
     };
 
-    private String subject;
-    private String description;
-    private LocalDate dueDate;
-    private boolean done;
-    private int databaseId;
-    private File photoFile;
+    private String mSubject;
+    private String mDescription;
+    private LocalDate mDueDate;
+    private boolean mDone;
+    private int mDatabaseId;
+    private File mPhotoFile;
 
     /**
      * Use when the Task already exists in the database, which means that its id is known
      *
-     * @param subject     the name of the subject of the task
-     * @param description a description of the task
+     * @param subject     the name of the Subject of the task
+     * @param description a Description of the task
      * @param dueDate     date when the task is due
      * @param databaseId  the _id field of the entry of the task in the database, NO_DATABASE_ID if none exists
-     * @param done        whether the task is done
+     * @param done        whether the task is Done
      * @param photoFile   the file which contains the task's photo
      */
     public Task(String subject, String description, LocalDate dueDate, int databaseId, boolean done, File photoFile) {
-        this.subject = subject;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.databaseId = databaseId;
-        this.done = done;
-        this.photoFile = photoFile;
+        this.mSubject = subject;
+        this.mDescription = description;
+        this.mDueDate = dueDate;
+        this.mDatabaseId = databaseId;
+        this.mDone = done;
+        this.mPhotoFile = photoFile;
     }
 
     public Task(Parcel in) {
 
-        this.subject = in.readString();
-        this.description = in.readString();
-        this.dueDate = (LocalDate) in.readSerializable();
-        this.databaseId = in.readInt();
-        this.done = in.readInt() != 0;
-        this.photoFile = (File) in.readSerializable();
+        this.mSubject = in.readString();
+        this.mDescription = in.readString();
+        this.mDueDate = (LocalDate) in.readSerializable();
+        this.mDatabaseId = in.readInt();
+        this.mDone = in.readInt() != 0;
+        this.mPhotoFile = (File) in.readSerializable();
     }
 
     @Override
@@ -85,51 +85,51 @@ public class Task implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(subject);
-        dest.writeString(description);
-        dest.writeSerializable(dueDate);
-        dest.writeInt(databaseId);
-        dest.writeInt(done ? 1 : 0);
-        dest.writeSerializable(photoFile);
+        dest.writeString(mSubject);
+        dest.writeString(mDescription);
+        dest.writeSerializable(mDueDate);
+        dest.writeInt(mDatabaseId);
+        dest.writeInt(mDone ? 1 : 0);
+        dest.writeSerializable(mPhotoFile);
     }
 
     public String getSubject() {
-        return subject;
+        return mSubject;
     }
 
     public String getDescription() {
-        return description;
+        return mDescription;
     }
 
     public LocalDate getDueDate() {
-        return dueDate;
+        return mDueDate;
     }
 
     public boolean isDone() {
-        return done;
+        return mDone;
     }
 
     public void setDone(boolean done) {
-        this.done = done;
+        this.mDone = done;
     }
 
     /**
-     * @return the databaseId. Defaults to -1 if it has not been set
+     * @return the mDatabaseId. Defaults to -1 if it has not been set
      */
     public int getDatabaseId() {
-        return databaseId;
+        return mDatabaseId;
     }
 
     public Bitmap getPhoto() {
-        if (photoFile != null) {
-            return BitmapFactory.decodeFile(photoFile.getAbsolutePath());
+        if (mPhotoFile != null) {
+            return BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath());
         }
 
         return null;
     }
 
     public File getPhotoFile() {
-        return photoFile;
+        return mPhotoFile;
     }
 
 
