@@ -78,6 +78,10 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
 
 
     private static HashMap<String, Integer> subjectIdMap;
+    /**
+     * Set to true whenever modifying tasks in the DB so that subjectIdMap is then rebuilt
+     */
+    private static boolean subjectsChanged;
 
     private final Context mContext;
 
@@ -139,7 +143,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
 
     public int getSubjectId(String subject) {
         //Builds the Hashmap the first time it is used
-        if (subjectIdMap == null) {
+        if (subjectIdMap == null || subjectsChanged) {
             SQLiteDatabase db = getReadableDatabase();
             String query = "SELECT " + SUBJECT_NAME + ", _id FROM " + SUBJECTS_TABLE;
             Cursor c = db.rawQuery(query, null);
@@ -286,6 +290,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         } else {
             Log.d("deleteSubject", "Not deleting any subject");
         }
+        subjectsChanged = true;
     }
 
     public void deleteSubject(String subjectName) {
@@ -323,6 +328,9 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
             subjectCV.clear();
             subjectCV.put(SUBJECT_NAME, name);
             getWritableDatabase().insert(SUBJECTS_TABLE, null, subjectCV);
+        } finally {
+            subjectsChanged = true;
         }
+
     }
 }
