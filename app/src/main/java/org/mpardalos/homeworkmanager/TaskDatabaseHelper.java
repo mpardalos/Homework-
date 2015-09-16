@@ -20,6 +20,7 @@ package org.mpardalos.homeworkmanager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
@@ -30,6 +31,7 @@ import org.joda.time.format.DateTimeFormatter;
 
 import java.io.File;
 import java.io.IOError;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -193,7 +195,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
                             dbFormat.parseLocalDate(c.getString(dateColumn)),
                             c.getInt(idColumn),
                             photoFile
-                            ));
+                    ));
         }
         c.close();
 
@@ -291,11 +293,36 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         deleteSubject(subjectId);
     }
 
+    /**
+     * Convenience call for addSubject(-1, name)
+     *
+     * @param name The name of the subject to be added
+     */
     public void addSubject(String name) {
-        SQLiteDatabase db = getWritableDatabase();
-        ContentValues subjectCV = new ContentValues();
-        subjectCV.put(SUBJECT_NAME, name);
-        Log.d("task id", String.valueOf(db.insert(SUBJECTS_TABLE, null, subjectCV)));
+        addSubject(-1, name);
+    }
 
+    /**
+     * Add a subject to the database.
+     *
+     * @param id   The value for the _id column, if it is -1 it will be left to be decided by the DB.
+     *             Also, if the id provided is in use, it is logged and a new id is used instead (as if -1 was passed)
+     * @param name The name of the subject to be added
+     */
+    public void addSubject(int id, String name) {
+        ContentValues subjectCV = new ContentValues();
+        // Let the db decide the id if -1 was provided
+        if (id >= 0) {
+            subjectCV.put("_id", id);
+        }
+        subjectCV.put(SUBJECT_NAME, name);
+        try {
+            getWritableDatabase().insertOrThrow(SUBJECTS_TABLE, null, subjectCV);
+        } catch (SQLiteConstraintException e) {
+            Log.e("Database Helper", "subject id provided was in use. Using a new one.", e);
+            subjectCV.clear();
+            subjectCV.put(SUBJECT_NAME, name);
+            getWritableDatabase().insert(SUBJECTS_TABLE, null, subjectCV);
+        }
     }
 }

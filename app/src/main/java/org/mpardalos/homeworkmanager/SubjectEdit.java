@@ -49,6 +49,9 @@ public class SubjectEdit extends AppCompatActivity {
         mSubjectList.setLayoutManager(lm);
         mSubjectList.setAdapter(new SubjectAdapter(mDatabase.getSubjects()));
         ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+
+            private int databaseId;
+
             @Override
             public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
                 return false;
@@ -58,8 +61,11 @@ public class SubjectEdit extends AppCompatActivity {
             public void onSwiped(final RecyclerView.ViewHolder viewHolder, int direction) {
                 //The methods after this modify the viewHolder so we have to keep the original position
                 final int originalPosition = viewHolder.getAdapterPosition();
+                final String subjectName = ((SubjectAdapter.SubjectHolder) viewHolder).title.getText().toString();
 
-                mDatabase.deleteSubject(((SubjectAdapter.SubjectHolder) viewHolder).title.getText().toString());
+                databaseId = mDatabase.getSubjectId(subjectName);
+                mDatabase.deleteSubject(subjectName);
+
                 ((SubjectAdapter) mSubjectList.getAdapter()).remove(viewHolder.getAdapterPosition());
                 mSubjectList.getAdapter().notifyDataSetChanged();
 
@@ -69,7 +75,7 @@ public class SubjectEdit extends AppCompatActivity {
                             public void onClick(View view) {
                                 ((SubjectAdapter) mSubjectList.getAdapter()).restore(originalPosition);
                                 mSubjectList.getAdapter().notifyDataSetChanged();
-                                mDatabase.addSubject(((SubjectAdapter.SubjectHolder) viewHolder).title.getText().toString());
+                                mDatabase.addSubject(databaseId, subjectName);
                             }
                         }).show();
             }
