@@ -123,12 +123,15 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         switch (id) {
             //Doesn't go back if setResultFromInput is false
             case android.R.id.home:
-                boolean inputComplete = setResultFromInput(RESULT_OK);
-                if (inputComplete) {
-                    finish();
-                } else {
+                if (findViewById(R.id.due_date_input).getTag(R.id.due_date) == null) {
                     Toast.makeText(this, R.string.enter_due_date_toast, Toast.LENGTH_LONG).show();
+                    return true;
+                } else if (((Spinner) findViewById(R.id.subject_input)).getSelectedView() == null) {
+                    Toast.makeText(this, R.string.no_subject_selected, Toast.LENGTH_LONG).show();
+                    return true;
                 }
+                setResultFromInput(RESULT_OK);
+                finish();
                 return true;
 
             case R.id.add_photo:
@@ -218,10 +221,6 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
      */
     protected boolean setResultFromInput(int result_code) {
         LocalDate dueDate = (LocalDate) findViewById(R.id.due_date_input).getTag(R.id.due_date);
-        //Used by onOptionsItemSelected t show the "please enter due_
-        if (dueDate == null) {
-            return false;
-        }
         String subject = ((TextView) ((Spinner) findViewById(R.id.subject_input))
                 .getSelectedView().findViewById(android.R.id.text1)).getText().toString();
         String description = ((EditText) findViewById(R.id.description_input)).getText()
