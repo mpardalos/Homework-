@@ -66,6 +66,8 @@ public class TaskEdit extends TaskAdd {
 
         ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(task.getPhoto());
 
+        mPhotoFile = task.getPhotoFile();
+
     }
 
     @Override

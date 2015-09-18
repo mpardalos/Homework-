@@ -240,4 +240,12 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         return new File(directory, timeStamp + ".jpg");
     }
+
+    public void onPhotoClick(View v) {
+        if (mPhotoFile != null) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(mPhotoFile), "image/*");
+            startActivity(intent);
+        }
+    }
 }
