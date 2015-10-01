@@ -76,6 +76,6 @@
             android:id="@+id/image_preview"
             android:layout_width="211dp"
             android:layout_height="160dp"
-            android:layout_weight="0.27"/>
+            android:onClick="onPhotoClick"/>
     </LinearLayout>
 </RelativeLayout>
