@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -54,12 +56,19 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     protected File mPhotoFile;
 
     private static final int IMAGE_CAPTURE_REQUEST = 1;
+    private static final String TASK_PHOTO_BITMAP = "image";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         JodaTimeAndroid.init(this);
         setContentView(R.layout.add_or_edit_task);
+        // Restore the image if it was saved
+        if (savedInstanceState != null) {
+            ((ImageView) findViewById(R.id.image_preview))
+                    .setImageBitmap((Bitmap) savedInstanceState.getParcelable(TASK_PHOTO_BITMAP));
+        }
+
         this.mDatabase = new TaskDatabaseHelper(this);
 
         //Populate subject selection spinner
@@ -287,5 +296,14 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
             intent.setDataAndType(Uri.fromFile(mPhotoFile), "image/*");
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState (Bundle outState) {
+        Drawable drawable = ((ImageView) findViewById(R.id.image_preview)).getDrawable();
+        if (drawable != null) {
+            outState.putParcelable(TASK_PHOTO_BITMAP, ((BitmapDrawable) drawable).getBitmap() );
+        }
+        super.onSaveInstanceState(outState);
     }
 }
