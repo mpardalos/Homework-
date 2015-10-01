@@ -17,6 +17,7 @@
 
 package org.mpardalos.homeworkmanager;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -195,8 +196,46 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == IMAGE_CAPTURE_REQUEST && resultCode == RESULT_OK) {
-            Bitmap image = BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath());
-            ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(image);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    final ImageView imageView = (ImageView) findViewById(R.id.image_preview);
+
+                    //Find the correct sample size
+
+                    BitmapFactory.Options findSampleSizeOptions = new BitmapFactory.Options();
+                    findSampleSizeOptions.inJustDecodeBounds = true;
+                    BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath(), findSampleSizeOptions);
+
+                    final int sourceWidth = findSampleSizeOptions.outWidth;
+                    final int sourceHeight = findSampleSizeOptions.outHeight;
+                    final int viewWidth = imageView.getWidth();
+                    final int viewHeight = imageView.getHeight();
+
+                    // Set it to 1. If the source size is ok then just use 1. If that is not good set it to 2.
+                    // If that is not good enough still then keep doubling it until it is.
+                    // (BitmapFactory.Options.inSampleSize has to be a power of 2)
+                    int sampleSize = 1;
+                    if (sourceHeight > viewHeight || sourceWidth > viewWidth) {
+                        sampleSize = 2;
+                        while ((sourceWidth / sampleSize) > viewWidth || (sourceHeight / sampleSize) > viewHeight) {
+                            sampleSize *= 2;
+                        }
+                    }
+
+                    final BitmapFactory.Options loadImageOptions = new BitmapFactory.Options();
+                    loadImageOptions.inSampleSize = sampleSize;
+                    final Bitmap image = BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath(), loadImageOptions);
+
+                    imageView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageView.setImageBitmap(image);
+                        }
+                    });
+                }
+            }).run();
+
         }
     }
 
@@ -238,7 +277,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
 
     private File createPhotoFile() throws IOException {
         File directory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        @SuppressLint("SimpleDateFormat") String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         return new File(directory, timeStamp + ".jpg");
     }
 }
