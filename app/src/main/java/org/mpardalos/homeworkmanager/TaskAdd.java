@@ -57,6 +57,47 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
 
     private static final int IMAGE_CAPTURE_REQUEST = 1;
     private static final String TASK_PHOTO_BITMAP = "image";
+    private final String PHOTO_FILE_PATH = "photo_file";
+    protected final Runnable loadImageToImageView = new Runnable() {
+        @Override
+        public void run() {
+            final ImageView imageView = (ImageView) findViewById(R.id.image_preview);
+
+            //Find the correct sample size
+
+            BitmapFactory.Options findSampleSizeOptions = new BitmapFactory.Options();
+            findSampleSizeOptions.inJustDecodeBounds = true;
+            BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath(), findSampleSizeOptions);
+
+            final int sourceWidth = findSampleSizeOptions.outWidth;
+            final int sourceHeight = findSampleSizeOptions.outHeight;
+            final int targetWidth = imageView.getWidth(); // < 2048 ? imageView.getWidth() : 2048;
+            final int targetHeight = imageView.getHeight();// < 2048 ? imageView.getHeight() : 2048;
+
+
+            // Set it to 1. If the source size is ok then just use 1. If that is not good set it to 2.
+            // If that is not good enough still then keep doubling it until it is.
+            // (BitmapFactory.Options.inSampleSize has to be a power of 2)
+            int sampleSize = 1;
+            if (sourceHeight > targetHeight || sourceWidth > targetWidth) {
+                sampleSize = 2;
+                while ((sourceWidth / sampleSize) > targetWidth || (sourceHeight / sampleSize) > targetHeight) {
+                    sampleSize *= 2;
+                }
+            }
+
+            final BitmapFactory.Options loadImageOptions = new BitmapFactory.Options();
+            loadImageOptions.inSampleSize = sampleSize;
+            final Bitmap image = BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath(), loadImageOptions);
+
+            imageView.post(new Runnable() {
+                @Override
+                public void run() {
+                    imageView.setImageBitmap(image);
+                }
+            });
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +106,8 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         setContentView(R.layout.add_or_edit_task);
         // Restore the image if it was saved
         if (savedInstanceState != null) {
-            ((ImageView) findViewById(R.id.image_preview))
-                    .setImageBitmap((Bitmap) savedInstanceState.getParcelable(TASK_PHOTO_BITMAP));
+            this.mPhotoFile = new File(savedInstanceState.getString(PHOTO_FILE_PATH));
+            ((ImageView) findViewById(R.id.image_preview)).setImageBitmap((Bitmap) savedInstanceState.getParcelable(TASK_PHOTO_BITMAP));
         }
 
         this.mDatabase = new TaskDatabaseHelper(this);
@@ -205,46 +246,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == IMAGE_CAPTURE_REQUEST && resultCode == RESULT_OK) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    final ImageView imageView = (ImageView) findViewById(R.id.image_preview);
-
-                    //Find the correct sample size
-
-                    BitmapFactory.Options findSampleSizeOptions = new BitmapFactory.Options();
-                    findSampleSizeOptions.inJustDecodeBounds = true;
-                    BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath(), findSampleSizeOptions);
-
-                    final int sourceWidth = findSampleSizeOptions.outWidth;
-                    final int sourceHeight = findSampleSizeOptions.outHeight;
-                    final int viewWidth = imageView.getWidth();
-                    final int viewHeight = imageView.getHeight();
-
-                    // Set it to 1. If the source size is ok then just use 1. If that is not good set it to 2.
-                    // If that is not good enough still then keep doubling it until it is.
-                    // (BitmapFactory.Options.inSampleSize has to be a power of 2)
-                    int sampleSize = 1;
-                    if (sourceHeight > viewHeight || sourceWidth > viewWidth) {
-                        sampleSize = 2;
-                        while ((sourceWidth / sampleSize) > viewWidth || (sourceHeight / sampleSize) > viewHeight) {
-                            sampleSize *= 2;
-                        }
-                    }
-
-                    final BitmapFactory.Options loadImageOptions = new BitmapFactory.Options();
-                    loadImageOptions.inSampleSize = sampleSize;
-                    final Bitmap image = BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath(), loadImageOptions);
-
-                    imageView.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            imageView.setImageBitmap(image);
-                        }
-                    });
-                }
-            }).run();
-
+            new Thread(loadImageToImageView).run();
         }
     }
 
@@ -302,6 +304,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     protected void onSaveInstanceState (Bundle outState) {
         Drawable drawable = ((ImageView) findViewById(R.id.image_preview)).getDrawable();
         if (drawable != null) {
+            outState.putString(PHOTO_FILE_PATH, mPhotoFile.getAbsolutePath());
             outState.putParcelable(TASK_PHOTO_BITMAP, ((BitmapDrawable) drawable).getBitmap() );
         }
         super.onSaveInstanceState(outState);

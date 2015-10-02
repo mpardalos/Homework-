@@ -107,14 +107,6 @@ public class Task implements Parcelable {
         return mDatabaseId;
     }
 
-    public Bitmap getPhoto() {
-        if (mPhotoFile != null) {
-            return BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath());
-        }
-
-        return null;
-    }
-
     public File getPhotoFile() {
         return mPhotoFile;
     }

@@ -23,6 +23,7 @@ import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -64,9 +65,17 @@ public class TaskEdit extends TaskAdd {
 
         ((EditText) findViewById(R.id.description_input)).setText(task.getDescription());
 
-        ((ImageView) findViewById(R.id.image_preview)).setImageBitmap(task.getPhoto());
-
+        //mPhotoFile has to be set before running loadImageToView
         mPhotoFile = task.getPhotoFile();
+        //Put it in listener because it has to be called after views have been sized
+        findViewById(android.R.id.content).getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                new Thread(loadImageToImageView).run();
+                return true;
+            }
+        });
+
 
     }
 
