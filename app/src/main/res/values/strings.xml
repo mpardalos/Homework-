@@ -30,13 +30,12 @@
     <string name="add_photo">Add Photo</string>
     <string name="edit_subjects">Edit Subjects</string>
     <string name="title_activity_edit_subjects">Edit Subjects</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_subject_edit">Edit Subjects</string>
     <string name="undo_action">Undo</string>
     <string name="item_deleted">1 Deleted</string>
     <string name="camera_unavailable">Your device doesn\'t have a camera</string>
     <string name="cannot_write_photo_to_disk">Can\'t write photo to memory</string>
     <string name="no_subject_selected">No subject selected. If there aren\'t any you can add new ones by selecting \"edit subjects\" in the main screen</string>
-
+    <string name="delete_tasks_confirmation_dialog_title">Are you sure you want to delete all tasks?</string>
+    <string name="delete_tasks_confirmation_dialog_text">You can\'t restore them after they have been deleted!</string>
 </resources>
