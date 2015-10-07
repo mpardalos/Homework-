@@ -43,6 +43,25 @@ public class TaskList extends AppCompatActivity {
     TaskAdapter adapter;
     private RecyclerView mTaskRecyclerView;
 
+    private final Runnable mLoadTasksToList = new Runnable() {
+        @Override
+        public void run() {
+            // Only this needs to be done outside the main thread.
+            final List<Task> tasks = mDatabase.getTasks();
+
+            // This has to be run inside the main thread using post (
+            mTaskRecyclerView.post(new Runnable() {
+                @Override
+                public void run() {
+                    adapter.changeTaskList((ArrayList<Task>) tasks);
+                    mTaskRecyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                    findViewById(R.id.loading).setVisibility(View.GONE);
+                }
+            });
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,7 +134,7 @@ public class TaskList extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         this.adapter = new TaskAdapter(this, null);
-        new TaskLoader().execute();
+        new Thread(mLoadTasksToList).run();
     }
 
     @Override
@@ -157,7 +176,7 @@ public class TaskList extends AppCompatActivity {
     }
 
     private void refreshList() {
-        new TaskLoader().execute((Void) null);
+        new Thread(mLoadTasksToList).run();
     }
 
     @Override
@@ -175,22 +194,5 @@ public class TaskList extends AppCompatActivity {
             refreshList();
         }
     }
-
-    private class TaskLoader extends AsyncTask<Void, Void, List<Task>> {
-        //Bad, bad, bad decision, hopefully only temporary
-        public List<Task> doInBackground(Void... databaseHelpers) {
-            return mDatabase.getTasks();
-        }
-
-        protected void onPreExecute() {
-            findViewById(R.id.loading).setVisibility(View.VISIBLE);
-        }
-
-        protected void onPostExecute(List<Task> result) {
-            adapter.changeTaskList((ArrayList<Task>) result);
-            mTaskRecyclerView.setAdapter(adapter);
-            adapter.notifyDataSetChanged();
-            findViewById(R.id.loading).setVisibility(View.GONE);
-        }
-    }
 }
+
