@@ -71,7 +71,9 @@ public class TaskEdit extends TaskAdd {
         findViewById(android.R.id.content).getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
             public boolean onPreDraw() {
-                new Thread(loadImageToImageView).run();
+                if (mPhotoFile != null) {
+                    new Thread(loadImageToImageView).run();
+                }
                 return true;
             }
         });
