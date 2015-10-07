@@ -46,7 +46,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 
@@ -121,6 +120,8 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
 
+        // This is pointless until we add support for adding a daily schedule
+        /*
         //Auto-complete dueDate based on current subject and its next occurrence
         subjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -153,6 +154,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+        */
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
     }
