@@ -55,48 +55,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     protected File mPhotoFile;
 
     private static final int IMAGE_CAPTURE_REQUEST = 1;
-    private static final String TASK_PHOTO_BITMAP = "image";
     private final String PHOTO_FILE_PATH = "photo_file";
-    protected final Runnable loadImageToImageView = new Runnable() {
-        @Override
-        public void run() {
-            final ImageView imageView = (ImageView) findViewById(R.id.image_preview);
-
-            //Find the correct sample size
-
-            BitmapFactory.Options findSampleSizeOptions = new BitmapFactory.Options();
-            findSampleSizeOptions.inJustDecodeBounds = true;
-            BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath(), findSampleSizeOptions);
-
-            final int sourceWidth = findSampleSizeOptions.outWidth;
-            final int sourceHeight = findSampleSizeOptions.outHeight;
-            final int targetWidth = imageView.getWidth(); // < 2048 ? imageView.getWidth() : 2048;
-            final int targetHeight = imageView.getHeight();// < 2048 ? imageView.getHeight() : 2048;
-
-
-            // Set it to 1. If the source size is ok then just use 1. If that is not good set it to 2.
-            // If that is not good enough still then keep doubling it until it is.
-            // (BitmapFactory.Options.inSampleSize has to be a power of 2)
-            int sampleSize = 1;
-            if (sourceHeight > targetHeight || sourceWidth > targetWidth) {
-                sampleSize = 2;
-                while ((sourceWidth / sampleSize) > targetWidth || (sourceHeight / sampleSize) > targetHeight) {
-                    sampleSize *= 2;
-                }
-            }
-
-            final BitmapFactory.Options loadImageOptions = new BitmapFactory.Options();
-            loadImageOptions.inSampleSize = sampleSize;
-            final Bitmap image = BitmapFactory.decodeFile(mPhotoFile.getAbsolutePath(), loadImageOptions);
-
-            imageView.post(new Runnable() {
-                @Override
-                public void run() {
-                    imageView.setImageBitmap(image);
-                }
-            });
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,8 +64,12 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         setContentView(R.layout.add_or_edit_task);
         // Restore the image if it was saved
         if (savedInstanceState != null) {
-            this.mPhotoFile = new File(savedInstanceState.getString(PHOTO_FILE_PATH));
-            ((ImageView) findViewById(R.id.image_preview)).setImageBitmap((Bitmap) savedInstanceState.getParcelable(TASK_PHOTO_BITMAP));
+            String pathString = savedInstanceState.getString(PHOTO_FILE_PATH);
+            if (pathString != null) {
+                this.mPhotoFile = new File(pathString);
+                loadImageToImageView(mPhotoFile);
+            }
+
         }
 
         this.mDatabase = new TaskDatabaseHelper(this);
@@ -119,42 +82,6 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
                 new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, subjects);
         subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectSpinner.setAdapter(subjectAdapter);
-
-        // This is pointless until we add support for adding a daily schedule
-        /*
-        //Auto-complete dueDate based on current subject and its next occurrence
-        subjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String subject = null;
-                if (view != null) {
-                    subject = (String) ((TextView) view.findViewById(android.R.id.text1))
-                            .getText();
-                }
-
-                if (subject != null) {
-                    LocalDate dateIterator = LocalDate.now();
-                    //Iterate on every day starting from tomorrow until 7 days from today.
-                    //(I think a week=7 days everywhere but this should be checked)
-                    for (int i = 1; i <= 7; i++) {
-                        dateIterator = dateIterator.plusDays(1);
-                        List<String> subjectsInDay = mDatabase.getSubjectsInDay(dateIterator
-                                .dayOfWeek()
-                                .getAsText()
-                                .toLowerCase());
-                        if (subjectsInDay.contains(subject)) {
-                            onDateEntered(dateIterator);
-                            break;
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-        */
         Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar);
         setSupportActionBar(toolbar);
     }
@@ -248,7 +175,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == IMAGE_CAPTURE_REQUEST && resultCode == RESULT_OK) {
-            new Thread(loadImageToImageView).run();
+            loadImageToImageView(mPhotoFile);
         }
     }
 
@@ -302,12 +229,60 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         }
     }
 
+    /**
+     * Load an image from a file to the ImageView in the activity (R.id.image_preview) using a separate thread.
+     *
+     * @param photoFile: The file from which to load the photo
+     */
+    protected void loadImageToImageView(final File photoFile) {
+        final Runnable loadImageToImageView = new Runnable() {
+            @Override
+            public void run() {
+                final ImageView imageView = (ImageView) findViewById(R.id.image_preview);
+
+                //Find the correct sample size
+                BitmapFactory.Options findSampleSizeOptions = new BitmapFactory.Options();
+                findSampleSizeOptions.inJustDecodeBounds = true;
+                BitmapFactory.decodeFile(photoFile.getAbsolutePath(), findSampleSizeOptions);
+
+                final int sourceWidth = findSampleSizeOptions.outWidth;
+                final int sourceHeight = findSampleSizeOptions.outHeight;
+                final int targetWidth = Math.max(imageView.getWidth(), 2048);
+                final int targetHeight = Math.max(imageView.getHeight(), 2048);
+
+
+                // Set it to 1. If the source size is ok then just use 1. If that is not good set it to 2.
+                // If that is not good enough still then keep doubling it until it is.
+                // (BitmapFactory.Options.inSampleSize has to be a power of 2)
+                int sampleSize = 1;
+                if (sourceHeight > targetHeight || sourceWidth > targetWidth) {
+                    sampleSize = 2;
+                    while ((sourceWidth / sampleSize) > targetWidth || (sourceHeight / sampleSize) > targetHeight) {
+                        sampleSize *= 2;
+                    }
+                }
+
+                final BitmapFactory.Options loadImageOptions = new BitmapFactory.Options();
+                loadImageOptions.inSampleSize = sampleSize;
+                final Bitmap image = BitmapFactory.decodeFile(photoFile.getAbsolutePath(), loadImageOptions);
+
+                imageView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        imageView.setImageBitmap(image);
+                    }
+                });
+            }
+        };
+        new Thread(loadImageToImageView).run();
+    }
+
     @Override
     protected void onSaveInstanceState (Bundle outState) {
-        Drawable drawable = ((ImageView) findViewById(R.id.image_preview)).getDrawable();
-        if (drawable != null) {
+        // Save the location of the Photo if it exists. onSaveInstanceState saved only view data, so we need to keep the
+        // location of the photo
+        if (mPhotoFile != null) {
             outState.putString(PHOTO_FILE_PATH, mPhotoFile.getAbsolutePath());
-            outState.putParcelable(TASK_PHOTO_BITMAP, ((BitmapDrawable) drawable).getBitmap() );
         }
         super.onSaveInstanceState(outState);
     }

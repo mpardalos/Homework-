@@ -65,14 +65,13 @@ public class TaskEdit extends TaskAdd {
 
         ((EditText) findViewById(R.id.description_input)).setText(task.getDescription());
 
-        //mPhotoFile has to be set before running loadImageToView
-        mPhotoFile = task.getPhotoFile();
+        this.mPhotoFile = task.getPhotoFile();
         //Put it in listener because it has to be called after views have been sized
         findViewById(android.R.id.content).getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
             public boolean onPreDraw() {
                 if (mPhotoFile != null) {
-                    new Thread(loadImageToImageView).run();
+                    loadImageToImageView(mPhotoFile);
                 }
                 return true;
             }
