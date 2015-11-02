@@ -67,19 +67,10 @@ public class TaskEdit extends TaskAdd {
         ((EditText) findViewById(R.id.description_input)).setText(task.getDescription());
 
         this.mPhotoFile = task.getPhotoFile();
-        //Put it in listener because it has to be called after views have been sized
-        findViewById(android.R.id.content).getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-            @Override
-            public boolean onPreDraw() {
-                if (mPhotoFile != null) {
-                    findViewById(R.id.image_heading).setVisibility(View.VISIBLE);
-                    loadImageToImageView(mPhotoFile);
-                }
-                return true;
-            }
-        });
-
-
+        if (mPhotoFile != null) {
+            findViewById(R.id.image_heading).setVisibility(View.VISIBLE);
+            loadImageToImageView(mPhotoFile);
+        }
     }
 
     @Override
