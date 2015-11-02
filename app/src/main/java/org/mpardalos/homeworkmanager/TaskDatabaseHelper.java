@@ -39,7 +39,7 @@ import java.util.List;
 
 public class TaskDatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "data.db";
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 3;
 
     public static final String SUBJECT_NAME = "SubjName";
     private static final String TASKS_TABLE = "Tasks";
@@ -65,7 +65,8 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
             TASK_PHOTO_LOCATION + " TEXT, " +
             DUE_DATE + " TEXT, " +
             TASK_DONE + " INTEGER NOT NULL, " +
-            SUBJECT_ID + " INTEGER NOT NULL" +
+            SUBJECT_ID + " INTEGER NOT NULL, " +
+            "FOREIGN KEY (" + SUBJECT_ID + ") REFERENCES " + SUBJECTS_TABLE + "(_id) DEFERRABLE INITIALLY DEFERRED" +
             ");";
 
     private static final String createTimeTable = "CREATE TABLE " + TIMETABLE +
