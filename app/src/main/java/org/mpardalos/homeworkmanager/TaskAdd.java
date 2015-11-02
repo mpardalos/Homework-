@@ -67,6 +67,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
             String pathString = savedInstanceState.getString(PHOTO_FILE_PATH);
             if (pathString != null) {
                 this.mPhotoFile = new File(pathString);
+                findViewById(R.id.image_heading).setVisibility(View.VISIBLE);
                 loadImageToImageView(mPhotoFile);
             }
 
@@ -175,6 +176,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == IMAGE_CAPTURE_REQUEST && resultCode == RESULT_OK) {
+            findViewById(R.id.image_heading).setVisibility(View.VISIBLE);
             loadImageToImageView(mPhotoFile);
         }
     }

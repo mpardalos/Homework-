@@ -38,4 +38,5 @@
     <string name="no_subject_selected">No subject selected. If there aren\'t any you can add new ones by selecting \"edit subjects\" in the main screen</string>
     <string name="delete_tasks_confirmation_dialog_title">Are you sure you want to delete all tasks?</string>
     <string name="delete_tasks_confirmation_dialog_text">You can\'t restore them after they have been deleted!</string>
+    <string name="image_heading">Photograph</string>
 </resources>

@@ -23,6 +23,7 @@ import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -71,6 +72,7 @@ public class TaskEdit extends TaskAdd {
             @Override
             public boolean onPreDraw() {
                 if (mPhotoFile != null) {
+                    findViewById(R.id.image_heading).setVisibility(View.VISIBLE);
                     loadImageToImageView(mPhotoFile);
                 }
                 return true;

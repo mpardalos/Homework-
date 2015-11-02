@@ -78,6 +78,17 @@
                 android:hint="@string/description_input"
                 android:inputType="textMultiLine"/>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/task_add_input_seperator_height"/>
+
+            <TextView
+                android:id="@+id/image_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="@string/image_heading"/>
+
             <ImageView
                 android:id="@+id/image_preview"
                 android:layout_width="211dp"
