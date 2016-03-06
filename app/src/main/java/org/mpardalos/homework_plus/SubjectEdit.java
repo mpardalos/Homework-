@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package org.mpardalos.homeworkmanager;
+package org.mpardalos.homework_plus;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;

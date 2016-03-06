@@ -15,10 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package org.mpardalos.homeworkmanager;
+package org.mpardalos.homework_plus;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
 

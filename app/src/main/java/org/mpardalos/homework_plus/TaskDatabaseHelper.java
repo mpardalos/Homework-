@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package org.mpardalos.homeworkmanager;
+package org.mpardalos.homework_plus;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -31,7 +31,6 @@ import org.joda.time.format.DateTimeFormatter;
 
 import java.io.File;
 import java.io.IOError;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.mpardalos.homeworkmanager;
+package org.mpardalos.homework_plus;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

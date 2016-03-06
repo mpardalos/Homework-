@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="org.mpardalos.homeworkmanager"
+    package="org.mpardalos.homework_plus"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-feature android:name="android.hardware.camera"
@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TaskList"
+            android:name="org.mpardalos.homework_plus.TaskList"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -23,28 +23,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TaskAdd"
+            android:name="org.mpardalos.homework_plus.TaskAdd"
             android:label="@string/title_activity_task_add"
-            android:parentActivityName=".TaskList">
+            android:parentActivityName="org.mpardalos.homework_plus.TaskList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.mpardalos.homeworkmanager.TaskList"/>
+                android:value="org.mpardalos.homework_plus.TaskList"/>
         </activity>
         <activity
-            android:name=".TaskEdit"
+            android:name="org.mpardalos.homework_plus.TaskEdit"
             android:label="@string/title_activity_task_details"
-            android:parentActivityName=".TaskList">
+            android:parentActivityName="org.mpardalos.homework_plus.TaskList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.mpardalos.homeworkmanager.TaskList"/>
+                android:value="org.mpardalos.homework_plus.TaskList"/>
         </activity>
         <activity
-            android:name=".SubjectEdit"
+            android:name="org.mpardalos.homework_plus.SubjectEdit"
             android:label="@string/title_activity_subject_edit"
-            android:parentActivityName=".TaskList">
+            android:parentActivityName="org.mpardalos.homework_plus.TaskList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.mpardalos.homeworkmanager.TaskList"/>
+                android:value="org.mpardalos.homework_plus.TaskList"/>
         </activity>
     </application>
 

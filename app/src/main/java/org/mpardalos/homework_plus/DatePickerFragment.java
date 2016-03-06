@@ -1,4 +1,4 @@
-package org.mpardalos.homeworkmanager;
+package org.mpardalos.homework_plus;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;

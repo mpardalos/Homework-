@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package org.mpardalos.homeworkmanager;
+package org.mpardalos.homework_plus;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,9 +24,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
