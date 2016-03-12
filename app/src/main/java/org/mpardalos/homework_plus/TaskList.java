@@ -40,8 +40,8 @@ public class TaskList extends AppCompatActivity {
 
     public static final int ADD_TASK_REQUEST = 2; //request code for the add task activity
     public static final int EDIT_TASK_REQUEST = 3;
-    TaskDatabaseHelper mDatabase;
-    TaskAdapter adapter;
+    private TaskDatabaseHelper mDatabase;
+    private TaskAdapter adapter;
     private RecyclerView mTaskRecyclerView;
 
     private final Runnable mLoadTasksToList = new Runnable() {
@@ -177,6 +177,7 @@ public class TaskList extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressWarnings("unused")
     public void addTask(View view) {
         Intent openTaskAdd = new Intent(this, TaskAdd.class);
         startActivityForResult(openTaskAdd, ADD_TASK_REQUEST);

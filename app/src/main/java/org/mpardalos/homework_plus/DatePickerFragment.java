@@ -16,10 +16,10 @@ public class DatePickerFragment extends DialogFragment
         implements DatePickerDialog.OnDateSetListener {
 
     public interface onDateEnteredListener {
-        public void onDateEntered(LocalDate date);
+        void onDateEntered(LocalDate date);
     }
 
-    onDateEnteredListener parent;
+    private onDateEnteredListener parent;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

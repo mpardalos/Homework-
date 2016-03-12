@@ -40,7 +40,6 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -127,16 +126,14 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
                         }
                     }
 
-                    try {
-                        mPhotoFile = createPhotoFile();
-                    } catch (IOException e) {
-                        Toast.makeText(this, R.string.cannot_write_photo_to_disk, Toast.LENGTH_SHORT).show();
-                    }
+                    mPhotoFile = createPhotoFile();
 
                     if (mPhotoFile != null) {
                         Log.i("Photo Path", mPhotoFile.getAbsolutePath());
                         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mPhotoFile));
                         startActivityForResult(takePictureIntent, IMAGE_CAPTURE_REQUEST);
+                    } else {
+                        Toast.makeText(this, R.string.cannot_write_photo_to_disk, Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -149,6 +146,7 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         finish();
     }
 
+    @SuppressWarnings("unused")
     public void onDueDateClicked(View view) {
         DatePickerFragment dateInput = new DatePickerFragment();
         LocalDate previousInput = (LocalDate) view.getTag(R.id.due_date);
@@ -196,7 +194,8 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
     /**
      * @param result_code the result code to be passed with the result. Used for subclasses of this
      *                    activity
-     * @return Whether the result was set.
+     * @return Whether the result was set. This implementation always returns true but the implementation in TaskEdit
+     *         returns either true or false
      */
     protected boolean setResultFromInput(int result_code) {
         LocalDate dueDate = (LocalDate) findViewById(R.id.due_date_input).getTag(R.id.due_date);
@@ -215,12 +214,13 @@ public class TaskAdd extends AppCompatActivity implements DatePickerFragment.onD
         return true;
     }
 
-    private File createPhotoFile() throws IOException {
+    private File createPhotoFile() {
         File directory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         @SuppressLint("SimpleDateFormat") String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         return new File(directory, timeStamp + ".jpg");
     }
 
+    @SuppressWarnings("unused")
     public void onPhotoClick(View v) {
         if (mPhotoFile != null) {
             Intent intent = new Intent(Intent.ACTION_VIEW);

@@ -68,7 +68,7 @@ class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectHolder> 
     }
 
     class SubjectHolder extends RecyclerView.ViewHolder {
-        TextView title;
+        final TextView title;
 
         public SubjectHolder(View itemView) {
             super(itemView);

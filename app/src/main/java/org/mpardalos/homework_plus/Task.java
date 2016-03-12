@@ -27,7 +27,7 @@ import java.io.File;
 /**
  * Represents a specific homework task/assignment.
  */
-public class Task implements Parcelable {
+class Task implements Parcelable {
     public static final int NO_DATABASE_ID = -1;
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
@@ -40,11 +40,11 @@ public class Task implements Parcelable {
         }
     };
 
-    private String mSubject;
-    private String mDescription;
-    private LocalDate mDueDate;
-    private int mDatabaseId;
-    private File mPhotoFile;
+    private final String mSubject;
+    private final String mDescription;
+    private final LocalDate mDueDate;
+    private final int mDatabaseId;
+    private final File mPhotoFile;
 
     /**
      * Use when the Task already exists in the database, which means that its id is known
@@ -63,7 +63,8 @@ public class Task implements Parcelable {
         this.mPhotoFile = photoFile;
     }
 
-    public Task(Parcel in) {
+    // private constructor since it is only used by the Parcelable.Creator inside the class
+    private Task(Parcel in) {
 
         this.mSubject = in.readString();
         this.mDescription = in.readString();

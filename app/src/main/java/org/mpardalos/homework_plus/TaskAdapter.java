@@ -36,7 +36,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     private Context mContext;
     private HashMap<Integer, Task> mRemovedTasks;
 
-    public TaskAdapter(Context context, ArrayList<Task> tasks) {
+    public TaskAdapter(Context context, @SuppressWarnings("SameParameterValue") ArrayList<Task> tasks) {
         mContext = context;
         mTasks = tasks;
         mRemovedTasks = new HashMap<>();

@@ -40,7 +40,7 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "data.db";
     private static final int DB_VERSION = 3;
 
-    public static final String SUBJECT_NAME = "SubjName";
+    private static final String SUBJECT_NAME = "SubjName";
     private static final String TASKS_TABLE = "Tasks";
     private static final String SUBJECTS_TABLE = "Subjects";
     private static final String TIMETABLE = "TimeTable";
@@ -101,25 +101,6 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
     public TaskDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.mContext = context;
-    }
-
-    public List<String> getSubjectsInDay(String day) {
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT " + SUBJECTS_TABLE + "." + SUBJECT_NAME + " FROM " +
-                SUBJECTS_TABLE +
-                " INNER JOIN " + TIMETABLE + " ON " +
-                "(" + TIMETABLE + "." + SUBJECT_ID + "==" + SUBJECTS_TABLE
-                + "._id)" +
-                " WHERE " + TIMETABLE + "." + DAY_OF_WEEK + "== ?;"
-                , new String[]{day.toLowerCase()});
-        c.moveToPosition(-1);
-        List<String> subjectList = new ArrayList<>();
-        int index = c.getColumnIndex(SUBJECT_NAME);
-        while (c.moveToNext()) {
-            subjectList.add(c.getString(index));
-        }
-        c.close();
-        return subjectList;
     }
 
     public ArrayList<String> getSubjects() {

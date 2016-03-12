@@ -33,8 +33,8 @@ import android.widget.TextView;
 
 
 public class SubjectEdit extends AppCompatActivity {
-    TaskDatabaseHelper mDatabase;
-    RecyclerView mSubjectList;
+    private TaskDatabaseHelper mDatabase;
+    private RecyclerView mSubjectList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

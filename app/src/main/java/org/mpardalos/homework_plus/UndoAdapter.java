@@ -17,7 +17,7 @@
 
 package org.mpardalos.homework_plus;
 
-public interface UndoAdapter {
+interface UndoAdapter {
 
     void remove(int position);
 
