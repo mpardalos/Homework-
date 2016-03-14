@@ -5,5 +5,6 @@ The app knows the user's timetable and therefore  can also know when they have t
 
 This program in licensed under the GPLv3 (see LICENSE for details)
 
-#Beta Testing!#
-Since the app is nearing v1.0 it as to be tested to iron out any bugs. If you want to help with the beta testing email me at: mpardalos@gmail.com.
+<a href="https://play.google.com/store/apps/details?id=org.mpardalos.homewor_plus">
+<img src="http://www.sideloadvr.com/images/button.png" height="80">
+</a>
