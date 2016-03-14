@@ -64,10 +64,10 @@ public class TaskEdit extends TaskAdd {
 
         ((EditText) findViewById(R.id.description_input)).setText(task.getDescription());
 
-        this.mPhotoFile = task.getPhotoFile();
-        if (mPhotoFile != null) {
+        this.setMPhotoFile(task.getPhotoFile());
+        if (getMPhotoFile() != null) {
             findViewById(R.id.image_heading).setVisibility(View.VISIBLE);
-            loadImageToImageView(mPhotoFile);
+            loadImageToImageView(getMPhotoFile());
         }
     }
 
@@ -115,15 +115,15 @@ public class TaskEdit extends TaskAdd {
         Log.i("Task to be added: ", "Due Date: " + dueDate);
         Log.i("Task to be added: ", "Description: " + description);
         String photoPath;
-        if (mPhotoFile != null) {
-            photoPath = mPhotoFile.getAbsolutePath();
+        if (getMPhotoFile() != null) {
+            photoPath = getMPhotoFile().getAbsolutePath();
         } else {
             photoPath = "None";
         }
         Log.i("Task to be added: ", "Photo path: " + photoPath);
 
         Intent result = new Intent();
-        result.putExtra("task", new Task(subject, description, dueDate, databaseId, mPhotoFile));
+        result.putExtra("task", new Task(subject, description, dueDate, databaseId, getMPhotoFile()));
         setResult(result_code, result);
         return true;
     }
